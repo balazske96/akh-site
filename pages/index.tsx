@@ -23,7 +23,6 @@ export default function Home(): ReactElement {
     } else {
       setLogoSize(300)
     }
-
   }
 
   React.useEffect(alignLogoPictureToWindowWidth, [windowSize]);
@@ -34,9 +33,9 @@ export default function Home(): ReactElement {
         <Image src="/logo.png" alt="Logo" width={logoSize} height={logoSize} />
       </div>
       <p>Az oldal fejlesztés alatt áll...</p>
-      <p>Addig nézd meg alábbi Social Media felületeinket</p>
+      <p>Addig ismerkedj meg velünk az alábbi felületeken</p>
       <SocialMediaIconContainer />
-      <p>Vagy látogass el webshopunkra!</p>
+      <p>vagy nézz szét a webshopunkban!</p>
       <button onClick={onButtonClick}>Webshop</button>
     </div>
   )
