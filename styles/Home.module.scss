@@ -1,0 +1,50 @@
+@import './mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  height: 100vh;
+
+  > * {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .logo {
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-size: 38px;
+    text-align: center;
+
+    @include breakpoint(l) {
+      font-size: 28px;
+    }
+  }
+
+  button {
+    border: 0;
+    background-color: white;
+    font-size: 38px;
+    padding: 10px 50px;
+    border-radius: 5px;
+
+    @include breakpoint(l) {
+      font-size: 28px;
+    }
+
+    &:hover {
+      background-color: rgb(191, 191, 191);
+      cursor: pointer;
+    }
+
+  }
+
+  
+
+}
