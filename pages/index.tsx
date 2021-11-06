@@ -34,7 +34,7 @@ export default function Home(): ReactElement {
       <p>Az oldal fejlesztés alatt áll...</p>
       <p>Látogass el addig a webshopunkra!</p>
       <button onClick={onButtonClick}>Webshop</button>
-      {/* <SocialMediaIconContainer/> */}
+      <SocialMediaIconContainer/>
     </div>
   )
 }
