@@ -1,40 +1,49 @@
+@import '../styles/mixins.scss';
+
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template: "facebook twitter instagram youtube";
+    justify-items: center;
     align-items: center;
-    width: 100%;
+    grid-gap: 50px;
+
+    @include breakpoint(l) {
+        grid-template-areas:
+        "twitter instagram" "facebook youtube";
+        grid-gap: 30px;
+    }
 
     img {
-        filter: invert(90%);
+        height: 100px;
+
+        @include breakpoint(l) {
+            height: 70px;
+        }
 
         &:hover {
-            filter: invert(80%);
+            opacity: 60%;
             cursor: pointer;
         }
     }
 
+    .invertColor {
+        filter: invert(100%);
+    }
+
     .instagramIcon {
-        width: 100px;
-        height: 100px;
+        grid-area: instagram;
     }
 
     .facebookIcon {
-        width: 125px;
-        height: 125px;
+        grid-area: facebook;
     }
 
     .youtubeIcon {
-        width: 100px;
-        height: 110px;
-        margin-left: 15px;
-        margin-top: -3px;
+        grid-area: youtube;
     }
 
     .twitterIcon {
-        width: 80px;
-        height: 80px;
-        margin-right: 10px;
+        grid-area: twitter;
     }
 }
 

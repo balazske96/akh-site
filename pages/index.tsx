@@ -10,31 +10,34 @@ import SocialMediaIconContainer from '../components/SocialMediaIconContainer';
 export default function Home(): ReactElement {
 
   const windowSize = useWindowSize();
-  const [logoSize, setLogoSize] = React.useState<number>(400); 
+  const [logoSize, setLogoSize] = React.useState<number>(300);
 
   const onButtonClick = () => {
     window.location.href = 'https://shop.akiralyhalott.hu'
   }
 
-  React.useEffect(()=>{
-      if(windowSize !== undefined){
-        if( windowSize.width! < 643) {
-          setLogoSize(300)
-        } else {
-          setLogoSize(400)
-        }
-      }
-  }, [windowSize]);
+  const alignLogoPictureToWindowWidth = () => {
+
+    if (windowSize.width! < 643) {
+      setLogoSize(200)
+    } else {
+      setLogoSize(300)
+    }
+
+  }
+
+  React.useEffect(alignLogoPictureToWindowWidth, [windowSize]);
 
   return (
     <div className={styles.container}>
       <div>
-        <Image src="/logo.png" alt="Logo" width={logoSize} height={logoSize}/>
+        <Image src="/logo.png" alt="Logo" width={logoSize} height={logoSize} />
       </div>
       <p>Az oldal fejlesztés alatt áll...</p>
-      <p>Látogass el addig a webshopunkra!</p>
+      <p>Addig nézd meg alábbi Social Media felületeinket</p>
+      <SocialMediaIconContainer />
+      <p>Vagy látogass el webshopunkra!</p>
       <button onClick={onButtonClick}>Webshop</button>
-      <SocialMediaIconContainer/>
     </div>
   )
 }
