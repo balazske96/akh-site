@@ -1,0 +1,35 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Styling, formatting and building the project"
+
+npm run check-types || (
+	echo "❌ Typescript error...";
+	false;
+)
+
+echo "✅ Typescript check passed"
+
+npm run check-format || (
+	echo "❌ Prettier format error...";
+	false;
+)
+
+echo "✅ Prettier check passed"
+
+npm run check-lint || (
+	echo "❌ ESLint error...";
+	false;
+)
+
+echo "✅ ESLint check passed"
+
+npm run build || (
+	echo "❌ NextJS error...";
+	false;
+)
+
+echo "✅ NextJS build passed"
+
+echo "✅✅✅ Everything is fine. Commiting..."
+
