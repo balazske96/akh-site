@@ -5,7 +5,6 @@ import useWindowSize from '../hooks/useWindowSize';
 import SocialMediaIconContainer from '../components/SocialMediaIconContainer';
 
 export default function Home(): ReactElement {
-
 	const windowSize = useWindowSize();
 	const [logoSize, setLogoSize] = React.useState<number>(300);
 
@@ -25,7 +24,6 @@ export default function Home(): ReactElement {
 
 	return (
 		<div className={styles.container}>
-			<div style={{ display: 'none' }}></div>
 			<div>
 				<Image
 					src="/logo.png"
