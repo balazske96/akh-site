@@ -5,7 +5,6 @@ import useWindowSize from '../hooks/useWindowSize';
 import SocialMediaIconContainer from '../components/SocialMediaIconContainer';
 
 export default function Home(): ReactElement {
-
 	const windowSize = useWindowSize();
 	const [logoSize, setLogoSize] = React.useState<number>(300);
 
@@ -14,7 +13,6 @@ export default function Home(): ReactElement {
 	};
 
 	const alignLogoPictureToWindowWidth = () => {
-
 		if (windowSize.width! < 643) {
 			setLogoSize(200);
 		} else {
@@ -27,7 +25,12 @@ export default function Home(): ReactElement {
 	return (
 		<div className={styles.container}>
 			<div>
-				<Image src="/logo.png" alt="Logo" width={logoSize} height={logoSize} />
+				<Image
+					src="/logo.png"
+					alt="Logo"
+					width={logoSize}
+					height={logoSize}
+				/>
 			</div>
 			<p>Az oldal fejlesztés alatt áll...</p>
 			<p>Addig ismerkedj meg velünk az alábbi felületeken</p>
@@ -37,4 +40,3 @@ export default function Home(): ReactElement {
 		</div>
 	);
 }
-
