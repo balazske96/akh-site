@@ -13,12 +13,13 @@
   align-items: center;
   background-color: $black;
   padding: 0 100px 0 40px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 
-  @include breakpoint(sm) {
+  @include underTablet() {
     padding: 0 20px 0 20px;
   }
 
-  @include breakpoint(l) {
+  @include underMobileLarge() {
     height: 70px;
   }
 }
@@ -28,7 +29,7 @@
   margin-bottom: auto;
   margin-top: auto;
 
-  @include breakpoint(sm) {
+  @include underTablet() {
     width: 40px;
   }
 }

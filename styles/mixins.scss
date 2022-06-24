@@ -1,25 +1,42 @@
-@mixin breakpoint($class) {
-	@if $class == xs {
-		@media (max-width: 767px) {
-			@content;
-		}
-	} @else if $class == sm {
-		@media (max-width: 768px) {
-			@content;
-		}
-	} @else if $class == md {
-		@media (max-width: 992px) {
-			@content;
-		}
-	} @else if $class == l {
-		@media (max-width: 643px) {
-			@content;
-		}
-	} @else if $class == xl {
-		@media (max-width: 917px) {
-			@content;
-		}
-	} @else {
-		@warn "Breakpoint mixin supports: xs, sm, md, lg";
+@mixin underPixel($pixel) {
+	@media only screen and ('max-width: #{$pixel}px') {
+		@content
+	}
+}
+
+@mixin underLaptopLarge {
+	@media only screen and ('max-width: 1440px') {
+		@content
+	}
+}
+
+@mixin underLaptop {
+	@media only screen and ('max-width: 1024px') {
+		@content
+	}
+}
+
+@mixin underTablet {
+	@media only screen and ('max-width: 768px') {
+		@content
+	}
+}
+
+
+@mixin underMobileLarge {
+	@media only screen and ('max-width: 425px') {
+		@content
+	}
+}
+
+@mixin underMobileMedium {
+	@media only screen and ('max-width: 375px') {
+		@content
+	}
+}
+
+@mixin underMobileSmall {
+	@media only screen and ('max-width: 320px') {
+		@content
 	}
 }
