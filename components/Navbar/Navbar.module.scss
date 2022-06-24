@@ -27,8 +27,13 @@
 
 .logo {
   width: 50px;
+  margin-right: auto;
   margin-bottom: auto;
   margin-top: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @include underTablet() {
     width: 40px;

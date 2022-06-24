@@ -1,12 +1,19 @@
 import '../styles/globals.scss';
 import type {AppProps} from 'next/app';
-import Layout from '../components/Layout/Layout';
+import Head from 'next/head';
 
 function MyApp({Component, pageProps}: AppProps) {
 	return (
-		<Layout>
-			<Component {...pageProps} />
-		</Layout>
+		<>
+			<Head>
+				<meta charSet="UTF-8"/>
+				<meta
+					name="keywords"
+			  		content="zene, rock, pop, pop-rock, magyar, király, halott, a király halott, halott király"
+				/>
+			</Head>
+			<Component {...pageProps} />;
+		</>
 	);
 }
 

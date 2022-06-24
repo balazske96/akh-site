@@ -6,9 +6,11 @@ import styles from './Layout.module.scss';
 
 interface LayoutProps {
 	children: React.ReactNode;
+	footer?: boolean;
+	navbar?: boolean;
 }
 
-export default function Layout({children}: LayoutProps) {
+export default function Layout({children, footer = true, navbar = true}: LayoutProps) {
 
 	return (
 		<>
@@ -21,9 +23,9 @@ export default function Layout({children}: LayoutProps) {
 				<title>A Király Halott</title>
 			</Head>
 			<div className={styles.container}>
-				<Navbar/>
+				{navbar && <Navbar/>}
 				{children}
-				<Footer/>
+				{footer && <Footer/>}
 			</div>
 		</>
 	);

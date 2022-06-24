@@ -9,7 +9,7 @@ export default function Hero() {
 			<div className={styles.textContainer}>
 				<p>
 					Üdvözlünk <br/><img alt="Zenekari logó" className={styles.nameLogoInText} src="/akh_name_logo_white.png"/><br/>zenekar<br/>hivatalos
-					weboldalán!
+					honlapján!
 				</p>
 			</div>
 		</div>

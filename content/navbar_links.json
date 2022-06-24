@@ -1,15 +1,15 @@
 [
   {
-    "title": "Főoldal",
-    "href": "/"
-  },
-  {
-    "title": "Rólunk",
-    "href": "/rolunk"
+    "title": "Bio",
+    "href": "/bio"
   },
   {
     "title": "Zene",
-    "href": "/music"
+    "href": "/zene"
+  },
+  {
+    "title": "Koncert",
+    "href": "/koncertek"
   },
   {
     "title": "Shop",

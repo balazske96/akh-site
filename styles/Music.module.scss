@@ -1,0 +1,41 @@
+@import "./mixins";
+
+.container {
+  padding: 150px 0;
+  text-align: justify;
+  text-justify: auto;
+  text-align-last: center;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @include underMobileLarge {
+    font-size: 1rem;
+    padding: 100px 0;
+
+  }
+
+  h2 {
+    text-align: center;
+    margin: 0 0 50px 0;
+    padding: 0 50px;
+    font-size: 2rem;
+
+    a {
+      text-decoration: underline;
+    }
+
+    @include underTablet{
+      font-size: 1rem;
+      padding: 0 80px;
+    }
+
+    @include underMobileLarge {
+      padding: 0 30px;
+    }
+  }
+
+}
+
+.musicPlayerContainer {
+  padding: 0 20px;
+}

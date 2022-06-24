@@ -1,5 +1,5 @@
 import styles from './Footer.module.scss';
-import SocialMediaIconContainer from '../SocialMediaIconContainer/SocialMediaIconContainer';
+import SocialMediaIconContainer from './SocialMediaIconContainer/SocialMediaIconContainer';
 
 export default function Footer() {
 	return (

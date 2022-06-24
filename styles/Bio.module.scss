@@ -1,0 +1,44 @@
+@import "./mixins";
+
+.container {
+  padding: 100px 0;
+  text-align: justify;
+  text-justify: auto;
+  text-align-last: center;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  @include underLaptop {
+    max-width: 700px;
+  }
+
+  @include underTablet {
+    max-width: 500px;
+  }
+
+  @include underPixel(530) {
+    max-width: 380px;
+  }
+
+  @include underMobileLarge {
+    max-width: 320px;
+    font-size: 0.9rem;
+    padding: 80px 0;
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+
+  @include underMobileSmall {
+    max-width: 290px;
+  }
+
+
+}
