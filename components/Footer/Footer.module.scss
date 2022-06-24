@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.container {
+  background-color: $black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+  position: relative;
+
+  @include underTablet {
+    padding: 60px 0;
+  }
+}
+
+.copyright {
+  margin-top: 20px;
+}
+
+.upperDivider {
+  height: 2px;
+  width: 600px;
+  position: absolute;
+  top: 0;
+  background-color: $textWhite;
+
+  @include underLaptop {
+    width: 400px;
+  }
+
+  @include underPixel(600) {
+    width: 200px;
+  }
+}

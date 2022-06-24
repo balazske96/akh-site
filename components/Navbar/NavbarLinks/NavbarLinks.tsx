@@ -1,7 +1,7 @@
 import Hamburger from 'hamburger-react';
 import styles from './NavbarLinks.module.scss';
 import Link from 'next/link';
-import links from '../../../content/links.json';
+import links from '../../../content/navbar_links.json';
 import {Link as LinkType} from '../../../types';
 import clsx from 'clsx';
 import {Drawer, useMediaQuery} from '@mui/material';

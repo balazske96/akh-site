@@ -1,0 +1,31 @@
+@import '../../styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  img {
+    height: 40px;
+
+    @include underTablet {
+      height: 30px;
+    }
+
+    @include underMobileLarge {
+      height: 20px;
+    }
+
+    &:hover {
+      opacity: 60%;
+      cursor: pointer;
+    }
+  }
+
+  .invertColor {
+    filter: invert(100%);
+  }
+}
