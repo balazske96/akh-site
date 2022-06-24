@@ -22,11 +22,13 @@ export default function NavbarLinks() {
 	const content = links.map((link: LinkType) =>
 		<Link key={link.title} href={link.href}>
 			<a
+				onClick={() => setIsMenuOpened(false)}
 				className={clsx({
 					[styles.link]: true,
 					[styles.activeLink]: router.asPath === link.href
 				})}
-				href={link.href}
+				target={link.title === 'Shop' ? '_blank' : '_self'}
+				href={link.href} rel="noreferrer"
 			>
 				{link.title}
 			</a>

@@ -1,14 +1,13 @@
 import styles from '../styles/NotFound.module.scss';
-import Link from 'next/link';
+import React from 'react';
 
 export default function NotFound() {
+
+	React.useEffect(() => {
+		window.location.href = '/';
+	}, []);
+
 	return (
-		<div className={styles.container}>
-			<div className={styles.hoppa}>Hoppá!</div>
-			<div className={styles.pageNotFound}>A keresett oldal nem található...</div>
-			<Link href="/">
-				<a href="/">Vissza a főoldalra</a>
-			</Link>
-		</div>
+		<div className={styles.container} />
 	);
 }
