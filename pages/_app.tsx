@@ -12,7 +12,7 @@ function MyApp({Component, pageProps}: AppProps) {
 			  		content="zene, rock, pop, pop-rock, magyar, király, halott, a király halott, halott király"
 				/>
 			</Head>
-			<Component {...pageProps} />;
+			<Component {...pageProps} />
 		</>
 	);
 }
