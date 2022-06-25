@@ -7,8 +7,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0;
+  padding: 50px 0;
   position: relative;
+  gap: 30px;
 
   @include underTablet {
     padding: 60px 0;
@@ -16,7 +17,7 @@
 }
 
 .copyright {
-  margin-top: 20px;
+  //margin-top: 20px;
 }
 
 .upperDivider {
