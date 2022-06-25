@@ -1,7 +1,38 @@
+@import "styles/mixins";
+
 .container {
-  padding-top: 150px;
-  min-height: 480px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 100px 40px;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 20px;
+
+  @include underTablet {
+    font-size: 3rem;
+  }
+
+  @include underMobileLarge {
+    font-size: 2rem;
+  }
+}
+
+.description {
+  text-align: center;
+  line-height: 1.7rem;
+
+  @include underMobileLarge {
+    font-size: 0.8rem;
+  }
+}
+
+.concertCardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

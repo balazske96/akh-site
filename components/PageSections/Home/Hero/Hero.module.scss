@@ -125,7 +125,7 @@
     margin-top: 30px;
   }
 
-  @include underMobileSmall {
+  @include underMobileLarge {
     width: 100px;
   }
 }
