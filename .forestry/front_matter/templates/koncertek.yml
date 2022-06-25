@@ -37,3 +37,5 @@ fields:
   config:
     required: false
   label: Link to event
+pages:
+- contents/aws_barba_negra.json
