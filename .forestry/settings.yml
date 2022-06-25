@@ -5,7 +5,7 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: contents
+  path: contents/concerts
   label: Koncertek
   create: documents
   match: "**/*"
