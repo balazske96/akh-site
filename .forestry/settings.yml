@@ -4,10 +4,8 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-- type: document
-  path: content/pages/biography
-  label: Biography
-  match: "**/*"
+- type: heading
+  label: Content
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
