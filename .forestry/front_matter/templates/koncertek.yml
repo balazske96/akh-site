@@ -38,4 +38,4 @@ fields:
     required: false
   label: Link to event
 pages:
-- contents/aws_barba_negra.json
+- contents/concerts/aws_barba_negra.json
