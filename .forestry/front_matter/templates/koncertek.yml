@@ -5,12 +5,12 @@ fields:
 - name: display_name
   type: text
   config:
-    required: false
+    required: true
   label: Display Name
 - name: city
   type: text
   config:
-    required: false
+    required: true
   label: City
 - name: date
   type: number
@@ -22,10 +22,11 @@ fields:
     min: 
     max: 
     step: 
+    required: true
 - name: location
   type: text
   config:
-    required: false
+    required: true
   label: Location
 - name: link_to_ticket
   type: text
@@ -35,7 +36,7 @@ fields:
 - name: link_to_event
   type: text
   config:
-    required: false
+    required: true
   label: Link to event
 pages:
 - contents/concerts/aws_barba_negra.json
