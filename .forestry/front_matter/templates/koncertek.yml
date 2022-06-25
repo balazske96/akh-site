@@ -1,4 +1,39 @@
 ---
-label: koncertek
+label: concert
 hide_body: true
-fields: []
+fields:
+- name: display_name
+  type: text
+  config:
+    required: false
+  label: Display Name
+- name: city
+  type: text
+  config:
+    required: false
+  label: City
+- name: date
+  type: number
+  label: Date
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+- name: location
+  type: text
+  config:
+    required: false
+  label: Location
+- name: link_to_ticket
+  type: text
+  config:
+    required: false
+  label: Link to ticket
+- name: link_to_event
+  type: text
+  config:
+    required: false
+  label: Link to event
