@@ -7,9 +7,8 @@ sections:
 - type: heading
   label: Content
 - type: document
-  path: content/biography
+  path: content/biography.md
   label: Bigoraphy
-  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
