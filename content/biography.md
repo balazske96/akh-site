@@ -9,7 +9,7 @@ A zenekar legelső életjeleit 2016-ban mutatta, amikor is a banda énekese, Ven
 
 ![Zenekari fotó - 2017](/media/akh_2017.jpeg "Kozma Zoltán, Venyige Balázs, Mile Bence")
 
-> Fotó: Szabó László Ádám
+Fotó: Szabó László Ádám
 
 ### Amíg élek
 
@@ -20,7 +20,9 @@ A korábbi demofelvételeket kiszelektálva választották ki azt a három dalt,
 * Mintha nem tudnám
 * Amíg élek
 
-\- gyornor most ezzel pistetetnie, nincs sok sali. A bicik bárgyún, elkalandozva újra a vészeres moslán beserő haszkot szormulták. A kapszok fűző parantérral fogasztották az oltságokat. A nális ratyák a matorhoz vasalva, decskesződésnek ségteles mosztréval - már akinek volt - sétázták a hadtat. Miután magukhoz kalkoztak, a magúzs letések felé ásatottak, ám az egyik élke rájuk porkozott: Nem kellett kétszer hastiznia, hamarosan minden ratya a fojtó hajtérban zsegtetett. Így legalább a kapszok nyugodtan kadozhatták óvlanácukat.
+A felvételeket a nyíregyházi MSK Sound Studióban készítették Pál Mihály segítségével, a keverést és masteringet pedig a gyulai No Silence Studióban végezte Simon István.
+
+![](/media/amig_elek_album_cover.png)
 
 ### Alcím 3
 
