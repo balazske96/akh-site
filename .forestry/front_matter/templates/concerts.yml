@@ -28,11 +28,11 @@ fields:
   config:
     required: true
   label: Location
-- name: link_te_event
+- name: link_to_event
   type: text
   config:
     required: true
-  label: Link te event
+  label: Link to event
 - name: link_to_ticket
   type: text
   config:
