@@ -22,7 +22,7 @@ A korábbi demofelvételeket kiszelektálva választották ki azt a három dalt,
 
 A felvételeket a nyíregyházi MSK Sound Studióban készítették Pál Mihály segítségével, a keverést és masteringet pedig a gyulai No Silence Studióban végezte Simon István.
 
-![](/media/amig_elek_album_cover.png)
+![Amíg élek album borító](/media/amig_elek_album_cover.png "Amíg élek borító")
 
 ### Alcím 3
 
