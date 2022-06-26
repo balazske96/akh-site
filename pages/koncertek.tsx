@@ -1,11 +1,12 @@
 import Layout from '../components/Layout/Layout';
 import styles from '../styles/Concerts.module.scss';
 import {Concert} from '../types';
-import concerts from '../content/concerts.json';
 import Head from 'next/head';
 import ConcertCard from '../components/ConcertCard/ConcertCard';
+import {GetStaticProps} from 'next';
+import fs from 'fs';
 
-export default function Concerts() {
+export default function Concerts({concerts}: { concerts: Concert[] }) {
 	return (
 		<Layout>
 			<Head>
@@ -44,3 +45,27 @@ export default function Concerts() {
 		</Layout>
 	);
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+
+	let concerts: Concert[] = [];
+
+	try {
+
+		const concertFiles = fs.readdirSync('content/concerts/');
+		concertFiles.map((concertFile) => {
+			const rawJson = fs.readFileSync(`content/concerts/${concertFile}`);
+			const jsonFormat = JSON.parse(rawJson.toString()) as Concert;
+			concerts.push(jsonFormat);
+		});
+
+		concerts = concerts.sort((a, b) => a.date - b.date);
+	} catch (e) {
+		console.log(e);
+	}
+
+
+	return {
+		props: {concerts: concerts}
+	};
+};
