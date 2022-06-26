@@ -5,7 +5,6 @@
   text-align: justify;
   text-justify: auto;
   text-align-last: center;
-  max-width: 1000px;
   margin: 0 auto;
 
   @include underMobileLarge {
@@ -24,7 +23,7 @@
       text-decoration: underline;
     }
 
-    @include underTablet{
+    @include underTablet {
       font-size: 1rem;
       padding: 0 80px;
     }
@@ -33,9 +32,38 @@
       padding: 0 30px;
     }
   }
-
 }
 
 .musicPlayerContainer {
-  padding: 0 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 400px);
+  grid-template-areas:
+      "spotify youtube"
+      "apple-music deezer";
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @include underLaptop {
+    grid-template-rows: repeat(2, 300px);
+    max-width: 700px;
+  }
+
+  @include underTablet {
+    grid-template-rows: repeat(4, 300px);
+    max-width: 300px;
+    grid-template-areas:
+      "spotify spotify"
+      "youtube youtube"
+      "apple-music apple-music"
+      "deezer deezer";
+  }
+
+  /*@include underMobileLarge {
+    grid-template-rows: repeat(4, 200px);
+    max-width: 200px;
+
+  }*/
+
 }

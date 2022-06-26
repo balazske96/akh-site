@@ -1,6 +1,9 @@
 import Layout from '../components/Layout/Layout';
 import styles from '../styles/Music.module.scss';
+import platforms from '../content/streaming_platforms.json';
 import Head from 'next/head';
+import MusicCard from '../components/MusicCard/MusicCard';
+import {StreamingPlatform} from '../types';
 
 export default function Music() {
 	return (
@@ -10,20 +13,17 @@ export default function Music() {
 			</Head>
 			<div className={styles.container}>
 				<h2>
-					Hallgass meg minket az alábbi lejátszó segítségével vagy kattings <a
-						href="https://open.spotify.com/artist/6YVFO1kvJ7kxbYpbIZLXhJ?si=2NftFZWTTQ27zEeYhDZg7A"
-						target="_blank" rel="noreferrer">ide</a> a
-					közvetlen Spotify
-					eléréséhez!
+					Válaszd ki kedvenc platformodat!
 				</h2>
 				<div className={styles.musicPlayerContainer}>
-					<iframe
-						style={{borderRadius: '12px'}}
-						src="https://open.spotify.com/embed/artist/6YVFO1kvJ7kxbYpbIZLXhJ?utm_source=generator"
-						width="100%"
-						height="450"
-						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-					/>
+					{platforms.map((platform) => (
+						<MusicCard
+							key={platform.label}
+							label={platform.label}
+							href={platform.href}
+							platform={platform.platform as StreamingPlatform}
+						/>
+					))}
 				</div>
 			</div>
 		</Layout>

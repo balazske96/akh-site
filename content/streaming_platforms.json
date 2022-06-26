@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Spotify",
+    "href": "https://open.spotify.com/artist/6YVFO1kvJ7kxbYpbIZLXhJ?si=LK9ErW_fQ-yIPa2sZv4gDA",
+    "platform": "SPOTIFY"
+  },
+  {
+    "label": "Apple Music",
+    "href": "https://music.apple.com/hu/artist/a-kir%C3%A1ly-halott/1331011092",
+    "platform": "APPLE_MUSIC"
+  },
+  {
+    "label": "YouTube",
+    "href": "https://youtube.com/c/akiralyhalott",
+    "platform": "YOUTUBE"
+  },
+  {
+    "label": "Deezer",
+    "href": "https://deezer.page.link/MorPmw95SpyZEiGn7",
+    "platform": "DEEZER"
+  }
+]

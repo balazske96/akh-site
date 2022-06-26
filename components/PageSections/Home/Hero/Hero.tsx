@@ -8,7 +8,7 @@ export default function Hero() {
 			</div>
 			<div className={styles.textContainer}>
 				<p>
-					Üdvözlünk <br/><img alt="Zenekari logó" className={styles.nameLogoInText} src="/akh_name_logo_white.png"/><br/>zenekar<br/>hivatalos
+					Üdvözlünk <br/><img alt="Zenekari logó" className={styles.nameLogoInText} src="/akh_name_logo_white.png"/><br/>hivatalos
 					honlapján!
 				</p>
 			</div>

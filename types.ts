@@ -18,3 +18,10 @@ export type Concert = {
 	link_to_event: string;
 	location: string;
 }
+
+export enum StreamingPlatform {
+	YOUTUBE = 'YOUTUBE',
+	SPOTIFY = 'SPOTIFY',
+	APPLE_MUSIC = 'APPLE_MUSIC',
+	DEEZER = 'DEEZER',
+}
