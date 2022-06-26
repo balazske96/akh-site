@@ -38,3 +38,5 @@ fields:
   config:
     required: false
   label: Link to ticket
+pages:
+- content/concerts/budapest_barba-negra_2022-06-04.json
