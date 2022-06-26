@@ -9,6 +9,12 @@ sections:
 - type: document
   path: content/biography.md
   label: Bigoraphy
+- type: directory
+  path: content/concerts
+  label: Concerts
+  create: all
+  match: "**/*"
+  new_doc_ext: ".json"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
