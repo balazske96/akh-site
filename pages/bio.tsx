@@ -1,61 +1,28 @@
 import Layout from '../components/Layout/Layout';
 import Head from 'next/head';
 import styles from '../styles/Bio.module.scss';
+import {GetStaticProps} from 'next';
+import fs from 'fs';
+import {marked} from 'marked';
+import fm from 'front-matter';
 
-export default function Bio() {
+export default function Bio({content}: { content: string }) {
 	return (
 		<Layout>
 			<Head>
 				<title>Bio</title>
 			</Head>
-			<div className={styles.container}>
-				<h1>A zenekarról</h1>
-				<p>
-					Lórum ipse mindaddig jól vondol, míg meg nem jesít egy csern és buggyos polt. A kegyves renór vitos
-					és pasztik helyesével azonban csenyítések valás kednek, mivel ő látszólag szurány erről görögetnie,
-					ha vizi a bálmadását, és együtt ködi halognia a kardást. Ma is sok vikvián mázik még a harizmus,
-					hogy a haróta a hóbikok kliuma, a killa színégyzefe, hogy állítsa. A hasztók egy huzulása
-					szanizmusoktól vezérelve hasztozik, a flódásznak södére is szurcája van ehhez. Várt pupadék szerint
-					a gyűszűgy gilkoszlyájától rágos, hogy egyazon irás mellett zsinterítse el az adását. Valóban
-					eredendően söröző güzdő a gyűszűgy, vagy csak könnyen banépszoros? Bár a zabort pimozás selített a
-					szelétől, fors söncsén mégis a rota tarága kosítja meg. Miskakajsán tipló emelő kázása szerint a
-					csalékban két tabizmus tergaz.
-					<br/>
-					<br/>
-					Bátlan mozás: dönző, címzeres, ciportság és hatlan szverek (kb. 20 babizán), kehem kb. 30 babizán.
-					Hisztos mozás: csalás gulatok reződése és kodrága, jeled - bált siség vetlenség – rázás (250-250
-					babizán). Ming rézések, nevelykek: a szürgés dotárához nem rézés a salakos takász. Szeménységet a a
-					palás sürdelhet jogós szeklő szavák alól, aki ezek szaltásait már feli mozás porságában pacskogta,
-					és ezt fajdoznia tudja, valamint a hisztos mozás jogós koságai alól, aki a fokos szőlés hunkóját
-					hírestés hűtőben szürgéssel szalad. Azokban a kacos porságokban, amelyekben a palás salakos vesztő
-					és salakos cúgott stalban mokáncsos koságot és ezt mező polya fajdoznia tudja, a kacos sító egy
-					rődésre (1295 hocskára) kuszik. Lekha: a bozatos ermetiséghez ínyes korzot a jális és nem jális
-					fegyedres andusok kambódásához ferdire hati korz torokára nyarsulják meg. Hevén tónaton 74 hocska, a
-					kukres tónaton pedig 70 hocska hevény hocskával.
-					<br/>
-					<br/>
-					- gyornor most ezzel pistetetnie, nincs sok sali. A bicik bárgyún, elkalandozva újra a vészeres
-					moslán beserő haszkot szormulták. A kapszok fűző parantérral fogasztották az oltságokat. A nális
-					ratyák a matorhoz vasalva, decskesződésnek ségteles mosztréval - már akinek volt - sétázták a
-					hadtat. Miután magukhoz kalkoztak, a magúzs letések felé ásatottak, ám az egyik élke rájuk
-					porkozott: Nem kellett kétszer hastiznia, hamarosan minden ratya a fojtó hajtérban zsegtetett. Így
-					legalább a kapszok nyugodtan kadozhatták óvlanácukat.
-					<br/>
-					<br/>
-					Ennek érdekében a hibet nem talausok akcsókát, beszélyek sikócait lyuggatja a taltságokra, hanem a
-					podás kánánainak és koszonáinak víziójához múlékos fekéket szakodja el velük. Nagymértékben bénál
-					spontán és mura antataikra, puffadt patárisukra, a hatos és a vális podásban tatlan füzéseikre.
-					Fogat a metlen jancai és satos hozásra, valamint a regségeken boga itatok csapkapára. A kedő tató
-					bakárt tozott, gyakran eleper elsőkből löltetkedt fogások tüsszögik ki. Nyosították azt a szűrű kétő
-					venedzséget, amelynek hotoraként legyenített a csizmus füzes salhan lendőzése. Az épegző baktitást
-					interjelő irat csaknem gyant permerges volonnal teremekedi a félenes komkos olásokat, illetve a
-					hatós nyulágot sikró likásokat. Kémény szőttes lánapt sapusz karéja, a szomlan latos belő falmány,
-					valamint a csizmus bánca sadvány korzódás venedzségének mendernsérében csegerítés 20-ával fasztott a
-					csizmus füzes és salhan teszter, amelynek flamája, hogy elterezik azokat a pöcsökből malvadt
-					miszonságokat, akik likásba kelegnek, vagy azokat a zöreseket, amelyek volt csizmus miszonságokat
-					bicelnek és kurágot zsonlítnak arra, hogy minimum két bókáig bicelik is őket.
-				</p>
+			<div className={styles.container} dangerouslySetInnerHTML={{__html: content}}>
 			</div>
 		</Layout>
 	);
 }
+
+export const getStaticProps: GetStaticProps = () => {
+	const rawMarkdown = fs.readFileSync('content/biography.md');
+	const html = marked.parse(fm(rawMarkdown.toString()).body);
+
+	return {
+		props: {content: html}
+	};
+};

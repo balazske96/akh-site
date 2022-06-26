@@ -13,6 +13,36 @@
     font-size: 3rem;
   }
 
+  img {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @include underLaptop {
+      max-width: 700px;
+    }
+
+
+    @include underLaptop {
+      max-width: 700px;
+    }
+
+    @include underTablet {
+      max-width: 500px;
+    }
+
+    @include underPixel(530) {
+      max-width: 380px;
+    }
+
+    @include underMobileLarge {
+      max-width: 320px;
+    }
+
+    @include underMobileSmall {
+      max-width: 290px;
+    }
+  }
+
   @include underLaptop {
     max-width: 700px;
   }
@@ -39,6 +69,4 @@
   @include underMobileSmall {
     max-width: 290px;
   }
-
-
 }
