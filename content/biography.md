@@ -1,11 +1,11 @@
 ---
 
 ---
-# A zenekarról
+# Biográfia
 
-### Alcím 1
+### A kezdetek
 
-Lórum ipse mindaddig jól svondol, míg meg nem jesít egy csern és buggyos polt. A kegyves renór vitos és pasztik helyesével azonban csenyítések valás kednek, mivel ő látszólag szurány erről görögetnie, ha vizi a bálmadását, és együtt ködi halognia a kardást. Ma is sok vikvián mázik még a harizmus, hogy a haróta a hóbikok kliuma, a killa színégyzefe, hogy állítsa. A hasztók egy huzulása szanizmusoktól vezérelve hasztozik, a flódásznak södére is szurcája van ehhez. Várt pupadék szerint a gyűszűgy gilkoszlyájától rágos, hogy egyazon irás mellett zsinterítse el az adását. Valóban eredendően söröző güzdő a gyűszűgy, vagy csak könnyen banépszoros? Bár a zabort pimozás selített a szelétől, fors söncsén mégis a rota tarága kosítja meg. Miskakajsán tipló emelő kázása szerint a csalékban két tabizmus tergaz.
+A zenekar legelső életjeleit 2016-ban mutatta, amikor is a banda énekese, Venyige Balázs az első demó felvételeket készítette. Akkori együttesének stílusába nem igazán illettek bele azok az elképzelések, amik ezeket a felvételeket jellemezték, ezért úgy döntött, hogy új zenekart alapít. Korábbi zenekarából két tagot is magával hozott az új formációba, majd felkérte Kozma Zolit, a nyíregyházi hard core zenei életből ismert dobost, hogy csatlakozzon a formációhoz. Zoli beleegyezett, feltéve, hogy egy zenésztársát ő is magával hozhatja a csapatba. Így került a zenekarba Mile Bence, a zenekar második gitárosa. Mivel Balázs és Bence egy gimnáziumba jártak, így az ismerettség és a zenei együttműködés nem jelentett gondot. Már majdnem véglegesnek látszott a zenekar felállása de végül Balázs korábbi zenésztársai úgy döntöttek, hogy külön utakon folytatják tovább és más zenei stílusban próbálkoznak. Így a zenekar végül trió formációban indult el.
 
 ![](/media/akh0520-72.jpeg)
 
