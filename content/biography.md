@@ -51,4 +51,6 @@ A kislemez az **Árván maradt gondolat** nevet kapta, ami egyben a második dal
 
 Mivel a világjárvány nem tette lehetővé a kislemez koncerteken való bemutatását, a zenekar, év elején egy [élőzenés videót](https://www.youtube.com/watch?v=2Ke4hfEMWyA) készített, melynek az **Y Sound Studió** adott otthont. A felvételen, az új lemez dalai mellett elhangzik első kislemezük címadó dala is, az [Amíg élek](https://youtu.be/2Ke4hfEMWyA?t=533). Ugyan ebben az évben a zenekar menedszeri szerepét **Szűcs Mihály** vette át. Ennek köszönhetően az év harmadik felében számos nagy zenekar, köztük a **Road**, **Lord**, **Omen** és **Leander Kills** vendégeként léphettek fel.
 
+![](/media/akh_barba_negra_2021-11-27.jpeg)
+
 ### Új tag
