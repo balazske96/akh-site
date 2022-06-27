@@ -58,4 +58,8 @@ A körülményes megalakulásból szerzett tapasztalatok miatt, a zenekar mindig
 ![A Király Halott új felállás](/media/akh_tupival.jpeg "Zenekari felállás a bővülés után")  
 Fotó: Zsoldos Dávid
 
+### 2022
+
+A csapat 2022 tavaszán, eleget téve a felkérésnek, útnak indult az [AWS](https://www.facebook.com/awszenekar) társaságában, hogy az országot bejárva, egy öt állomásos vidéki turnén mutatkozzon be. A turnét végül egy kiegészítő koncerttel zárták a **Barba Negrában**. A zárókoncertet megelőzően a csapatnak lehetősége volt az **A38 Hajón** is koncertet adni a [USEME](https://www.facebook.com/usemezenekar) és a [Fatal Error](https://www.facebook.com/fatalerrorzenekar) zenekarok társaságában.
+
 Folytatjuk...
