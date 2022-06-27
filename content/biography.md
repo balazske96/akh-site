@@ -62,6 +62,7 @@ Fotó: Zsoldos Dávid
 
 A csapat 2022 tavaszán, eleget téve a felkérésnek, útnak indult az [AWS](https://www.facebook.com/awszenekar) társaságában, hogy az országot bejárva, egy öt állomásos vidéki turnén mutatkozzon be. A turnét végül egy kiegészítő koncerttel zárták a **Barba Negrában**. A zárókoncertet megelőzően a csapatnak lehetősége volt az **A38 Hajón** is koncertet adni a [USEME](https://www.facebook.com/usemezenekar) és a [Fatal Error](https://www.facebook.com/fatalerrorzenekar) zenekarok társaságában.
 
-![](/media/akh_barba_negra_2022-06-04.jpeg)
+![](/media/akh_barba_negra_2022-06-04.jpeg)  
+Fotó: Berényi Kitti
 
 Folytatjuk...
