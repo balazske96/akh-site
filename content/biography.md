@@ -14,11 +14,11 @@ Fotó: Szabó László Ádám
 ### Amíg élek
 
 Miután véglegesnek igérkezett a zenekar formációja, elkezdtek az első anyagon dolgozni.  
-A korábbi demofelvételeket kiszelektálva választották ki azt a három dalt, ami az első kislemezükön, az "Amíg élek"-en szerepel:
+A korábbi demofelvételeket kiszelektálva választották ki azt a három dalt, ami az első kislemezükön, az "[Amíg élek](https://www.youtube.com/watch?v=C_NP7aao94w&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)"-en szerepel:
 
-* Senki nem figyel
-* Mintha nem tudnám
-* Amíg élek
+* [Senki nem figyel](https://www.youtube.com/watch?v=u37V2Dd6u_k&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-&index=2)
+* [Mintha nem tudnám](https://www.youtube.com/watch?v=pzVuNqjZXHU&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)
+* [Amíg élek](https://www.youtube.com/watch?v=C_NP7aao94w&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)
 
 A felvételeket a nyíregyházi MSK Sound Studióban készítették Pál Mihály segítségével, a keverést és masteringet pedig a gyulai No Silence Studios-ban végezte Simon István.
 
@@ -28,3 +28,21 @@ A felvételeket a nyíregyházi MSK Sound Studióban készítették Pál Mihály
 
 Első koncertjét a zenekar, még a hivatalos megalakulásának évében, 2017 decemberében adta az [**Alvin és a mókusok**](https://www.facebook.com/Alvin.es.a.Mokusok) előtt, Nyíregyházán. Az este hatalmas sikert aratott, így a következő hetekben a zenekar elkezdte szervezni az új év fellépéseit.  
 2018-ban számos ismert hazai zenekar társaságában adtak koncertet országszerte, köztük a **New Friend Request**, **Szükségállapot**, **Orion Dawn**, **Headstock** zenekarokkal. Ugyan ebben az évben meghívást kaptak a Kisvárdai **LeszFeszt** fesztiválra, mely első fesztivál fellépésük is egyben.
+
+![A Király Halott - Dürer Kert - 2018](/media/akh_durer_2018_aprilis.jpeg "A Király Halott - Dürer Kert - 2018")
+
+Fotó: Bodnár Dávid
+
+### Árván maradt gondolat
+
+Egy koncerteket tekintve passzívabb időszak után a zenekar elkezdett dolgozni legújabb kislemezén. A kislemez előfutára az [A büszke](https://www.youtube.com/watch?v=WG3cj18hTVQ&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX) című daluk volt, melyhez a csapat egy szöveges videót is készített. Ugyan ebben az évben megjelent második kislemezük, amely a korábbiakban említett A büszke című dalon kívül még három, teljesen új dalt és egy akusztikus feldolgozást tartalmazott:
+
+* [Feketén álmodom](https://www.youtube.com/watch?v=oNKIWTSgkSo&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
+* [Árván maradt gondolat](https://www.youtube.com/watch?v=MJ0jdPa8CYk&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
+* [A büszke](https://www.youtube.com/watch?v=WG3cj18hTVQ&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
+* [Hallom a hangod](https://www.youtube.com/watch?v=zntPk_cRCg0&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
+* [Feketán álmodom (akusztikus)](https://www.youtube.com/watch?v=oJionycKlUY&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
+
+A kislemez az **Árván maradt gondolat** nevet kapta, ami egyben a második dal címe is a lemezen. A zenekar [első videóklipje](https://www.youtube.com/watch?v=MJ0jdPa8CYk&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX) is ehhez a dalhoz készült, amit Szabó László Ádám rendezett és készített el.
+
+ 
