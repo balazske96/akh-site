@@ -9,7 +9,7 @@ import {useState} from 'react';
 import {useRouter} from 'next/router';
 
 export default function NavbarLinks() {
-	const isTablet = useMediaQuery('(max-width:768px)');
+	const isTablet = useMediaQuery('(max-width:970px)');
 	const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 	const router = useRouter();
 
