@@ -14,7 +14,7 @@ Fotó: Szabó László Ádám
 ### Amíg élek
 
 Miután véglegesnek igérkezett a zenekar formációja, elkezdtek az első anyagon dolgozni.  
-A korábbi demofelvételeket kiszelektálva választották ki azt a három dalt, ami az első kislemezükön, az "[Amíg élek](https://www.youtube.com/watch?v=C_NP7aao94w&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)"-en szerepel:
+A korábbi demofelvételeket kiszelektálva választották ki azt a három dalt, ami az első kislemezükön, az [Amíg élek](https://www.youtube.com/watch?v=C_NP7aao94w&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)-en szerepel:
 
 * [Senki nem figyel](https://www.youtube.com/watch?v=u37V2Dd6u_k&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-&index=2)
 * [Mintha nem tudnám](https://www.youtube.com/watch?v=pzVuNqjZXHU&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)
@@ -35,7 +35,7 @@ Fotó: Bodnár Dávid
 
 ### Árván maradt gondolat
 
-Egy koncerteket tekintve passzívabb időszak után a zenekar elkezdett dolgozni legújabb kislemezén. A kislemez előfutára az [A büszke](https://www.youtube.com/watch?v=WG3cj18hTVQ&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX) című daluk volt, melyhez a csapat egy szöveges videót is készített. Ugyan ebben az évben megjelent második kislemezük, amely a korábbiakban említett A büszke című dalon kívül még három, teljesen új dalt és egy akusztikus feldolgozást tartalmazott:
+Egy koncerteket tekintve passzívabb időszak után a zenekar elkezdett dolgozni egy második anyagon. A kislemez előfutára az [A büszke](https://www.youtube.com/watch?v=WG3cj18hTVQ&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX) című daluk volt, melyhez a csapat egy szöveges videót is készített. Ugyan ebben az évben megjelent második kislemezük, amely a korábbiakban említett A büszke című dalon kívül még három, teljesen új dalt és egy akusztikus feldolgozást tartalmazott:
 
 * [Feketén álmodom](https://www.youtube.com/watch?v=oNKIWTSgkSo&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
 * [Árván maradt gondolat](https://www.youtube.com/watch?v=MJ0jdPa8CYk&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
@@ -46,3 +46,9 @@ Egy koncerteket tekintve passzívabb időszak után a zenekar elkezdett dolgozni
 A kislemez az **Árván maradt gondolat** nevet kapta, ami egyben a második dal címe is a lemezen. A zenekar [első videóklipje](https://www.youtube.com/watch?v=MJ0jdPa8CYk&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX) is ehhez a dalhoz készült, amit Szabó László Ádám rendezett és készített el.
 
 ![Árván maradt gondolat album borító](/media/akh_arvan_maradt_gondolat_cover.png "Árván maradt gondolat")
+
+### 2021
+
+Mivel a világjárvány nem tette lehetővé a kislemez koncerteken való bemutatását, a zenekar, év elején egy [élőzenés videót](https://www.youtube.com/watch?v=2Ke4hfEMWyA) készített, melynek az **Y Sound Studió** adott otthont. A felvételen, az új lemez dalai mellett elhangzik első kislemezük címadó dala is, az [Amíg élek](https://youtu.be/2Ke4hfEMWyA?t=533). Ugyan ebben az évben a zenekar menedszeri szerepét **Szűcs Mihály** vette át. Ennek köszönhetően az év harmadik felében számos nagy zenekar, köztük a **Road**, **Lord**, **Omen** és **Leander Kills** vendégeként léphettek fel.
+
+### Új tag
