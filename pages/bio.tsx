@@ -20,6 +20,13 @@ export default function Bio({content}: { content: string }) {
 
 export const getStaticProps: GetStaticProps = () => {
 	const rawMarkdown = fs.readFileSync('content/biography.md');
+	const renderer = {
+		link(href: string | null, title: string | null, text: string): string {
+			return `<a href="${href}" title="${title}" target="_blank">${text}</a>`;
+		}
+	};
+
+	marked.use({renderer});
 	const html = marked.parse(fm(rawMarkdown.toString()).body);
 
 	return {

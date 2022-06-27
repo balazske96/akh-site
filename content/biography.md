@@ -12,8 +12,7 @@ Fotó: Szabo László Ádám
 
 ### Amíg élek
 
-Miután véglegesnek igérkezett a zenekar formációja, elkezdtek az első anyagon dolgozni.  
-A korábbi demofelvételeket kiszelektálva választották ki azt a három dalt, ami az első kislemezükön, az [Amíg élek](https://www.youtube.com/watch?v=C_NP7aao94w&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)-en szerepel:
+Miután véglegesnek igérkezett a zenekar formációja, elkezdtek az első anyagon dolgozni. A korábbi demofelvételeket kiszelektálva választották ki azt a három dalt, ami az első kislemezükön, az [Amíg élek](https://www.youtube.com/watch?v=C_NP7aao94w&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)-en szerepel:
 
 * [Senki nem figyel](https://www.youtube.com/watch?v=u37V2Dd6u_k&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-&index=2)
 * [Mintha nem tudnám](https://www.youtube.com/watch?v=pzVuNqjZXHU&list=PLwSVmtL6MK8-7InEuGbqhXVN046dL_84-)
