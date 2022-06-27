@@ -29,8 +29,7 @@ A felvételeket a nyíregyházi MSK Sound Studióban készítették Pál Mihály
 Első koncertjét a zenekar, még a hivatalos megalakulásának évében, 2017 decemberében adta az [**Alvin és a mókusok**](https://www.facebook.com/Alvin.es.a.Mokusok) előtt, Nyíregyházán. Az este hatalmas sikert aratott, így a következő hetekben a zenekar elkezdte szervezni az új év fellépéseit.  
 2018-ban számos ismert hazai zenekar társaságában adtak koncertet országszerte, köztük a **New Friend Request**, **Szükségállapot**, **Orion Dawn**, **Headstock** zenekarokkal. Ugyan ebben az évben meghívást kaptak a Kisvárdai **LeszFeszt** fesztiválra, mely első fesztivál fellépésük is egyben.
 
-![A Király Halott - Dürer Kert - 2018](/media/akh_durer_2018_aprilis.jpeg "A Király Halott - Dürer Kert - 2018")
-
+![A Király Halott - Dürer Kert - 2018](/media/akh_durer_2018_aprilis.jpeg "A Király Halott - Dürer Kert - 2018")  
 Fotó: Bodnár Dávid
 
 ### Árván maradt gondolat
@@ -51,6 +50,11 @@ A kislemez az **Árván maradt gondolat** nevet kapta, ami egyben a második dal
 
 Mivel a világjárvány nem tette lehetővé a kislemez koncerteken való bemutatását, a zenekar, év elején egy [élőzenés videót](https://www.youtube.com/watch?v=2Ke4hfEMWyA) készített, melynek az **Y Sound Studió** adott otthont. A felvételen, az új lemez dalai mellett elhangzik első kislemezük címadó dala is, az [Amíg élek](https://youtu.be/2Ke4hfEMWyA?t=533). Ugyan ebben az évben a zenekar menedszeri szerepét **Szűcs Mihály** vette át. Ennek köszönhetően az év harmadik felében számos nagy zenekar, köztük a **Road**, **Lord**, **Omen** és **Leander Kills** vendégeként léphettek fel.
 
-![](/media/akh_barba_negra_2021-11-27.jpeg)
+![](/media/akh_barba_negra_2021-11-27.jpeg)  
+Fotó: Berényi Kitti
 
-### Új tag
+### Új tag a csapatban
+
+A körülményes megalakulásból szerzett tapasztalatok miatt, a zenekar mindig is tartott a csapat kibővítésétől. Ugyanakkor érződött, hogy egy fix tagra, basszusgitáros poszton szükség lenne. Ezt a félelmet sikerült legyőznie a csapatnak akkor, amikor felmerült Botos Gábor (Tupi) neve, mint lehetséges tag a zenekarban. Nagy örömükre Tupi elfogadta a felkérést, így 2022 januárja óta a csapat 4 tagból áll
+
+![](/media/akh_tupival.jpeg)
