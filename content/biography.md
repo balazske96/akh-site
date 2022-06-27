@@ -40,7 +40,7 @@ Egy koncerteket tekintve passzívabb időszak után a zenekar elkezdett dolgozni
 * [Hallom a hangod](https://www.youtube.com/watch?v=zntPk_cRCg0&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
 * [Feketán álmodom (akusztikus)](https://www.youtube.com/watch?v=oJionycKlUY&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
 
-Az anyag hangszeres sávjait otthonukban rögzítették, az énekfelvételt pedig a **Stray Heart Records** falai között valósították meg **Diószegi Kiki**-vel**.** A felvételek keverését és masterelését ezúttal is a **No Silence Studios** hangmérnökére, **Simon István**ra bízták.  
+Az anyag hangszeres sávjait otthonukban rögzítették, az énekfelvételt pedig a **Stray Heart Records** falai között valósították meg **Diószegi Kiki**-vel. A felvételek keverését és masterelését ezúttal is a **No Silence Studios** hangmérnökére, **Simon István**ra bízták.  
 A kislemez az **Árván maradt gondolat** nevet kapta, ami egyben a második dal címe is a lemezen. A zenekar [első videóklipje](https://www.youtube.com/watch?v=MJ0jdPa8CYk&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX) is ehhez a dalhoz készült, amit **Szabó László Ádám** rendezett és készített el.
 
 ![Árván maradt gondolat album borító](/media/akh_arvan_maradt_gondolat_cover.png "Árván maradt gondolat kislemez borító")
