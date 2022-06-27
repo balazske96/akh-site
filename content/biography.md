@@ -25,7 +25,7 @@ A felvételeket a nyíregyházi **MSK Sound Studióban** készítették **Pál M
 ### Az első koncertek
 
 Első koncertjét a zenekar, még a hivatalos megalakulásának évében, 2017 decemberében adta az [**Alvin és a mókusok**](https://www.facebook.com/Alvin.es.a.Mokusok) előtt, Nyíregyházán. Az este hatalmas sikert aratott, így a következő hetekben a zenekar elkezdte szervezni az új év fellépéseit.  
-2018-ban számos ismert hazai zenekar társaságában adtak koncertet országszerte, köztük a **New Friend Request**, **Szükségállapot**, **Orion Dawn**, **Headstock** zenekarokkal. Ugyan ebben az évben meghívást kaptak a Kisvárdai **LeszFeszt** fesztiválra, mely első fesztivál fellépésük is egyben.
+2018-ban számos ismert hazai zenekar társaságában adtak koncertet országszerte, köztük a **New Friend Request**, **Szükségállapot**, **Orion Dawn**, **Headstock** zenekarokkal. Ugyan ebben az évben meghívást kaptak a kisvárdai **LeszFeszt** fesztiválra, mely első fesztivál fellépésük is egyben.
 
 ![A Király Halott - Dürer Kert - 2018](/media/akh_durer_2018_aprilis.jpeg "Koncert 2018 áprilisában a Dürer Kertben")  
 Fotó: Bodár Dávid
@@ -38,7 +38,7 @@ Egy koncerteket tekintve passzívabb időszak után a zenekar elkezdett dolgozni
 * [Árván maradt gondolat](https://www.youtube.com/watch?v=MJ0jdPa8CYk&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
 * [A büszke](https://www.youtube.com/watch?v=WG3cj18hTVQ&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
 * [Hallom a hangod](https://www.youtube.com/watch?v=zntPk_cRCg0&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
-* [Feketán álmodom (akusztikus)](https://www.youtube.com/watch?v=oJionycKlUY&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
+* [Feketén álmodom (akusztikus)](https://www.youtube.com/watch?v=oJionycKlUY&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX)
 
 Az anyag hangszeres sávjait otthonukban rögzítették, az énekfelvételt pedig a **Stray Heart Records** falai között valósították meg **Diószegi Kiki**-vel. A felvételek keverését és masterelését ezúttal is a **No Silence Studios** hangmérnökére, **Simon István**ra bízták.  
 A kislemez az **Árván maradt gondolat** nevet kapta, ami egyben a második dal címe is a lemezen. A zenekar [első videóklipje](https://www.youtube.com/watch?v=MJ0jdPa8CYk&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX) is ehhez a dalhoz készült, amit **Szabó László Ádám** rendezett és készített el.
