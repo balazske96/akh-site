@@ -57,13 +57,17 @@ export const getStaticProps: GetStaticProps<GallerySubPageProps> = async ({param
 	fs.readdirSync('public/gallery', {withFileTypes: true})
 		.filter(dir => dir.isDirectory())
 		.map(dir => {
-			const rawJson = fs.readFileSync(`public/gallery/${dir.name}/meta.json`);
+			try {
+				const rawJson = fs.readFileSync(`public/gallery/${dir.name}/meta.json`);
 
-			if (JSON.parse(rawJson.toString()).slug === slug) {
-				title = JSON.parse(rawJson.toString()).title;
-				photos = fs.readdirSync(`public/gallery/${dir.name}`, {withFileTypes: true})
-					.filter(file => path.extname(file.name) !== '.json')
-					.map(photo => `/gallery/${dir.name}/${photo.name}`);
+				if (JSON.parse(rawJson.toString()).slug === slug) {
+					title = JSON.parse(rawJson.toString()).title;
+					photos = fs.readdirSync(`public/gallery/${dir.name}`, {withFileTypes: true})
+						.filter(file => path.extname(file.name) !== '.json')
+						.map(photo => `/gallery/${dir.name}/${photo.name}`);
+				}
+			} catch (e) {
+				console.log(e);
 			}
 		});
 
