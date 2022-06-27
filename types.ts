@@ -3,6 +3,14 @@ export type Link = {
 	href: string;
 }
 
+export type GalleryPost = {
+	title: string;
+	card_title: string;
+	cover_src: string;
+	slug: string;
+	date: number;
+}
+
 export type SocialMediaAccount = {
 	name: string;
 	account_url: string;

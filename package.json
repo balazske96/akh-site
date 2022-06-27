@@ -16,7 +16,8 @@
 	"dependencies": {
 		"@emotion/react": "^11.9.3",
 		"@emotion/styled": "^11.9.3",
-		"@mui/material": "^5.8.5",
+		"@mui/lab": "^5.0.0-alpha.88",
+		"@mui/material": "^5.8.6",
 		"@types/marked": "^4.0.3",
 		"clsx": "^1.1.1",
 		"front-matter": "^4.0.2",
