@@ -45,4 +45,4 @@ Egy koncerteket tekintve passzívabb időszak után a zenekar elkezdett dolgozni
 
 A kislemez az **Árván maradt gondolat** nevet kapta, ami egyben a második dal címe is a lemezen. A zenekar [első videóklipje](https://www.youtube.com/watch?v=MJ0jdPa8CYk&list=PLwSVmtL6MK89QYFJuqkTh6K0Qgf-gqYIX) is ehhez a dalhoz készült, amit Szabó László Ádám rendezett és készített el.
 
- 
+![Árván maradt gondolat album borító](/media/akh_arvan_maradt_gondolat_cover.png "Árván maradt gondolat")
