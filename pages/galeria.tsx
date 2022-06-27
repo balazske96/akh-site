@@ -16,7 +16,7 @@ export default function Gallery({posts}: GalleryProps) {
 			<div className={styles.container}>
 				<h1>Galéria</h1>
 				<div className={styles.postsContainer}>
-					{posts.sort((a,b)=> b.date - a.date).map((post) => (
+					{posts.sort((a, b) => b.date - a.date).map((post) => (
 						<Link key={post.title} href={post.slug}>
 							<div
 								className={styles.postBody}
@@ -35,20 +35,25 @@ export default function Gallery({posts}: GalleryProps) {
 export const getStaticProps: GetStaticProps = () => {
 	const posts: GalleryPost[] = [];
 
+
 	fs.readdirSync('public/gallery', {withFileTypes: true})
 		.filter(path => path.isDirectory())
 		.map(dir => dir.name)
 		.map(dir => {
-			const rawJson = fs.readFileSync(`public/gallery/${dir}/meta.json`);
-			const metaJson = JSON.parse(rawJson.toString());
+			try {
+				const rawJson = fs.readFileSync(`public/gallery/${dir}/meta.json`);
+				const metaJson = JSON.parse(rawJson.toString());
 
-			posts.push({
-				date: metaJson.date,
-				card_title: metaJson.card_title,
-				title: metaJson.title,
-				cover_src: `gallery/${dir}/${metaJson.cover}`,
-				slug: `/galeria/${metaJson.slug}`
-			});
+				posts.push({
+					date: metaJson.date,
+					card_title: metaJson.card_title,
+					title: metaJson.title,
+					cover_src: `gallery/${dir}/${metaJson.cover}`,
+					slug: `/galeria/${metaJson.slug}`
+				});
+			} catch (e) {
+				console.log('Build failed: ' + e);
+			}
 
 		});
 
