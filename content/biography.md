@@ -54,3 +54,5 @@ Mivel a világjárvány nem tette lehetővé a kislemez koncerteken való bemuta
 A körülményes megalakulásból szerzett tapasztalatok miatt, a zenekar mindig is tartott a csapat kibővítésétől. Ugyanakkor érződött, hogy egy fix tagra, basszusgitáros poszton szükség lenne. Ezt a félelmet sikerült legyőznie a csapatnak akkor, amikor felmerült Botos Gábor (Tupi) neve, mint lehetséges tag a zenekarban. Nagy örömükre Tupi elfogadta a felkérést, így 2022 januárja óta a csapat 4 tagból áll. Tupi, a basszusgitáros poszt mellett aktív része lett a koncertek szervezésének és lebonyolításának is.
 
 ![A Király Halott új felállás](/media/akh_tupival.jpeg "Fotó: Zsoldos Dávid")
+
+Folytatjuk...
