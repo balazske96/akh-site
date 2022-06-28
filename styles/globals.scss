@@ -3,23 +3,28 @@
 @import "./variables";
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	color: white;
-	background-color: $black;
-	padding: 0;
-	height: 100%;
-	margin: 0;
-	font-family: 'Roboto Mono', sans-serif;
+  color: white;
+  background-color: $black;
+  padding: 0;
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto Mono', sans-serif;
 
-	#__next {
-		height: 100%;
-	}
+  #__next {
+    height: 100%;
+  }
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
 }
 
 a {
-	color: $textWhite;
+  color: $textWhite;
 }

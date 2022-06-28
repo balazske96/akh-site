@@ -6,7 +6,7 @@ import Layout from '../components/Layout/Layout';
 export default function Home(): React.ReactElement {
 
 	return (
-		<Layout footer={false}>
+		<Layout footer={false} padding={false}>
 			<Head>
 				<title>A Király Halott zenekar hivatalos honlapja</title>
 				<meta name="description" content="A Király Halott zenekar hivatalos honlapja"/>

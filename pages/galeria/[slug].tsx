@@ -7,6 +7,8 @@ import path from 'path';
 import Masonry from '@mui/lab/Masonry';
 import Head from 'next/head';
 import {useMediaQuery} from '@mui/material';
+import Modal from '@mui/material/Modal';
+import {useState} from 'react';
 
 
 interface GallerySubPageProps {
@@ -21,6 +23,13 @@ interface IParams extends ParsedUrlQuery {
 export default function GallerySubPage({title, photos}: GallerySubPageProps) {
 	const isTablet = useMediaQuery('(max-width:768px) ');
 	const isMobile = useMediaQuery('(max-width:425px) ');
+	const [selectedImage, setSelectedImage] = useState<string | null>(null);
+	const [isImageOpened, setIsImageOpened] = useState<boolean>(false);
+
+	const viewImage = (imageSrc: string) => {
+		setSelectedImage(imageSrc);
+		setIsImageOpened(true);
+	};
 
 	return (
 		<Layout>
@@ -32,7 +41,7 @@ export default function GallerySubPage({title, photos}: GallerySubPageProps) {
 				<div className={styles.photoContainer}>
 					<Masonry columns={isTablet ? (isMobile ? 1 : 2) : 3} spacing={1}>
 						{photos.map((photoSrc, index) => (
-							<div key={photoSrc}>
+							<div key={photoSrc} onClick={() => viewImage(photoSrc)}>
 								<img
 									className={styles.image}
 									loading="lazy"
@@ -45,6 +54,14 @@ export default function GallerySubPage({title, photos}: GallerySubPageProps) {
 					</Masonry>
 				</div>
 			</div>
+			<Modal
+				open={isImageOpened}
+				onClose={() => setIsImageOpened(false)}
+			>
+				<div className={styles.viewedImageContainer}>
+					<img alt={selectedImage ?? ''} className={styles.viewedImage} src={selectedImage ?? ''}/>
+				</div>
+			</Modal>
 		</Layout>
 	);
 }

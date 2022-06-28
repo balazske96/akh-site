@@ -4,6 +4,7 @@ import fs from 'fs';
 import {GalleryPost} from '../types';
 import styles from '../styles/Gallery.module.scss';
 import Link from 'next/link';
+import Head from 'next/head';
 
 interface GalleryProps {
 	posts: GalleryPost[];
@@ -13,17 +14,20 @@ export default function Gallery({posts}: GalleryProps) {
 
 	return (
 		<Layout>
+			<Head>
+				<title>Képgaléria</title>
+			</Head>
 			<div className={styles.container}>
-				<h1>Galéria</h1>
+				<h1>Képgaléria</h1>
 				<div className={styles.postsContainer}>
 					{posts.sort((a, b) => b.date - a.date).map((post) => (
 						<Link key={post.title} href={post.slug}>
-							<div
+							<a
 								className={styles.postBody}
 								style={{backgroundImage: `url(${post.cover_src})`}}
 							>
 								<p className={styles.postTitle}>{post.card_title}</p>
-							</div>
+							</a>
 						</Link>
 					))}
 				</div>

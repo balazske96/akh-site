@@ -12,9 +12,10 @@ export default function Music() {
 				<title>Zene</title>
 			</Head>
 			<div className={styles.container}>
-				<h2>
+				<h1>Zene</h1>
+				<h3>
 					Válaszd ki kedvenc platformodat!
-				</h2>
+				</h3>
 				<div className={styles.musicPlayerContainer}>
 					{platforms.map((platform) => (
 						<MusicCard
