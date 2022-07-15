@@ -8,6 +8,10 @@
   width: 100%;
   padding-right: 40px;
   padding-left: 40px;
+
+  @include underMobileLarge {
+    padding-top: 100px;
+  }
 }
 
 .title {

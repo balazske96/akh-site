@@ -6,8 +6,12 @@
   align-items: center;
 
   @include underMobileLarge {
+    padding-top: 100px;
+
     h1 {
-      font-size: 1rem;
+      font-size: 1.5rem;
+      margin-bottom: 50px;
+      padding: 0 10px;
     }
   }
 }

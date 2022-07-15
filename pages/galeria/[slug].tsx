@@ -21,7 +21,6 @@ interface IParams extends ParsedUrlQuery {
 }
 
 export default function GallerySubPage({title, photos}: GallerySubPageProps) {
-	const isTablet = useMediaQuery('(max-width:768px) ');
 	const isMobile = useMediaQuery('(max-width:425px) ');
 	const [selectedImage, setSelectedImage] = useState<string | null>(null);
 	const [isImageOpened, setIsImageOpened] = useState<boolean>(false);
@@ -39,7 +38,7 @@ export default function GallerySubPage({title, photos}: GallerySubPageProps) {
 			<div className={styles.container}>
 				<h1>{title}</h1>
 				<div className={styles.photoContainer}>
-					<Masonry columns={isTablet ? (isMobile ? 1 : 2) : 3} spacing={1}>
+					<Masonry columns={isMobile ? 2 : 3} spacing={1}>
 						{photos.map((photoSrc, index) => (
 							<div key={photoSrc} onClick={() => viewImage(photoSrc)}>
 								<img
