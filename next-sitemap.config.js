@@ -11,7 +11,7 @@ function calculatePriority(path){
 
 
 module.exports = {
-	siteUrl: process.env.SITE_URL || 'https:/akiralyhalott.hu',
+	siteUrl: process.env.SITE_URL || 'https://akiralyhalott.hu',
 	generateRobotsTxt: true, 
 	exclude: ['/szervezoknek'],
 	transform: async (config, path) => {
