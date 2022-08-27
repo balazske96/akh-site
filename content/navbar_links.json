@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Bio",
+    "href": "/bio"
+  },
+  {
+    "title": "Zene",
+    "href": "/zene"
+  },
+  {
+    "title": "Koncert",
+    "href": "/koncertek"
+  },
+  {
+    "title": "Képgaléria",
+    "href": "/galeria"
+  },
+  {
+    "title": "Shop",
+    "href": "https://shop.akiralyhalott.hu"
+  }
+]

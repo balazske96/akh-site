@@ -1,0 +1,86 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  width: 100%;
+  border-top: 0.5px solid $textWhite;
+  padding: 20px 0;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "date date city city . location location location location actions actions actions"
+    "date date city city . location location location location actions actions actions";
+
+  @include underLaptop {
+    grid-template-areas: "date date date city city location location location actions actions actions actions";
+  }
+
+  @include underTablet {
+    grid-gap: 10px;
+    grid-template-areas:
+      "date date date location location location location actions actions actions actions actions"
+      "city city city location location location location actions actions actions actions actions"
+  }
+
+  @include underPixel(640) {
+    grid-template-areas:
+      "date date date date date date date date date date date date"
+      "city city city city city city city city city city city city"
+      "location location location location location location location location location location location location"
+      "actions actions actions actions actions actions actions actions actions actions actions actions"
+  }
+}
+
+.dateContainer,
+.locationContainer,
+.cityContainer,
+.actionsContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include underPixel(640) {
+    justify-content: center;
+  }
+}
+
+.dateContainer {
+  grid-area: date;
+}
+
+.locationContainer {
+  grid-area: location;
+  justify-content: flex-end;
+
+  @include underTablet {
+    justify-content: center;
+  }
+
+}
+
+.cityContainer {
+  grid-area: city;
+  justify-content: center;
+  color: #e3c60b;
+
+
+  @include underTablet {
+    justify-content: flex-start;
+  }
+
+  @include underPixel(640) {
+    justify-content: center;
+  }
+}
+
+.actionsContainer {
+  grid-area: actions;
+  gap: 20px;
+  justify-content: flex-end;
+
+  @include underPixel(640) {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,42 @@
+---
+label: concerts
+hide_body: true
+fields:
+- name: display_name
+  type: text
+  config:
+    required: true
+  label: Display Name
+- name: city
+  type: text
+  config:
+    required: true
+  label: City
+- name: date
+  type: number
+  label: Date
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true
+- name: location
+  type: text
+  config:
+    required: true
+  label: Location
+- name: link_to_event
+  type: text
+  config:
+    required: true
+  label: Link to event
+- name: link_to_ticket
+  type: text
+  config:
+    required: false
+  label: Link to ticket
+pages:
+- content/concerts/budapest_barba_negra_2022-09-17.json
