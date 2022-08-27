@@ -39,6 +39,4 @@ fields:
     required: false
   label: Link to ticket
 pages:
-- content/concerts/budapest_a38_2022-05-02.json
-- content/concerts/budapest_barba-negra_2022-06-04.json
-- content/concerts/veszprem_expresszó_2022-04-17.json
+- content/concerts/budapest_barba_negra_2022-09-17.json
