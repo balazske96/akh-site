@@ -1,63 +1,61 @@
-@import "./mixins";
+@import './mixins';
 
 .container {
-  text-align: justify;
-  text-justify: auto;
-  text-align-last: center;
-  margin: 0 auto;
+	text-align: justify;
+	text-justify: auto;
+	text-align-last: center;
+	margin: 0 auto;
 
-  @include underMobileLarge {
-    font-size: 1rem;
-    padding: 100px 0;
+	@include underMobileLarge {
+		font-size: 1rem;
+		padding: 80px 0;
+	}
 
-  }
+	h3 {
+		text-align: center;
+		margin: 0 0 50px 0;
+		padding: 0 50px;
+		font-size: 2rem;
 
-  h3 {
-    text-align: center;
-    margin: 0 0 50px 0;
-    padding: 0 50px;
-    font-size: 2rem;
+		a {
+			text-decoration: underline;
+		}
 
-    a {
-      text-decoration: underline;
-    }
+		@include underTablet {
+			font-size: 1rem;
+			padding: 0 80px;
+		}
 
-    @include underTablet {
-      font-size: 1rem;
-      padding: 0 80px;
-    }
-
-    @include underMobileLarge {
-      padding: 0 30px;
-    }
-  }
+		@include underMobileLarge {
+			padding: 0 30px;
+		}
+	}
 }
 
 .musicPlayerContainer {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 400px);
-  grid-template-areas:
-      "spotify youtube"
-      "apple-music deezer";
-  max-width: 1000px;
-  margin: 70px auto 0 auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 400px);
+	grid-template-areas:
+		'spotify youtube'
+		'apple-music deezer';
+	max-width: 1000px;
+	margin: 70px auto 0 auto;
 
-  @include underLaptop {
-    grid-template-rows: repeat(2, 300px);
-    max-width: 700px;
-  }
+	@include underLaptop {
+		grid-template-rows: repeat(2, 300px);
+		max-width: 700px;
+	}
 
-  @include underTablet {
-    grid-template-rows: repeat(2, 200px);
-    max-width: 400px;
-  }
+	@include underTablet {
+		grid-template-rows: repeat(2, 200px);
+		max-width: 400px;
+	}
 
-  @include underMobileLarge {
-    grid-template-rows: repeat(2, 150px);
-    max-width: 300px;
-    grid-gap: 10px;
-
-  }
+	@include underMobileLarge {
+		grid-template-rows: repeat(2, 150px);
+		max-width: 300px;
+		grid-gap: 10px;
+	}
 }
