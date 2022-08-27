@@ -23,7 +23,7 @@ export default function ForOrganizers() {
 						<h2>Turné menedzsment:</h2>
 						<p>Berényi Kitti</p>
 						<p>
-							Email: <a href="mailto:kitti.akiralyhalott@gmail.com.hu">kitti.akiralyhalott@gmail.com</a>
+							Email: <a href="mailto:info@akiralyhalott.hu">info@akiralyhalott.hu</a>
 						</p>
 						<p>Tel: <a href="tel:+36704504436">+36704504436</a></p>
 					</div>
