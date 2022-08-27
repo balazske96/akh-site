@@ -67,7 +67,10 @@ export default function GallerySubPage({ title, photos }: GallerySubPageProps) {
 				</div>
 			</div>
 			<Modal open={isImageOpened} onClose={() => setIsImageOpened(false)}>
-				<div className={styles.viewedImageContainer}>
+				<div
+					className={styles.viewedImageContainer}
+					onClick={() => setIsImageOpened(false)}
+				>
 					<img
 						alt={selectedImage ?? ''}
 						className={styles.viewedImage}
