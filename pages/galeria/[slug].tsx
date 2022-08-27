@@ -9,7 +9,7 @@ import Head from 'next/head';
 import { useMediaQuery } from '@mui/material';
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import useTimeout from '../../hooks/useTimeout';
 
 interface GallerySubPageProps {
 	title: string;
@@ -24,11 +24,14 @@ export default function GallerySubPage({ title, photos }: GallerySubPageProps) {
 	const isMobile = useMediaQuery('(max-width:425px) ');
 	const [selectedImage, setSelectedImage] = useState<string | null>(null);
 	const [isImageOpened, setIsImageOpened] = useState<boolean>(false);
+	const [isDelayPassed, setIsDelayPassed] = useState<boolean>(false);
 
 	const viewImage = (imageSrc: string) => {
 		setSelectedImage(imageSrc);
 		setIsImageOpened(true);
 	};
+
+	useTimeout(() => setIsDelayPassed(true), 1000);
 
 	return (
 		<Layout>
@@ -39,32 +42,25 @@ export default function GallerySubPage({ title, photos }: GallerySubPageProps) {
 				<h1>{title}</h1>
 				<div className={styles.photoContainer}>
 					<Masonry columns={isMobile ? 2 : 3} spacing={1}>
-						{photos.map((photoSrc, index) => (
+						{photos.map((photoSrc: string, index: number) => (
 							<div
 								key={photoSrc}
 								onClick={() => viewImage(photoSrc)}
 							>
-								<LazyLoadImage
-									className={styles.image}
-									delayTime={index * 1000}
-									src={photoSrc}
-									threshold={200}
-									alt={`${title} photo ${index + 1}`}
-									placeholder={
-										<div
-											className={styles.imagePlaceholder}
-										/>
-									}
-								/>
-								{/* <img
-									width={200}
-									height={1000}
-									className={styles.image}
-									loading="lazy"
-									title={`${title} photo ${index + 1}`}
-									src={photoSrc}
-									alt={`${title} photo ${index + 1}`}
-								/> */}
+								{isDelayPassed ? (
+									// With this "hacky" solution we can use both lazy loading and masonry layout
+									<img
+										width={200}
+										height={300}
+										className={styles.image}
+										loading="lazy"
+										title={`${title} photo ${index + 1}`}
+										src={photoSrc}
+										alt={`${title} photo ${index + 1}`}
+									/>
+								) : (
+									<div className={styles.imagePlaceholder} />
+								)}
 							</div>
 						))}
 					</Masonry>
