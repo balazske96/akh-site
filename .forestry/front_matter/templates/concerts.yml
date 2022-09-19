@@ -39,4 +39,6 @@ fields:
     required: false
   label: Link to ticket
 pages:
+- content/concerts/2022_road_kecskemet.json
+- content/concerts/2022_road_tatabanya.json
 - content/concerts/2022_road_veszprem.json
