@@ -38,5 +38,3 @@ fields:
   config:
     required: false
   label: Link to ticket
-pages:
-- content/concerts/budapest_barba_negra_2022-09-17.json
