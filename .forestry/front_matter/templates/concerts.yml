@@ -39,6 +39,7 @@ fields:
     required: false
   label: Link to ticket
 pages:
+- content/concerts/2022_nyiregyhaza.json
 - content/concerts/2022_road_budapest.json
 - content/concerts/2022_road_debrecen.json
 - content/concerts/2022_road_gyor.json
