@@ -48,7 +48,7 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 						<ul>
 							<li>
 								<a
-									href="/akh_technikai_rider_2022-06-02.pdf"
+									href="/akh-tech-rider.pdf"
 									target="_blank"
 								>
 									Technikai Rider 🛠
@@ -56,7 +56,7 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 							</li>
 							<li>
 								<a
-									href="/akh_catering_rider_2022-06-02.pdf"
+									href="/akh-catering-rider.pdf"
 									target="_blank"
 								>
 									Catering Rider 🥪
