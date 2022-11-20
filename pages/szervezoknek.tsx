@@ -39,7 +39,7 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 							</a>
 						</p>
 						<p>
-							Tel: <a href="tel:+36704504436">+36704504436</a>
+							Tel: <a href="tel:+36704504437">+36704504437</a>
 						</p>
 					</div>
 				</div>
