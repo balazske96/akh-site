@@ -12,11 +12,15 @@ interface LayoutProps {
 	navbar?: boolean;
 }
 
-export default function Layout({children, footer = true, navbar = true, padding = true}: LayoutProps) {
-
+export default function Layout({
+	children,
+	footer = true,
+	navbar = true,
+	padding = true,
+}: LayoutProps) {
 	const containerClassName = clsx({
 		[styles.container]: true,
-		[styles.padding]: padding
+		[styles.padding]: padding,
 	});
 
 	return (
@@ -29,10 +33,15 @@ export default function Layout({children, footer = true, navbar = true, padding 
 				<link rel="icon" type="image/png" href="/favicon.png"></link>
 				<title>A Király Halott</title>
 			</Head>
+			<div style={{ display: 'none' }}>
+				A Király Halott egy 2017 óta létező pop-rock csapat. A
+				weboldalon megtalálod zenéinket, képgalériánkat és a
+				webshopunkat is.
+			</div>
 			<div className={containerClassName}>
-				{navbar && <Navbar/>}
+				{navbar && <Navbar />}
 				{children}
-				{footer && <Footer/>}
+				{footer && <Footer />}
 			</div>
 		</>
 	);
