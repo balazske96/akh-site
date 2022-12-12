@@ -14,8 +14,6 @@ interface GalleryProps {
 }
 
 export default function Gallery({ concerts }: GalleryProps) {
-	const galleryBaseUrl = process.env.NEXT_PUBLIC_GALLERY_BASE_URL;
-
 	return (
 		<Layout>
 			<Head>
