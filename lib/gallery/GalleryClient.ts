@@ -1,5 +1,6 @@
 import { GalleryPost } from './../../types';
 import Client from 'ftp';
+import { connect } from 'http2';
 
 const ftpHost = process.env.FTP_HOST;
 const ftpPort = parseInt(process.env.FTP_PORT ?? '21');
@@ -19,8 +20,8 @@ export async function getGalleryDirectories(): Promise<string[]> {
 			client.on('ready', function () {
 				client.list(galleryDirectory, function (error, listintResult) {
 					if (error) {
+						client.end();
 						reject();
-						throw error;
 					}
 
 					listintResult.map((fileOrDirectory) => {
@@ -52,7 +53,11 @@ export async function getGalleryDirectories(): Promise<string[]> {
 		}
 	);
 
-	await myPromise.then((res) => (result = [...res]));
+	await myPromise
+		.then((res) => (result = [...res]))
+		.catch(() => {
+			throw new Error('cannot list gallery');
+		});
 
 	return result;
 }
@@ -73,6 +78,7 @@ export async function getDirectoriesMetadata(
 							client.end();
 							reject();
 						}
+
 						const chunks = [];
 
 						for await (const chunk of fileStream) {
@@ -106,9 +112,13 @@ export async function getDirectoriesMetadata(
 		}
 	);
 
-	await myPromise.then((res: GalleryPost) => {
-		result = res;
-	});
+	await myPromise
+		.then((res: GalleryPost) => {
+			result = res;
+		})
+		.catch(() => {
+			throw new Error('cannot get meta.json');
+		});
 
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
@@ -128,8 +138,8 @@ export async function getImagesInDirectory(
 			client.on('ready', function () {
 				client.list(directory, function (error, listintResult) {
 					if (error) {
+						client.end();
 						reject();
-						throw error;
 					}
 
 					listintResult.map((fileOrDirectory) => {
@@ -160,7 +170,11 @@ export async function getImagesInDirectory(
 		}
 	);
 
-	await myPromise.then((res) => (result = [...res]));
+	await myPromise
+		.then((res) => (result = [...res]))
+		.catch(() => {
+			throw new Error('cannot list images in gallery');
+		});
 
 	return result;
 }
