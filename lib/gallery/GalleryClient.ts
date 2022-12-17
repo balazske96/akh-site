@@ -1,6 +1,5 @@
 import { GalleryPost } from './../../types';
 import Client from 'ftp';
-import { connect } from 'http2';
 
 const ftpHost = process.env.FTP_HOST;
 const ftpPort = parseInt(process.env.FTP_PORT ?? '21');
