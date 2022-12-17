@@ -1,17 +1,19 @@
 import Layout from '../components/Layout/Layout';
-import {GetStaticProps} from 'next';
-import fs from 'fs';
-import {GalleryPost} from '../types';
+import { GetStaticProps } from 'next';
+import { GalleryPost } from '../types';
 import styles from '../styles/Gallery.module.scss';
 import Link from 'next/link';
 import Head from 'next/head';
+import {
+	getDirectoriesMetadata,
+	getGalleryDirectories,
+} from '../lib/gallery/GalleryClient';
 
 interface GalleryProps {
-	posts: GalleryPost[];
+	concerts: GalleryPost[];
 }
 
-export default function Gallery({posts}: GalleryProps) {
-
+export default function Gallery({ concerts }: GalleryProps) {
 	return (
 		<Layout>
 			<Head>
@@ -20,50 +22,43 @@ export default function Gallery({posts}: GalleryProps) {
 			<div className={styles.container}>
 				<h1>Képgaléria</h1>
 				<div className={styles.postsContainer}>
-					{posts.sort((a, b) => b.date - a.date).map((post) => (
-						<Link key={post.title} href={post.slug}>
-							<a
-								className={styles.postBody}
-								style={{backgroundImage: `url(${post.cover_src})`}}
+					{concerts
+						.sort((a, b) => b.date - a.date)
+						.map((concert) => (
+							<Link
+								key={concert.title}
+								href={`/galeria/${concert.slug}`}
 							>
-								<p className={styles.postTitle}>{post.card_title}</p>
-							</a>
-						</Link>
-					))}
+								<a
+									className={styles.postBody}
+									style={{
+										backgroundImage: `url(${concert.cover_src})`,
+									}}
+								>
+									<p className={styles.postTitle}>
+										{concert.card_title}
+									</p>
+								</a>
+							</Link>
+						))}
 				</div>
 			</div>
 		</Layout>
 	);
 }
 
-export const getStaticProps: GetStaticProps = () => {
-	const posts: GalleryPost[] = [];
+export const getStaticProps: GetStaticProps = async () => {
+	const directories = await getGalleryDirectories();
+	let galleryPosts: GalleryPost[] = [];
 
-
-	fs.readdirSync('public/gallery', {withFileTypes: true})
-		.filter(path => path.isDirectory())
-		.map(dir => dir.name)
-		.map(dir => {
-			try {
-				const rawJson = fs.readFileSync(`public/gallery/${dir}/meta.json`);
-				const metaJson = JSON.parse(rawJson.toString());
-
-				posts.push({
-					date: metaJson.date,
-					card_title: metaJson.card_title,
-					title: metaJson.title,
-					cover_src: `gallery/${dir}/${metaJson.cover}`,
-					slug: `/galeria/${metaJson.slug}`
-				});
-			} catch (e) {
-				console.log('Build failed: ' + e);
-			}
-
-		});
+	for (const directory of directories) {
+		const metaData = await getDirectoriesMetadata(directory);
+		galleryPosts = [...galleryPosts, metaData];
+	}
 
 	return {
 		props: {
-			posts: posts
-		}
+			concerts: galleryPosts,
+		},
 	};
 };
