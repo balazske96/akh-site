@@ -36,7 +36,7 @@ export default function Layout({
 			<div style={{ display: 'none' }}>
 				A Király Halott egy 2017 óta létező pop-rock csapat. A
 				weboldalon megtalálod zenéinket, képgalériánkat és a
-				webshopunkat is.
+				webshopunkat is.{'                        '}
 			</div>
 			<div className={containerClassName}>
 				{navbar && <Navbar />}
