@@ -38,3 +38,5 @@ fields:
   config:
     required: false
   label: Link to ticket
+pages:
+- content/concerts/depresszio_1000_budapest.json
