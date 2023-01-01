@@ -14,6 +14,7 @@ import {
 } from '../../lib/gallery/GalleryClient';
 import useImageLoader from '../../hooks/useImageLoader';
 import ImageLoader from '../../components/ImageLoder/ImageLoader';
+import LoadableImage from '../../components/LoadableImage/LoadableImage';
 
 interface GallerySubPageProps {
 	title: string;
@@ -57,12 +58,13 @@ export default function GallerySubPage({ title, photos }: GallerySubPageProps) {
 								key={photoSrc}
 								onClick={() => viewImage(photoSrc)}
 							>
-								<img
+								<LoadableImage
 									width={200}
 									height={300}
 									className={styles.image}
 									onLoad={imageLoaded}
 									onError={imageLoaded}
+									onLoadingComplete={imageLoaded}
 									title={`${title} photo ${index + 1}`}
 									src={photoSrc}
 									alt={`${title} photo ${index + 1}`}

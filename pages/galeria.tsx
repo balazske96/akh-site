@@ -10,6 +10,7 @@ import {
 } from '../lib/gallery/GalleryClient';
 import useImageLoader from '../hooks/useImageLoader';
 import ImageLoader from '../components/ImageLoder/ImageLoader';
+import LoadableImage from '../components/LoadableImage/LoadableImage';
 
 interface GalleryProps {
 	concerts: GalleryPost[];
@@ -40,12 +41,12 @@ export default function Gallery({ concerts }: GalleryProps) {
 								href={`/galeria/${concert.slug}`}
 							>
 								<a className={styles.postBody}>
-									<img
+									<LoadableImage
 										className={styles.postImage}
 										src={concert.cover_src}
-										onLoad={imageLoaded}
-										// We want the loader to disappear even if an image can't be loaded
+										onLoadingComplete={imageLoaded}
 										onError={imageLoaded}
+										onLoad={imageLoaded}
 									/>
 									<p className={styles.postTitle}>
 										{concert.card_title}
