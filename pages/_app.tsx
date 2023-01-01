@@ -1,6 +1,7 @@
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import 'react-circular-progressbar/dist/styles.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (

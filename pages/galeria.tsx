@@ -8,12 +8,19 @@ import {
 	getDirectoriesMetadata,
 	getGalleryDirectories,
 } from '../lib/gallery/GalleryClient';
+import useImageLoader from '../hooks/useImageLoader';
+import ImageLoader from '../components/ImageLoder/ImageLoader';
+import LoadableImage from '../components/LoadableImage/LoadableImage';
 
 interface GalleryProps {
 	concerts: GalleryPost[];
 }
 
 export default function Gallery({ concerts }: GalleryProps) {
+	const { isLoading, currentPercentage, imageLoaded } = useImageLoader(
+		concerts.length
+	);
+
 	return (
 		<Layout>
 			<Head>
@@ -21,7 +28,11 @@ export default function Gallery({ concerts }: GalleryProps) {
 			</Head>
 			<div className={styles.container}>
 				<h1>Képgaléria</h1>
-				<div className={styles.postsContainer}>
+				{isLoading && <ImageLoader percentage={currentPercentage} />}
+				<div
+					className={styles.postsContainer}
+					style={{ display: isLoading ? 'none' : 'grid' }}
+				>
 					{concerts
 						.sort((a, b) => b.date - a.date)
 						.map((concert) => (
@@ -29,12 +40,14 @@ export default function Gallery({ concerts }: GalleryProps) {
 								key={concert.title}
 								href={`/galeria/${concert.slug}`}
 							>
-								<a
-									className={styles.postBody}
-									style={{
-										backgroundImage: `url(${concert.cover_src})`,
-									}}
-								>
+								<a className={styles.postBody}>
+									<LoadableImage
+										className={styles.postImage}
+										src={concert.cover_src}
+										onLoadingComplete={imageLoaded}
+										onError={imageLoaded}
+										onLoad={imageLoaded}
+									/>
 									<p className={styles.postTitle}>
 										{concert.card_title}
 									</p>
@@ -57,6 +70,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	}
 
 	return {
+		revalidate: false,
 		props: {
 			concerts: galleryPosts,
 		},
