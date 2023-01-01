@@ -1,4 +1,3 @@
-import { useRef, useState } from 'react';
 import Layout from '../components/Layout/Layout';
 import { GetStaticProps } from 'next';
 import { GalleryPost } from '../types';
@@ -9,21 +8,17 @@ import {
 	getDirectoriesMetadata,
 	getGalleryDirectories,
 } from '../lib/gallery/GalleryClient';
+import useImageLoader from '../hooks/useImageLoader';
+import ImageLoader from '../components/ImageLoder/ImageLoader';
 
 interface GalleryProps {
 	concerts: GalleryPost[];
 }
 
 export default function Gallery({ concerts }: GalleryProps) {
-	const [isLoading, setIsLoading] = useState<boolean>(true);
-	const imageCounter = useRef<number>(0);
-
-	const imageLoaded = () => {
-		imageCounter.current += 1;
-		if (imageCounter.current >= concerts.length) {
-			setIsLoading(false);
-		}
-	};
+	const { isLoading, currentPercentage, imageLoaded } = useImageLoader(
+		concerts.length
+	);
 
 	return (
 		<Layout>
@@ -32,9 +27,7 @@ export default function Gallery({ concerts }: GalleryProps) {
 			</Head>
 			<div className={styles.container}>
 				<h1>Képgaléria</h1>
-				<div style={{ display: isLoading ? 'block' : 'none' }}>
-					Egy pillanat...
-				</div>
+				{isLoading && <ImageLoader percentage={currentPercentage} />}
 				<div
 					className={styles.postsContainer}
 					style={{ display: isLoading ? 'none' : 'grid' }}
@@ -51,6 +44,8 @@ export default function Gallery({ concerts }: GalleryProps) {
 										className={styles.postImage}
 										src={concert.cover_src}
 										onLoad={imageLoaded}
+										// We want the loader to disappear even if an image can't be loaded
+										onError={imageLoaded}
 									/>
 									<p className={styles.postTitle}>
 										{concert.card_title}

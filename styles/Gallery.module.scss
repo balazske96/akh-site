@@ -105,3 +105,17 @@
 	width: auto;
 	height: 100%;
 }
+
+.imageLoaderContainer {
+	display: flex;
+	width: 200px;
+	margin: 50px auto 20px auto;
+
+	@include underTablet {
+		width: 150px;
+	}
+
+	@include underMobileLarge {
+		width: 100px;
+	}
+}
