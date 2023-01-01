@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import Layout from '../components/Layout/Layout';
 import { GetStaticProps } from 'next';
 import { GalleryPost } from '../types';
@@ -14,6 +15,16 @@ interface GalleryProps {
 }
 
 export default function Gallery({ concerts }: GalleryProps) {
+	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const imageCounter = useRef<number>(0);
+
+	const imageLoaded = () => {
+		imageCounter.current += 1;
+		if (imageCounter.current >= concerts.length) {
+			setIsLoading(false);
+		}
+	};
+
 	return (
 		<Layout>
 			<Head>
@@ -21,7 +32,13 @@ export default function Gallery({ concerts }: GalleryProps) {
 			</Head>
 			<div className={styles.container}>
 				<h1>Képgaléria</h1>
-				<div className={styles.postsContainer}>
+				<div style={{ display: isLoading ? 'block' : 'none' }}>
+					Egy pillanat...
+				</div>
+				<div
+					className={styles.postsContainer}
+					style={{ display: isLoading ? 'none' : 'grid' }}
+				>
 					{concerts
 						.sort((a, b) => b.date - a.date)
 						.map((concert) => (
@@ -29,12 +46,12 @@ export default function Gallery({ concerts }: GalleryProps) {
 								key={concert.title}
 								href={`/galeria/${concert.slug}`}
 							>
-								<a
-									className={styles.postBody}
-									style={{
-										backgroundImage: `url(${concert.cover_src})`,
-									}}
-								>
+								<a className={styles.postBody}>
+									<img
+										className={styles.postImage}
+										src={concert.cover_src}
+										onLoad={imageLoaded}
+									/>
 									<p className={styles.postTitle}>
 										{concert.card_title}
 									</p>
@@ -57,6 +74,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	}
 
 	return {
+		revalidate: false,
 		props: {
 			concerts: galleryPosts,
 		},
