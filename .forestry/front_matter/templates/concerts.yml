@@ -50,3 +50,5 @@ fields:
   label: Link to ticket
 pages:
 - content/concerts/depresszio_1000_budapest.json
+- content/concerts/depresszio_2023_kiskunfelegyhaza.json
+- content/concerts/depresszio_2023_szekesfehervar.json
