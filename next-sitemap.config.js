@@ -1,4 +1,4 @@
-function calculatePriority(path){
+function calculatePriority(path) {
 	const defaultPriority = 0.7;
 
 	if (path === '/') return 1.0;
@@ -12,11 +12,11 @@ function calculatePriority(path){
 
 module.exports = {
 	siteUrl: process.env.SITE_URL || 'https://akiralyhalott.hu',
-	generateRobotsTxt: true, 
-	exclude: ['/szervezoknek'],
+	generateRobotsTxt: true,
+	exclude: ['/szervezoknek', '/impresszum'],
 	transform: async (config, path) => {
 		const priority = calculatePriority(path);
-    
+
 		// Use default transformation for all other cases
 		return {
 			loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
