@@ -1,0 +1,36 @@
+@import '../styles/mixins.scss';
+
+.container {
+	margin: 0 auto;
+	max-width: 1000px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	@include underLaptop {
+		max-width: 768px;
+	}
+
+	@include underTablet {
+		max-width: 420px;
+	}
+
+	@include underMobileLarge {
+		max-width: 320px;
+		font-size: 0.9rem;
+		padding: 80px 10px;
+
+		h1 {
+			text-align: center;
+			font-size: 2rem;
+		}
+	}
+
+	ul {
+		width: max-content;
+		margin: 0 auto;
+	}
+
+	li:not(:last-child) {
+		margin-bottom: 20px;
+	}
+}
