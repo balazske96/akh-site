@@ -2,6 +2,7 @@ import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import 'react-circular-progressbar/dist/styles.css';
+import { ShopProvider } from '../hooks/useShop';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -27,7 +28,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<meta property="og:image" content="/akh_og_image.png" />
 				<meta property="og:type" content="website" />
 			</Head>
-			<Component {...pageProps} />
+			<ShopProvider>
+				<Component {...pageProps} />
+			</ShopProvider>
 		</>
 	);
 }
