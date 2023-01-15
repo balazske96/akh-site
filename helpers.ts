@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const monthsTranslationObject = {
+export const monthsTranslationObject: { [key: number]: string } = {
 	1: 'Január',
 	2: 'Február',
 	3: 'Március',
@@ -15,8 +15,6 @@ export const monthsTranslationObject = {
 	12: 'December',
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 const momentJsMonthToHungarianMonth = (month: number) =>
 	monthsTranslationObject[month];
 
