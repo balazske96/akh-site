@@ -1,12 +1,13 @@
 import Layout from '../components/Layout/Layout';
 import styles from '../styles/Concerts.module.scss';
-import {Concert} from '../types';
+import { Concert } from '../types';
 import Head from 'next/head';
 import ConcertCard from '../components/ConcertCard/ConcertCard';
-import {GetStaticProps} from 'next';
+import { GetStaticProps } from 'next';
 import fs from 'fs';
+import moment from 'moment';
 
-export default function Concerts({concerts}: { concerts: Concert[] }) {
+export default function Concerts({ concerts }: { concerts: Concert[] }) {
 	return (
 		<Layout>
 			<Head>
@@ -18,14 +19,17 @@ export default function Concerts({concerts}: { concerts: Concert[] }) {
 					<>
 						<p className={styles.description}>
 							Jelenleg a koncertjeink szervezés alatt állnak...
-							<br/>
+							<br />
 							Nézz be ide később!🔥
 						</p>
 					</>
 				)}
-				{concerts.length >= 1 &&
+				{concerts.length >= 1 && (
 					<>
-						<p className={styles.description}>Legközelebb az alábbi koncerteken találkozhatsz velünk 👇</p>
+						<p className={styles.description}>
+							Legközelebb az alábbi koncerteken találkozhatsz
+							velünk 👇
+						</p>
 						<div className={styles.concertCardContainer}>
 							{concerts.map((concert: Concert) => (
 								<ConcertCard
@@ -40,18 +44,16 @@ export default function Concerts({concerts}: { concerts: Concert[] }) {
 							))}
 						</div>
 					</>
-				}
+				)}
 			</div>
 		</Layout>
 	);
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-
 	let concerts: Concert[] = [];
 
 	try {
-
 		const concertFiles = fs.readdirSync('content/concerts/');
 		concertFiles.map((concertFile) => {
 			const rawJson = fs.readFileSync(`content/concerts/${concertFile}`);
@@ -59,13 +61,14 @@ export const getStaticProps: GetStaticProps = async () => {
 			concerts.push(jsonFormat);
 		});
 
-		concerts = concerts.sort((a, b) => a.date - b.date);
+		concerts = concerts.sort((a, b) =>
+			moment(a.date).isBefore(moment(b.date)) ? -1 : 1
+		);
 	} catch (e) {
 		console.log(e);
 	}
 
-
 	return {
-		props: {concerts: concerts}
+		props: { concerts: concerts },
 	};
 };
