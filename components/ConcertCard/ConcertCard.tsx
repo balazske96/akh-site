@@ -28,18 +28,20 @@ export default function ConcertCard({
 			<div className={styles.actionsContainer}>
 				{linkToTicket && (
 					<LinkButton
-						href={linkToTicket}
-						label={'Jegyek'}
-						newTab={true}
 						color={'white'}
-					/>
+						target={'_blank'}
+						href={linkToTicket}
+					>
+						{'Jegyek'}
+					</LinkButton>
 				)}
 				<LinkButton
-					href={linkToEvent}
-					label={'Esemény'}
-					newTab={true}
 					color={'black'}
-				/>
+					target={'_blank'}
+					href={linkToEvent}
+				>
+					{'Esemény'}
+				</LinkButton>
 			</div>
 		</div>
 	);

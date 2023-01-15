@@ -1,28 +1,24 @@
 import styles from './LinkButton.module.scss';
 import clsx from 'clsx';
+import { HTMLProps } from 'react';
 
-interface LinkButtonProps {
-	href: string,
-	label: string,
-	newTab?: boolean
-	color?: 'black' | 'white'
+interface LinkButtonProps extends HTMLProps<HTMLAnchorElement> {
+	color?: 'black' | 'white';
 }
 
-export default function LinkButton({href, label, newTab = false, color = 'white'}: LinkButtonProps) {
+export default function LinkButton({
+	color = 'white',
+	...rest
+}: LinkButtonProps) {
 	const className = clsx({
 		[styles.container]: true,
 		[styles.black]: color === 'black',
-		[styles.white]: color === 'white'
+		[styles.white]: color === 'white',
 	});
 
 	return (
-		<a
-			className={className}
-			href={href}
-			target={newTab ? '_blank' : '_self'}
-			rel="noreferrer"
-		>
-			{label}
+		<a {...rest} className={className} rel="noreferrer">
+			{rest.children}
 		</a>
 	);
 }
