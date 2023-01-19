@@ -36,7 +36,7 @@ export default function Footer() {
 			</div>
 			<SocialMediaIconContainer />
 			<small className={styles.copyright}>
-				Copyright 2022 @ A Király Halott
+				Copyright 2023 @ A Király Halott
 			</small>
 		</footer>
 	);
