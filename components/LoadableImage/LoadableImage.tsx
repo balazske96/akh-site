@@ -13,7 +13,6 @@ export default function LoadableImage({
 
 	useEffect(() => {
 		if (ref.current && ref.current?.complete) {
-			console.log(ref.current);
 			onLoadingComplete();
 		}
 	}, [ref]);
