@@ -8,7 +8,7 @@ export default function Home(): React.ReactElement {
 	return (
 		<Layout footer={false} padding={false}>
 			<Head>
-				<title>A Király Halott zenekar hivatalos honlapja</title>
+				<title>A Király Halott | Hivatalos zenekari weboldal</title>
 				<meta name="description" content="A Király Halott zenekar hivatalos honlapja"/>
 			</Head>
 			<Hero/>
