@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				/>
 				<meta
 					property="og:title"
-					content="A Király Halott hivatalos honlapja"
+					content="A Király Halott | Hivatalos zenekari weboldal"
 				/>
 				<meta
 					property="og:description"
