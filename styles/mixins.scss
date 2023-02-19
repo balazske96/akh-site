@@ -1,42 +1,41 @@
 @mixin underPixel($pixel) {
-	@media only screen and ('max-width: #{$pixel}px') {
-		@content
+	@media only screen and ('max-width: {$pixel}px') {
+		@content;
 	}
 }
 
 @mixin underLaptopLarge {
 	@media only screen and ('max-width: 1440px') {
-		@content
+		@content;
 	}
 }
 
 @mixin underLaptop {
 	@media only screen and ('max-width: 1024px') {
-		@content
+		@content;
 	}
 }
 
 @mixin underTablet {
 	@media only screen and ('max-width: 768px') {
-		@content
+		@content;
 	}
 }
 
-
 @mixin underMobileLarge {
 	@media only screen and ('max-width: 425px') {
-		@content
+		@content;
 	}
 }
 
 @mixin underMobileMedium {
 	@media only screen and ('max-width: 375px') {
-		@content
+		@content;
 	}
 }
 
 @mixin underMobileSmall {
 	@media only screen and ('max-width: 320px') {
-		@content
+		@content;
 	}
 }

@@ -1,0 +1,42 @@
+.container {
+	position: relative;
+	padding: 20px 10px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	gap: 20px;
+	cursor: pointer;
+	text-decoration: none;
+
+	&:hover {
+		background-color: #202020;
+	}
+}
+
+.name {
+	text-align: center;
+}
+
+.onSaleToaster {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	padding: 5px 10px;
+	background-color: red;
+	color: white;
+	border-radius: 2px;
+}
+
+.image {
+	width: 100%;
+}
+
+.salePrice {
+	text-decoration: line-through;
+	margin-left: 10px;
+	font-style: italic;
+}
+
+.price {
+}

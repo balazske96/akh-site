@@ -33,3 +33,30 @@ export enum StreamingPlatform {
 	APPLE_MUSIC = 'APPLE_MUSIC',
 	DEEZER = 'DEEZER',
 }
+
+export type ShopProductImage = {
+	id: number;
+	date_created: string;
+	date_created_gmt: string;
+	date_modified: string;
+	date_modified_gmt: string;
+	src: string;
+	name: string;
+	alt: string;
+};
+
+export type ShopProduct = {
+	id: number;
+	name: string;
+	slug: string;
+	permalink: string;
+	description: string;
+	price: string;
+	onSale: boolean;
+	regularPrice: string;
+	salePrice: string;
+	catalogVisibility: 'visible' | 'catalog' | 'search' | 'hidden';
+	images: ShopProductImage[];
+	menuOrder: number;
+	priceHtml: string;
+};
