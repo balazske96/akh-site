@@ -11,6 +11,7 @@ export default function ShopProductCard({ shopProduct }: ShopProductProps) {
 			style: 'currency',
 			currency: 'HUF',
 			maximumFractionDigits: 0,
+			minimumFractionDigits: 0,
 		}).format(price);
 
 	return (
