@@ -6,6 +6,16 @@
 	max-width: 1440px;
 	margin: 0 auto;
 	flex-direction: column;
+
+	h1 {
+		@include underMobileLarge {
+			font-size: 2rem;
+		}
+	}
+
+	@include underTablet {
+		padding: 100px 0;
+	}
 }
 
 .link {

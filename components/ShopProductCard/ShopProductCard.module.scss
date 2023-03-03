@@ -1,3 +1,5 @@
+@import '../../styles/mixins.scss';
+
 .container {
 	position: relative;
 	padding: 20px 10px;
@@ -26,6 +28,12 @@
 	background-color: red;
 	color: white;
 	border-radius: 2px;
+
+	@include underMobileLarge {
+		font-size: 0.8rem;
+		left: 15px;
+		padding: 5px 5px;
+	}
 }
 
 .image {
