@@ -23,6 +23,8 @@
 		"@types/marked": "^4.0.3",
 		"@types/react-lazy-load-image-component": "^1.5.2",
 		"@types/ssh2-sftp-client": "^9.0.0",
+		"@types/woocommerce__woocommerce-rest-api": "^1.0.2",
+		"@woocommerce/woocommerce-rest-api": "^1.0.1",
 		"clsx": "^1.1.1",
 		"front-matter": "^4.0.2",
 		"ftp": "^0.3.10",
