@@ -34,7 +34,7 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 						<p>Berényi Kitti</p>
 						<p>
 							Email:{' '}
-							<a href="mailto:info@akiralyhalott.hu">
+							<a href="mailto:kitti@akiralyhalott.hu">
 								kitti@akiralyhalott.hu
 							</a>
 						</p>
