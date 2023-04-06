@@ -39,19 +39,18 @@ export default function Gallery({ concerts }: GalleryProps) {
 							<Link
 								key={concert.title}
 								href={`/galeria/${concert.slug}`}
+								className={styles.postBody}
 							>
-								<a className={styles.postBody}>
-									<LoadableImage
-										className={styles.postImage}
-										src={concert.cover_src}
-										onLoadingComplete={imageLoaded}
-										onError={imageLoaded}
-										onLoad={imageLoaded}
-									/>
-									<p className={styles.postTitle}>
-										{concert.card_title}
-									</p>
-								</a>
+								<LoadableImage
+									className={styles.postImage}
+									src={concert.cover_src}
+									onLoadingComplete={imageLoaded}
+									onError={imageLoaded}
+									onLoad={imageLoaded}
+								/>
+								<p className={styles.postTitle}>
+									{concert.card_title}
+								</p>
 							</Link>
 						))}
 				</div>
