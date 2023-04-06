@@ -20,19 +20,11 @@ export default function Footer() {
 		<footer className={styles.container}>
 			<div className={styles.upperDivider} />
 			<div className={styles.linkContainer}>
-				{hasOrganizer && (
-					<Link href="/szervezoknek">
-						<a href="/szervezoknek">Szervezőknek</a>
-					</Link>
-				)}
+				{hasOrganizer && <Link href="/szervezoknek">Szervezőknek</Link>}
 				{hasImpressum && hasOrganizer && (
 					<div className={styles.dotSeparator} />
 				)}
-				{hasImpressum && (
-					<Link href="/impresszum">
-						<a href="impresszum">Impresszum</a>
-					</Link>
-				)}
+				{hasImpressum && <Link href="/impresszum">Impresszum</Link>}
 			</div>
 			<SocialMediaIconContainer />
 			<small className={styles.copyright}>
