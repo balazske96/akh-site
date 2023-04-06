@@ -50,7 +50,7 @@
 	},
 	"settings": {
 		"react": {
-			"version": "latest"
+			"version": "detect"
 		}
 	}
 }
