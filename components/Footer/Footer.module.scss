@@ -23,18 +23,11 @@
 
 .upperDivider {
 	height: 2px;
-	width: 600px;
+	width: 80%;
 	position: absolute;
 	top: 0;
 	background-color: $textWhite;
-
-	@include underLaptop {
-		width: 400px;
-	}
-
-	@include underPixel(600) {
-		width: 200px;
-	}
+	max-width: 600px;
 }
 
 .linkContainer {
