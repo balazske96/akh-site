@@ -6,7 +6,7 @@ import Masonry from '@mui/lab/Masonry';
 import Head from 'next/head';
 import { useMediaQuery } from '@mui/material';
 import Modal from '@mui/material/Modal';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
 	getDirectoriesMetadata,
 	getGalleryDirectories,
@@ -38,6 +38,37 @@ export default function GallerySubPage({ title, photos }: GallerySubPageProps) {
 		setSelectedImage(imageSrc);
 		setIsImageOpened(true);
 	};
+
+	const onKeyDown = useCallback(
+		(event: KeyboardEvent) => {
+			if (selectedImage !== null) {
+				for (let index = 0; index < photos.length; index++) {
+					if (photos[index] === selectedImage) {
+						if (event.key === 'ArrowRight') {
+							if (index < photos.length - 1) {
+								setSelectedImage(photos[index + 1]);
+							}
+						}
+						if (event.key === 'ArrowLeft') {
+							if (index > 0) {
+								setSelectedImage(photos[index - 1]);
+							}
+						}
+						break;
+					}
+				}
+			}
+		},
+		[selectedImage]
+	);
+
+	useEffect(() => {
+		document.addEventListener('keydown', onKeyDown, false);
+
+		return () => {
+			document.removeEventListener('keydown', onKeyDown);
+		};
+	}, [onKeyDown]);
 
 	return (
 		<Layout>
