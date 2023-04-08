@@ -6,7 +6,7 @@ const branch = 'new-cms';
 
 export default defineConfig({
 	branch,
-	clientId: (process.env.NEXT_PUBLI_TINA_CMS_CLIENT_ID as string) ?? '',
+	clientId: (process.env.NEXT_PUBLIC_TINA_CMS_CLIENT_ID as string) ?? '',
 	token: (process.env.TINA_CMS_TOKEN as string) ?? '',
 	client: { skip: true },
 	build: {
