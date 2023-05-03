@@ -1,5 +1,5 @@
 import Layout from '../components/Layout/Layout';
-import styles from '../styles/ForOrganiers.module.scss';
+import styles from '../styles/Contact.module.scss';
 import Head from 'next/head';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 
@@ -11,10 +11,10 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 	return (
 		<Layout>
 			<Head>
-				<title>Szervezőknek</title>
+				<title>Kapcsolat</title>
 			</Head>
 			<div className={styles.container}>
-				<h1 className={styles.title}>Szervezőknek</h1>
+				<h1 className={styles.title}>Kapcsolat</h1>
 				<div className={styles.contactRow}>
 					<div className={styles.contactDetails}>
 						<h2>Koncertszervezés:</h2>
@@ -47,10 +47,7 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 					<div className={styles.resources}>
 						<ul>
 							<li>
-								<a
-									href="/akh-tech-rider.pdf"
-									target="_blank"
-								>
+								<a href="/akh-tech-rider.pdf" target="_blank">
 									Technikai Rider 🛠
 								</a>
 							</li>

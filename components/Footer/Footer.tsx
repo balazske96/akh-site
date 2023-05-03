@@ -12,7 +12,7 @@ export default function Footer() {
 		[router.asPath]
 	);
 	const hasOrganizer = useMemo(
-		() => router.asPath !== '/szervezoknek',
+		() => router.asPath !== '/kapcsolat',
 		[router.asPath]
 	);
 
@@ -20,7 +20,7 @@ export default function Footer() {
 		<footer className={styles.container}>
 			<div className={styles.upperDivider} />
 			<div className={styles.linkContainer}>
-				{hasOrganizer && <Link href="/szervezoknek">Szervezőknek</Link>}
+				{hasOrganizer && <Link href="/kapcsolat">Szervezőknek</Link>}
 				{hasImpressum && hasOrganizer && (
 					<div className={styles.dotSeparator} />
 				)}
