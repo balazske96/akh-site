@@ -60,3 +60,7 @@ export type ShopProduct = {
 	menuOrder: number;
 	priceHtml: string;
 };
+
+export type HeroVideo = { desktopVideoSrc: string; mobileVideoSrc: string };
+export type HeroImage = { src: string };
+export type HeroMedia = HeroVideo | HeroImage;

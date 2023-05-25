@@ -1,41 +1,44 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .container {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: 100px;
-  align-items: center;
-  background-color: $black;
-  padding: 0 100px 0 40px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	height: 100px;
+	align-items: center;
+	padding: 0 100px 0 40px;
 
-  @include underTablet() {
-    padding: 0 20px 0 20px;
-  }
+	@include underTablet() {
+		padding: 0 20px 0 20px;
+	}
 
-  @include underMobileLarge() {
-    height: 70px;
-  }
+	@include underMobileLarge() {
+		height: 70px;
+	}
+}
+
+.dynamicHeroIsActive {
+	background-color: $black;
+	box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 
 .logo {
-  width: 50px;
-  margin-right: auto;
-  margin-bottom: auto;
-  margin-top: auto;
+	width: 50px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-top: auto;
 
-  &:hover {
-    cursor: pointer;
-  }
+	&:hover {
+		cursor: pointer;
+	}
 
-  @include underTablet() {
-    width: 40px;
-  }
+	@include underTablet() {
+		width: 40px;
+	}
 }
