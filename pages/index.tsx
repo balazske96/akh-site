@@ -2,11 +2,18 @@ import React from 'react';
 import Head from 'next/head';
 import Layout from '../components/Layout/Layout';
 import DynamicHero from '../components/DynamicHero/DynamicHero';
-import AknRelease from '../components/DynamicHero/Contents/AknRelease';
+import { GetStaticProps } from 'next';
+import hero from '../content/hero.json';
+import { Hero } from '../types';
+import DefaultHero from '../components/DynamicHero/DefaultHero/DefaultHero';
 
-export default function Home(): React.ReactElement {
+export interface HomeProps {
+	hero: Hero;
+}
+
+export default function Home({ hero }: HomeProps): React.ReactElement {
 	return (
-		<Layout footer={false} padding={false}>
+		<Layout footer={false} padding={false} heroIsActive={hero.active}>
 			<Head>
 				<title>A Király Halott | Hivatalos zenekari weboldal</title>
 				<meta
@@ -14,14 +21,16 @@ export default function Home(): React.ReactElement {
 					content="A Király Halott zenekar hivatalos honlapja"
 				/>
 			</Head>
-			<DynamicHero
-				media={{
-					mobileVideoSrc: '/heros/akn-hero-mobile.mp4',
-					desktopVideoSrc: '/heros/akn-hero-desktop.mp4',
-				}}
-				mediaOpacityPercentage={60}
-				content={<AknRelease />}
-			/>
+			{!hero.active && <DefaultHero />}
+			{!!hero.active && <DynamicHero hero={hero} />}
 		</Layout>
 	);
 }
+
+export const getStaticProps: GetStaticProps<HomeProps> = () => {
+	return {
+		props: {
+			hero: { ...(hero as Hero) },
+		},
+	};
+};

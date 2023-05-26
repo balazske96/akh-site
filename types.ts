@@ -61,6 +61,15 @@ export type ShopProduct = {
 	priceHtml: string;
 };
 
-export type HeroVideo = { desktopVideoSrc: string; mobileVideoSrc: string };
-export type HeroImage = { src: string };
-export type HeroMedia = HeroVideo | HeroImage;
+export type Hero = {
+	titleImage?: string;
+	title?: string;
+	active: boolean;
+	subtitle?: string;
+	link: string;
+	linkLabel: string;
+	backgroundImage?: string;
+	backgroundVideoDesktop?: string;
+	backgroundVideoMobile?: string;
+	backgroundOpacityPercentage?: number;
+};

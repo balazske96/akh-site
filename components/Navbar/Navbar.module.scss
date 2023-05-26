@@ -23,9 +23,12 @@
 	}
 }
 
-.dynamicHeroIsActive {
-	background-color: $black;
+.shadow {
 	box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
+
+.background {
+	background-color: $black;
 }
 
 .logo {

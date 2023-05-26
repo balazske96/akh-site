@@ -1,49 +1,62 @@
-import { useCallback } from 'react';
-import { HeroMedia, HeroVideo } from '../../types';
+import { useMemo } from 'react';
+import { Hero } from '../../types';
 import styles from './DynamicHero.module.scss';
 import { useMediaQuery } from '@mui/material';
+import LinkButton from '../Button/LinkButton';
 
 interface DynamicHeroProps {
-	media: HeroMedia;
-	mediaOpacityPercentage?: number;
-	content?: React.ReactElement;
+	hero: Hero;
 }
 
-export default function DynamicHero({
-	media,
-	content,
-	mediaOpacityPercentage,
-}: DynamicHeroProps) {
+export default function DynamicHero({ hero }: DynamicHeroProps) {
 	const isTablet = useMediaQuery('(max-width:1220px)');
 
-	const isVideo = useCallback(() => {
-		return (
-			!!(media as HeroVideo).desktopVideoSrc &&
-			!!(media as HeroVideo).mobileVideoSrc
-		);
-	}, [media]);
+	const src = useMemo(() => {
+		return isTablet
+			? hero.backgroundVideoMobile
+			: hero.backgroundVideoDesktop;
+	}, [isTablet]);
 
-	if (isVideo()) {
+	const isVideo: boolean = useMemo(() => {
+		return !!hero.backgroundVideoMobile && !!hero.backgroundVideoDesktop;
+	}, [hero]);
+
+	const style = useMemo(() => {
+		return hero.backgroundOpacityPercentage
+			? { opacity: hero.backgroundOpacityPercentage / 100 }
+			: {};
+	}, [hero]);
+
+	if (isVideo) {
 		return (
 			<div className={styles.container}>
-				{!!content && content}
+				{!!hero.titleImage && (
+					<img
+						draggable={false}
+						className={styles.titleImage}
+						src={hero.titleImage}
+					/>
+				)}
+				{!!hero.title && <h2 className={styles.title}>{hero.title}</h2>}
+				<h3 className={styles.subtitle}>{hero.subtitle}</h3>
 				<video
 					className={styles.video}
-					style={
-						mediaOpacityPercentage
-							? { opacity: mediaOpacityPercentage / 100 }
-							: {}
-					}
-					autoPlay={true}
-					loop={true}
-					muted={true}
+					style={style}
+					autoPlay
+					loop
+					muted
+					playsInline
 					controls={false}
-					src={
-						isTablet
-							? (media as HeroVideo).mobileVideoSrc
-							: (media as HeroVideo).desktopVideoSrc
-					}
+					disablePictureInPicture
+					src={src}
 				/>
+				<LinkButton
+					className={styles.link}
+					href={hero.link}
+					color={'black'}
+				>
+					{hero.linkLabel}
+				</LinkButton>
 			</div>
 		);
 	}
