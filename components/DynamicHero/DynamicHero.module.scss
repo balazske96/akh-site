@@ -6,8 +6,9 @@
 	justify-content: center;
 	align-items: center;
 	margin: auto 0;
-	z-index: 2000;
+	z-index: 1000;
 	gap: 30px;
+	padding: 10px;
 
 	* {
 		z-index: inherit;
@@ -43,9 +44,6 @@
 
 .title {
 	font-size: 3rem;
-}
-
-.subtitle {
 }
 
 .link {

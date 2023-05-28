@@ -17,49 +17,46 @@ export default function DynamicHero({ hero }: DynamicHeroProps) {
 			: hero.backgroundVideoDesktop;
 	}, [isTablet]);
 
-	const isVideo: boolean = useMemo(() => {
-		return !!hero.backgroundVideoMobile && !!hero.backgroundVideoDesktop;
-	}, [hero]);
+	const fallbackImageSrc = useMemo(() => {
+		return isTablet ? hero.fallbackImageMobile : hero.fallbackImageDesktop;
+	}, [isTablet]);
 
-	const style = useMemo(() => {
+	const opacityStyle = useMemo(() => {
 		return hero.backgroundOpacityPercentage
 			? { opacity: hero.backgroundOpacityPercentage / 100 }
 			: {};
-	}, [hero]);
+	}, [hero.backgroundOpacityPercentage]);
 
-	if (isVideo) {
-		return (
-			<div className={styles.container}>
-				{!!hero.titleImage && (
-					<img
-						draggable={false}
-						className={styles.titleImage}
-						src={hero.titleImage}
-					/>
-				)}
-				{!!hero.title && <h2 className={styles.title}>{hero.title}</h2>}
-				<h3 className={styles.subtitle}>{hero.subtitle}</h3>
-				<video
-					className={styles.video}
-					style={style}
-					autoPlay
-					loop
-					muted
-					playsInline
-					controls={false}
-					disablePictureInPicture
-					src={src}
+	return (
+		<div className={styles.container}>
+			{!!hero.titleImage && (
+				<img
+					draggable={false}
+					className={styles.titleImage}
+					src={hero.titleImage}
 				/>
-				<LinkButton
-					className={styles.link}
-					href={hero.link}
-					color={'black'}
-				>
-					{hero.linkLabel}
-				</LinkButton>
-			</div>
-		);
-	}
-
-	return null;
+			)}
+			{!!hero.title && <h2 className={styles.title}>{hero.title}</h2>}
+			<h3 className={styles.subtitle}>{hero.subtitle}</h3>
+			<video
+				className={styles.video}
+				style={opacityStyle}
+				autoPlay
+				loop
+				muted
+				playsInline
+				controls={false}
+				poster={fallbackImageSrc}
+				src={src}
+			/>
+			<LinkButton
+				className={styles.link}
+				href={hero.link}
+				color={'white'}
+				target={'_blank'}
+			>
+				{hero.linkLabel}
+			</LinkButton>
+		</div>
+	);
 }

@@ -133,6 +133,7 @@ export default defineConfig({
 						type: 'string',
 						label: 'Link',
 						name: 'link',
+						required: true,
 						description:
 							'The link where the button should redirect the user',
 					},
@@ -140,37 +141,24 @@ export default defineConfig({
 						type: 'string',
 						label: 'Link Label',
 						name: 'linkLabel',
+						required: true,
 						description: 'The text inside the button',
 					},
 					{
 						type: 'image',
-						label: 'Background Image (Desktop)',
-						name: 'backgroundImageDesktop',
-						description:
-							// eslint-disable-next-line quotes
-							"Image for desktop devices if the hero's background is an image",
-					},
-					{
-						type: 'image',
-						label: 'Background Image (Mobile)',
-						name: 'backgroundImageMobile',
-						description:
-							// eslint-disable-next-line quotes
-							"Image for mobile devices if the hero's background is an image",
-					},
-					{
-						type: 'image',
 						label: 'Fallback Image (Desktop)',
+						required: true,
 						name: 'fallbackImageDesktop',
 						description:
-							'Fallback image for desktop devices. This is important because some device wont let you autoplay',
+							'Fallback image for desktop devices. This is important because some device wont let you autoplay the video',
 					},
 					{
 						type: 'image',
 						label: 'Fallback Image (Mobile)',
+						required: true,
 						name: 'fallbackImageMobile',
 						description:
-							'Fallback image for mobile devices. This is important because some device wont let you autoplay',
+							'Fallback image for mobile devices. This is important because some device wont let you autoplay the video',
 					},
 					{
 						type: 'image',
@@ -190,6 +178,7 @@ export default defineConfig({
 					},
 					{
 						type: 'number',
+						required: true,
 						label: 'Background Opacity (percentage)',
 						name: 'backgroundOpacityPercentage',
 						description: 'Opacity of the background image or video',

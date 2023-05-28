@@ -9,5 +9,7 @@
   "linkLabel": "Meghallgatom!",
   "titleImage": "/heros/akn-title.png",
   "title": "",
-  "backgroundOpacityPercentage": 60
+  "backgroundOpacityPercentage": 60,
+  "fallbackImageDesktop": "/heros/akn-release-fallback-desktop.webp",
+  "fallbackImageMobile": "/heros/akn-release-fallback-mobile.webp"
 }

@@ -21,8 +21,7 @@ export default function Home({ hero }: HomeProps): React.ReactElement {
 					content="A Király Halott zenekar hivatalos honlapja"
 				/>
 			</Head>
-			{!hero.active && <DefaultHero />}
-			{!!hero.active && <DynamicHero hero={hero} />}
+			{hero.active ? <DynamicHero hero={hero} /> : <DefaultHero />}
 		</Layout>
 	);
 }

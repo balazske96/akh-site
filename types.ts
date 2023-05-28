@@ -68,8 +68,9 @@ export type Hero = {
 	subtitle?: string;
 	link: string;
 	linkLabel: string;
-	backgroundImage?: string;
 	backgroundVideoDesktop?: string;
 	backgroundVideoMobile?: string;
-	backgroundOpacityPercentage?: number;
+	backgroundOpacityPercentage: number;
+	fallbackImageDesktop: string;
+	fallbackImageMobile: string;
 };
