@@ -10,6 +10,7 @@ interface LayoutProps {
 	padding?: boolean;
 	footer?: boolean;
 	navbar?: boolean;
+	heroIsActive?: boolean;
 }
 
 export default function Layout({
@@ -17,6 +18,7 @@ export default function Layout({
 	footer = true,
 	navbar = true,
 	padding = true,
+	heroIsActive = false,
 }: LayoutProps) {
 	const containerClassName = clsx({
 		[styles.container]: true,
@@ -39,7 +41,7 @@ export default function Layout({
 				webshopunkat is.{'                        '}
 			</div>
 			<div className={containerClassName}>
-				{navbar && <Navbar />}
+				{navbar && <Navbar heroIsActive={heroIsActive} />}
 				{children}
 				{footer && <Footer />}
 			</div>

@@ -60,3 +60,17 @@ export type ShopProduct = {
 	menuOrder: number;
 	priceHtml: string;
 };
+
+export type Hero = {
+	titleImage?: string;
+	title?: string;
+	active: boolean;
+	subtitle?: string;
+	link: string;
+	linkLabel: string;
+	backgroundVideoDesktop?: string;
+	backgroundVideoMobile?: string;
+	backgroundOpacityPercentage: number;
+	fallbackImageDesktop: string;
+	fallbackImageMobile: string;
+};

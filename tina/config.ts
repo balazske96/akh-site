@@ -89,6 +89,102 @@ export default defineConfig({
 					},
 				],
 			},
+			{
+				label: 'Hero',
+				name: 'hero',
+				format: 'json',
+				path: 'content',
+				match: {
+					include: 'hero',
+				},
+				ui: {
+					allowedActions: {
+						create: false,
+						delete: false,
+					},
+				},
+				fields: [
+					{
+						type: 'boolean',
+						label: 'Active',
+						name: 'active',
+						description: 'You can active or deactive the hero',
+					},
+					{
+						type: 'image',
+						label: 'TitleImage',
+						name: 'titleImage',
+						description:
+							'The image to display as title (band name or song title)',
+					},
+					{
+						type: 'string',
+						label: 'Title',
+						name: 'title',
+					},
+					{
+						type: 'string',
+						label: 'Subtitle',
+						name: 'subtitle',
+						description:
+							'some further information under the title, for example (Sond is available on YouTube)',
+					},
+					{
+						type: 'string',
+						label: 'Link',
+						name: 'link',
+						required: true,
+						description:
+							'The link where the button should redirect the user',
+					},
+					{
+						type: 'string',
+						label: 'Link Label',
+						name: 'linkLabel',
+						required: true,
+						description: 'The text inside the button',
+					},
+					{
+						type: 'image',
+						label: 'Fallback Image (Desktop)',
+						required: true,
+						name: 'fallbackImageDesktop',
+						description:
+							'Fallback image for desktop devices. This is important because some device wont let you autoplay the video',
+					},
+					{
+						type: 'image',
+						label: 'Fallback Image (Mobile)',
+						required: true,
+						name: 'fallbackImageMobile',
+						description:
+							'Fallback image for mobile devices. This is important because some device wont let you autoplay the video',
+					},
+					{
+						type: 'image',
+						label: 'Background Video (Desktop)',
+						name: 'backgroundVideoDesktop',
+						description:
+							// eslint-disable-next-line quotes
+							"Image for desktop devices if the hero's background is a video",
+					},
+					{
+						type: 'image',
+						label: 'Background Video (Mobile)',
+						name: 'backgroundVideoMobile',
+						description:
+							// eslint-disable-next-line quotes
+							"Image for mobile devices if the hero's background is a video",
+					},
+					{
+						type: 'number',
+						required: true,
+						label: 'Background Opacity (percentage)',
+						name: 'backgroundOpacityPercentage',
+						description: 'Opacity of the background image or video',
+					},
+				],
+			},
 		],
 	},
 });

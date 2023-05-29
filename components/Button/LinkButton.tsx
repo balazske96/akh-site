@@ -11,6 +11,7 @@ export default function LinkButton({
 	...rest
 }: LinkButtonProps) {
 	const className = clsx({
+		[rest.className as string]: !!rest.className,
 		[styles.container]: true,
 		[styles.black]: color === 'black',
 		[styles.white]: color === 'white',
