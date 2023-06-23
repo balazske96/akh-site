@@ -39,3 +39,4 @@ yarn-error.log*
 
 # Environment Variables
 .env
+# Random text to start deployment 
