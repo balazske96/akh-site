@@ -31,15 +31,15 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 					</div>
 					<div className={styles.contactDetails}>
 						<h2>Turné menedzsment:</h2>
-						<p>Berényi Kitti</p>
+						<p>Botos Gábor</p>
 						<p>
 							Email:{' '}
-							<a href="mailto:kitti@akiralyhalott.hu">
-								kitti@akiralyhalott.hu
+							<a href="mailto:zenekar@akiralyhalott.hu">
+								zenekar@akiralyhalott.hu
 							</a>
 						</p>
 						<p>
-							Tel: <a href="tel:+36704504437">+36704504437</a>
+							Tel: <a href="tel:‭+36302864229‬">+36302864229</a>
 						</p>
 					</div>
 				</div>
