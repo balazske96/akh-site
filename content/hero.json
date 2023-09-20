@@ -2,14 +2,14 @@
   "text": "Legújabb dalunk már a YouTube-on!👇",
   "image": "/heros/akn-title.png",
   "active": false,
-  "link": "https://youtu.be/LknN2Hji9MU",
-  "backgroundVideoDesktop": "/heros/akn-hero-desktop.webm",
-  "backgroundVideoMobile": "/heros/akn-hero-mobile.webm",
+  "link": "https://youtu.be/tvvqBGjxYGY",
+  "backgroundVideoDesktop": "/heros/tunj_el/hero-desktop-tunj-el.webm",
+  "backgroundVideoMobile": "/heros/tunj_el/hero-mobile-tunj-el.webm",
   "subtitle": "Legújabb dalunk már a YouTube-on!👇",
   "linkLabel": "Meghallgatom!",
-  "titleImage": "/heros/akn-title.png",
+  "titleImage": "/heros/tunj_el/TUNJ_EL_TITLE.png",
   "title": "",
   "backgroundOpacityPercentage": 60,
-  "fallbackImageDesktop": "/heros/akn-release-fallback-desktop.webp",
-  "fallbackImageMobile": "/heros//akn-release-fallback-mobile.png"
+  "fallbackImageDesktop": "/heros/tunj_el/fallback-image-tunj-el-desktop.webp",
+  "fallbackImageMobile": "/heros/tunj_el/fallback-image-tunj-el-mobile.webp"
 }
