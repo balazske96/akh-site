@@ -32,7 +32,7 @@ export default function Layout({
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
-				<link rel="icon" type="image/png" href="/favicon.png"></link>
+				<link rel="icon" type="image/png" href="/favicon.ico"></link>
 				<title>A Király Halott</title>
 			</Head>
 			<div style={{ display: 'none' }}>

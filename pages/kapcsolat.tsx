@@ -53,7 +53,7 @@ export default function ForOrganizers() {
 						target="_blank"
 						rel="noreferrer"
 					>
-						Sajtó anyag 🗞
+						Sajtóanyag 🗞
 					</a>
 				</div>
 				{isReady && !!p && p === riderPassword && (
