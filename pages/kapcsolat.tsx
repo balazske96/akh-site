@@ -1,13 +1,16 @@
 import Layout from '../components/Layout/Layout';
 import styles from '../styles/Contact.module.scss';
 import Head from 'next/head';
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import { useRouter } from 'next/router';
 
-interface ForOrganiersProps {
-	rider: boolean;
-}
+const riderPassword = process.env.NEXT_PUBLIC_RIDER_PASSWORD;
 
-export default function ForOrganizers({ rider }: ForOrganiersProps) {
+export default function ForOrganizers() {
+	const {
+		isReady,
+		query: { p },
+	} = useRouter();
+
 	return (
 		<Layout>
 			<Head>
@@ -43,7 +46,17 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 						</p>
 					</div>
 				</div>
-				{rider && (
+				<div className={styles.pressContentContainer}>
+					<a
+						href="https://drive.google.com/drive/folders/1EyNLOOOxMJ8eHgYRuGlQ6YIcDJEW6ct7?usp=drive_link"
+						className={styles.pressContentLink}
+						target="_blank"
+						rel="noreferrer"
+					>
+						Sajtó anyag 🗞
+					</a>
+				</div>
+				{isReady && !!p && p === riderPassword && (
 					<div className={styles.resources}>
 						<ul>
 							<li>
@@ -66,16 +79,3 @@ export default function ForOrganizers({ rider }: ForOrganiersProps) {
 		</Layout>
 	);
 }
-
-export const getServerSideProps: GetServerSideProps = async (
-	context: GetServerSidePropsContext
-) => {
-	const riderPassword = process.env.RIDER_PASSWORD;
-	const riderPasswordInQuery = (context.query.p as string) ?? '';
-
-	return {
-		props: {
-			rider: riderPassword === riderPasswordInQuery,
-		},
-	};
-};

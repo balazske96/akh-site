@@ -75,3 +75,17 @@
 		text-align: center;
 	}
 }
+
+.pressContent {
+	&Container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding: 3rem 0 0 0;
+	}
+
+	&Link {
+		font-size: 20px;
+	}
+}
