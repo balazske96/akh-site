@@ -1,6 +1,7 @@
 import styles from './ConcertCard.module.scss';
 import { beautifyDateLabel } from '../../helpers';
 import LinkButton from '../Button/LinkButton';
+import clsx from 'clsx';
 
 interface ConcertCardProps {
 	displayName: string;
@@ -9,6 +10,7 @@ interface ConcertCardProps {
 	linkToTicket?: string;
 	linkToEvent: string;
 	location: string;
+	highlighted?: boolean;
 }
 
 export default function ConcertCard({
@@ -17,9 +19,15 @@ export default function ConcertCard({
 	linkToEvent,
 	date,
 	location,
+	highlighted = false,
 }: ConcertCardProps) {
 	return (
-		<div className={styles.container}>
+		<div
+			className={clsx({
+				[styles.container]: true,
+				[styles.highlighted]: highlighted,
+			})}
+		>
 			<span className={styles.dateContainer}>
 				{beautifyDateLabel(date)}
 			</span>

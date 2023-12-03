@@ -40,6 +40,7 @@ export default function Concerts({ concerts }: { concerts: Concert[] }) {
 									date={concert.date}
 									city={concert.city}
 									location={concert.location}
+									highlighted={concert.highlighted}
 								/>
 							))}
 						</div>

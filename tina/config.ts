@@ -87,6 +87,12 @@ export default defineConfig({
 						label: 'Link to ticket',
 						description: 'Link of the ticket selling portal',
 					},
+					{
+						type: 'boolean',
+						name: 'highlighted',
+						label: 'Highlighted',
+						description: 'Should the concert be highlighted?',
+					},
 				],
 			},
 			{

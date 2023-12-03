@@ -36,5 +36,10 @@ export function concertsFields() {
 			name: 'link_to_ticket',
 			label: 'Link to ticket',
 		},
+		{
+			type: 'boolean',
+			name: 'highlighted',
+			label: 'Highlighted',
+		},
 	] as TinaField[];
 }

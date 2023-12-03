@@ -25,6 +25,7 @@ export type Concert = {
 	link_to_ticket?: string;
 	link_to_event: string;
 	location: string;
+	highlighted: boolean;
 };
 
 export enum StreamingPlatform {
