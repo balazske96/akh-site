@@ -56,13 +56,17 @@ async function convertResponseProductToShopProductType(prod: any) {
 export async function getProducts(): Promise<ShopProduct[]> {
 	const productsResponse = await WooCommerce.get('products');
 
-	const sortedProducts = productsResponse.data.sort(
+	const sortedProducts: [] = productsResponse.data.sort(
 		(a: any, b: any) => a['menu_order'] - b['menu_order']
+	);
+
+	const outOfStockProductsRemoved = sortedProducts.filter(
+		(product) => product['status'] == 'publish'
 	);
 
 	const result = [];
 
-	for (const prod of sortedProducts) {
+	for (const prod of outOfStockProductsRemoved) {
 		result.push(await convertResponseProductToShopProductType(prod));
 	}
 
