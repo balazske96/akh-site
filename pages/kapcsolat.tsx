@@ -21,15 +21,15 @@ export default function ForOrganizers() {
 				<div className={styles.contactRow}>
 					<div className={styles.contactDetails}>
 						<h2>Koncertszervezés:</h2>
-						<p>Szűcs Mihály</p>
+						<p>Hámori Dávid</p>
 						<p>
 							Email:{' '}
-							<a href="mailto:szm@koncertszervezo.hu">
-								szm@koncertszervezo.hu
+							<a href="mailto:zenekar@akiralyhalott.hu">
+								zenekar@akiralyhalott.hu
 							</a>
 						</p>
 						<p>
-							Tel: <a href="tel:+36209105312">+36209105312</a>
+							Tel: <a href="tel:+36707796765">+36707796765</a>
 						</p>
 					</div>
 					<div className={styles.contactDetails}>
@@ -42,7 +42,7 @@ export default function ForOrganizers() {
 							</a>
 						</p>
 						<p>
-							Tel: <a href="tel:‭+36302864229‬">+36302864229</a>
+							Tel: <a href="tel:+36302864229">+36302864229</a>
 						</p>
 					</div>
 				</div>
