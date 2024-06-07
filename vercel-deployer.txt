@@ -1,5 +1,0 @@
-# Add something to this file (on main branch) every time you would like to start a new deployment on Vercel
-# 2023.10.11
-# 2023.11.05 Szombathely images uploaded
-# 2023.11.26 Pécs images uploaded 
-# 2024.02.14 New merchandise in the shop

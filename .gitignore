@@ -1,42 +1,20 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Environment variables
+**/*.env
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Ignore everything in the app directory
+/app/*
 
-# testing
-/coverage
+# Except the wp-content directory
+!/app/wp-content/
 
-# next.js
-/.next/
-/out/
+# Ignore everything in wp-content
+/app/wp-content/*
 
-# production
-/build
+# Except the themes directory
+!/app/wp-content/themes/
 
-# misc
-.DS_Store
-*.pem
+# Ignore everything in themes
+/app/wp-content/themes/*
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-
-
-# Environment Variables
-.env
-# Random text to start deployment 
+# Except the akiralyhalott directory and its contents
+!/app/wp-content/themes/akiralyhalott/
