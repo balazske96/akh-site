@@ -12,6 +12,7 @@
 
 # Except the themes directory
 !/app/wp-content/themes/
+!/app/wp-content/mu-plugins/
 
 # Ignore everything in themes
 /app/wp-content/themes/*
