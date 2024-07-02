@@ -31,8 +31,6 @@ class RiderPlugin {
       filenameField.innerText = filename;
       filenameField.style.display = "block";
       filenameInput.value = id;
-
-      console.log(filenameInput.value);
     });
 
     media.open();

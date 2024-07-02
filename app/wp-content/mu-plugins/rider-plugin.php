@@ -24,7 +24,11 @@ class RiderPlugin
 
     function enqueue_rider_scripts()
     {
-        wp_enqueue_script('tech_rider_plugin_scripts', WPMU_PLUGIN_URL . '/js/rider-plugin.js');
+        $current_page = $_GET["page"];
+
+        if ($current_page === self::SETTINGS_PAGE_NAME) {
+            wp_enqueue_script('tech_rider_plugin_scripts', WPMU_PLUGIN_URL . '/js/rider-plugin.js');
+        }
     }
 
     function admin_page()
