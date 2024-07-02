@@ -42,10 +42,10 @@ class LatestVideoPlugin
 
     function settings()
     {
-        $first_section_name = "latest_yt_vid";
+        $section_name = "latest_yt_vid";
 
         add_settings_section(
-            $first_section_name,
+            $section_name,
             null,
             null,
             self::SETTINGS_PAGE_NAME
@@ -56,7 +56,7 @@ class LatestVideoPlugin
             "Video URL",
             [$this, "url_input_html"],
             self::SETTINGS_PAGE_NAME,
-            $first_section_name
+            $section_name
         );
 
         register_setting(
@@ -73,7 +73,7 @@ class LatestVideoPlugin
             "Megjelenítés",
             [$this, "toggle_input_html"],
             self::SETTINGS_PAGE_NAME,
-            $first_section_name
+            $section_name
         );
 
         register_setting(
