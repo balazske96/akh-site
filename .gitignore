@@ -1,8 +1,11 @@
 # Environment variables
 **/*.env
+# This env doesn't contain any sensitive info at all but be carefull if that will change
+!.env 
 
 # Ignore everything in the app directory
 /app/*
+**/node_modules/
 
 # Except the wp-content directory
 !/app/wp-content/
@@ -19,3 +22,7 @@
 
 # Except the akiralyhalott directory and its contents
 !/app/wp-content/themes/akiralyhalott/
+
+# Ignore everything in build and dist folder
+/app/wp-content/themes/akiralyhalott/dist
+/app/wp-content/themes/akiralyhalott/build
