@@ -2,6 +2,7 @@ import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import 'react-circular-progressbar/dist/styles.css';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -28,6 +29,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<meta property="og:type" content="website" />
 			</Head>
 			<Component {...pageProps} />
+			<GoogleTagManager gtmId="GTM-P2M24QSJ" />
+			<noscript>
+				<iframe
+					src="https://www.googletagmanager.com/ns.html?id=GTM-P2M24QSJ"
+					height="0"
+					width="0"
+					style={{ display: 'none', visibility: 'hidden' }}
+				/>
+			</noscript>
 		</>
 	);
 }

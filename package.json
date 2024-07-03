@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/lab": "^5.0.0-alpha.88",
     "@mui/material": "^5.8.6",
+    "@next/third-parties": "^14.2.4",
     "@tinacms/cli": "^1.5.5",
     "@types/ftp": "^0.3.33",
     "@types/marked": "^5.0.0",
