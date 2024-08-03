@@ -2,27 +2,18 @@
 **/*.env
 # This env doesn't contain any sensitive info at all but be carefull if that will change
 !.env 
+.next/
 
 # Ignore everything in the app directory
-/app/*
+/wordpress/app/*
 **/node_modules/
 
-# Except the wp-content directory
-!/app/wp-content/
+# Except .gitkeep
+!/wordpress/app/.gitkeep
 
-# Ignore everything in wp-content
-/app/wp-content/*
+# Ignore everything in the wp-content directory
+!/wordpress/app/wp-content/
 
-# Except the themes directory
-!/app/wp-content/themes/
-!/app/wp-content/mu-plugins/
-
-# Ignore everything in themes
-/app/wp-content/themes/*
-
-# Except the akiralyhalott directory and its contents
-!/app/wp-content/themes/akiralyhalott/
-
-# Ignore everything in build and dist folder
-/app/wp-content/themes/akiralyhalott/dist
-/app/wp-content/themes/akiralyhalott/build
+# Except mu-plugins
+/wordpress/app/wp-content/*
+!/wordpress/app/wp-content/mu-plugins/
