@@ -1,0 +1,54 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DEBUG: ${WORDPRESS_DEBUG}
+    volumes:
+      - ./wordpress/app:/var/www/html
+      - ./wordpress/settings/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./wordpress/settings/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+
+  database:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
+      MYSQL_USER: ${WORDPRESS_DB_USER}
+      MYSQL_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${WORDPRESS_DB_ROOT_PASSWORD}
+    volumes:
+      - db:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: database
+      PMA_USER: root
+      PMA_PASSWORD: ${WORDPRESS_DB_ROOT_PASSWORD}
+
+  smtp:
+    image: aerzas/mailcatcher:latest
+    ports:
+      - '1025:1025'
+      - '1080:1080'
+    healthcheck:
+      test: [ "CMD", "/scripts/docker-healthcheck.sh" ]
+      interval: 30s
+      timeout: 1s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  db:

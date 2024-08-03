@@ -1,17 +1,18 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Environment variables
+**/*.env
+# This env doesn't contain any sensitive info at all but be carefull if that will change
+!.env 
+.next/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+# Ignore everything in the app directory
+/wordpress/app/*
+**/node_modules/
 
-# testing
-/coverage
+# Except .gitkeep
+!/wordpress/app/.gitkeep
 
-# next.js
-/.next/
-/out/
+# Ignore everything in the wp-content directory
+!/wordpress/app/wp-content/
 
 # production
 /build
@@ -34,3 +35,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Except mu-plugins
+/wordpress/app/wp-content/*
+!/wordpress/app/wp-content/mu-plugins/
