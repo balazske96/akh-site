@@ -12,7 +12,7 @@ class RiderPlugin
     function __construct()
     {
         add_action("admin_menu", [$this, "admin_page"]);
-        add_action('admin_menu', [$this, "enqueue_media"]);
+        add_action('admin_enqueue_scripts', [$this, "enqueue_media"]);
         add_action("admin_init", [$this, "settings"]);
         add_action("admin_print_footer_scripts", [$this, "enqueue_rider_scripts"]);
     }
@@ -24,7 +24,7 @@ class RiderPlugin
 
     function enqueue_rider_scripts()
     {
-        $current_page = $_GET["page"];
+        $current_page = $_GET["page"] ?? '';
 
         if ($current_page === self::SETTINGS_PAGE_NAME) {
             wp_enqueue_script('tech_rider_plugin_scripts', WPMU_PLUGIN_URL . '/js/rider-plugin.js');
@@ -96,7 +96,7 @@ class RiderPlugin
 
         /** @var WP_Post */
         $attachment = get_post($attachment_id);
-        $is_pdf = $attachment->post_mime_type === 'application/pdf';
+        $is_pdf = $attachment ? $attachment->post_mime_type === 'application/pdf' : false;
         $display_type = $attachment ? 'block' : 'none';
         $link = wp_get_attachment_url($attachment_id)
 

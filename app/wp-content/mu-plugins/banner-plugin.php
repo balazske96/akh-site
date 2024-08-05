@@ -60,7 +60,7 @@ function render_form()
     <?php
 }
 
-add_action('admin_menu', function () {
+add_action('admin_enqueue_scripts', function () {
     wp_enqueue_media();
 });
 
@@ -291,7 +291,7 @@ function sanitize_banner_file($type, $attachment_id)
 add_action("admin_print_footer_scripts", "enqueue_banner_scripts");
 function enqueue_banner_scripts()
 {
-    $current_page = $_GET["page"];
+    $current_page = $_GET["page"] ?? '';
 
     if ($current_page === SETTINGS_PAGE_NAME) {
         wp_enqueue_script('banner_plugin_scripts', WPMU_PLUGIN_URL . '/js/banner-plugin.js');
