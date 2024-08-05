@@ -1,4 +1,4 @@
-FROM wordpress:6.5.3-php8.2-apache
+FROM wordpress:6.6.1-php8.2
 
 # Install packages under Debian
 RUN apt-get update && \
