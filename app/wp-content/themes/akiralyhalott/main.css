@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --max-content-width: 72rem;
+  --smoke-white: #e1e1e1;
+}
+
+html {
+  @apply bg-[var(--smoke-white)];
+}
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+a {
+  @apply no-underline;
+}
+
+ul {
+  list-style: none;
+}
+
+@layer utilities {
+  div:has(div):has(div):has(.side-menu:checked) {
+    @apply bg-[var(--smoke-white)] xl:bg-transparent;
+  }
+
+  div:has(div):has(.side-menu:checked) ~ nav {
+    @apply max-h-full;
+  }
+
+  .side-menu:checked ~ .hamb .hamb-line {
+    background-color: transparent;
+  }
+
+  .side-menu:checked ~ .hamb .hamb-line::before {
+    @apply rotate-[-45deg] top-0;
+  }
+
+  .side-menu:checked ~ .hamb .hamb-line::after {
+    @apply rotate-[45deg] top-0;
+  }
+
+  body:has(.side-menu:checked) {
+    @apply overflow-hidden;
+  }
+}
