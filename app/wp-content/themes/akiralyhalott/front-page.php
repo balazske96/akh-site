@@ -8,9 +8,9 @@
     <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri() . '/build/main.css' ?>' />
 </head>
 
-<body class="mx-auto bg-[#e1e1e1]">
-    <?php include __DIR__ . '/template-parts/navbar.php'; ?>
-    <?php include __DIR__ . '/template-parts/hero.php'; ?>
+<body class="mx-auto bg-[var(--smoke-white)]">
+    <?php get_template_part('template-parts/navbar'); ?>
+    <?php get_template_part('template-parts/hero'); ?>
 </body>
 
 </html>

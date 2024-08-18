@@ -15,12 +15,11 @@
                 </label>
             </div>
         </div>
-        <nav class="w-full xl:w-auto xl:h-auto h-full fixed xl:relative overflow-hidden bg-[var(--smoke-white)] xl:bg-transparent max-h-0 xl:max-h-none xl:px-2            
-    ">
+        <nav class="w-full xl:w-auto xl:h-auto h-full fixed xl:relative overflow-hidden bg-[var(--smoke-white)] xl:bg-transparent max-h-0 xl:max-h-none xl:px-2">
             <ul class="xl:flex xl:justify-between xl:h-full xl:gap-6">
                 <li class="xl:flex xl:items-center"><a class="block p-2 xl:p-0 hover:bg-slate-300 xl:hover:bg-transparent xl:hover:text-slate-600" href="<?php echo get_site_url() . '/#koncertek' ?>">Koncertek</a></li>
-                <li class="xl:flex xl:items-center"><a class="block p-2 xl:p-0 hover:bg-slate-300 xl:hover:bg-transparent xl:hover:text-slate-600" href="<?php echo get_site_url() . '/#merch' ?>">Merch</a>
-                <li class="xl:flex xl:items-center"><a class="block p-2 xl:p-0 hover:bg-slate-300 xl:hover:bg-transparent xl:hover:text-slate-600" href="<?php echo get_site_url() . '/#zene' ?>">Zene</a>
+                <li class="xl:flex xl:items-center"><a class="block p-2 xl:p-0 hover:bg-slate-300 xl:hover:bg-transparent xl:hover:text-slate-600" href="<?php echo get_site_url() . '/#merch' ?>">Merch</a></li>
+                <li class="xl:flex xl:items-center"><a class="block p-2 xl:p-0 hover:bg-slate-300 xl:hover:bg-transparent xl:hover:text-slate-600" href="<?php echo get_site_url() . '/#zene' ?>">Zene</a></li>
             </ul>
         </nav>
     </div>

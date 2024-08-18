@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "build": "webpack",
-        "tailwind": "npx tailwindcss -i ./main.css -o ./build/main.css",
+        "tailwind": "npx tailwindcss -i ./main.css -o ./build/main.css --minify",
         "tailwind:start": "npx tailwindcss -i ./main.css -o ./build/main.css --watch"
     },
     "author": "Balázs Venyige",
