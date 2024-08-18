@@ -1,0 +1,35 @@
+on: workflow_dispatch
+name: 🚀 Deploy WordPress Theme (Dev)
+env:
+  FTP_USER: 'akiralh_1'
+  FTP_HOST: 'www131.your-server.de'
+  FTP_PORT: '21'
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+      
+    - name: 🔨 Build Tailwind Style
+      run: |
+        cd ./app/wp-content/themes/akiralyhalott
+        npm install
+        npm run tailwind
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      with:
+        server: ${{ env.FTP_HOST }}
+        username: ${{ env.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./app/wp-content/themes/akiralyhalott
+        server-dir: /public_html/dev/
+        protocol: ftps
+        port: ${{ env.FTP_PORT }}
