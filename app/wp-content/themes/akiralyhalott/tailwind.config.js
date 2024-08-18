@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./**/*.php", "./../../mu-plugins/**/*.php"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        handwritten: ["Caveat", "cursive"],
+      },
+    },
+    fontFamily: {
+      serif: ["Quando", "ui-serif"],
+    },
   },
   plugins: [],
 };
