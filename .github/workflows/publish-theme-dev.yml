@@ -26,6 +26,6 @@ jobs:
         username: akiralh_1
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./app/wp-content/themes/akiralyhalott/
-        server-dir: /public_html/dev/
+        server-dir: /wp-content/themes/akiralyhalott/
         protocol: ftps
         port: 21
