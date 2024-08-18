@@ -1,9 +1,5 @@
 on: workflow_dispatch
 name: 🚀 Deploy WordPress Theme (Dev)
-env:
-  FTP_USER: 'akiralh_1'
-  FTP_HOST: 'www131.your-server.de'
-  FTP_PORT: '21'
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -26,10 +22,10 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        server: ${{ env.FTP_HOST }}
-        username: ${{ env.FTP_USERNAME }}
+        server: www131.your-server.de
+        username: akiralh_1
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./app/wp-content/themes/akiralyhalott
         server-dir: /public_html/dev/
         protocol: ftps
-        port: ${{ env.FTP_PORT }}
+        port: 21
