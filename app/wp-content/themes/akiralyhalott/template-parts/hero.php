@@ -9,7 +9,7 @@ $image_src_set = [
 
 <section class="w-screen relative">
     <picture>
-        <source media="(max-width: 1279px)" srcset="<?php echo $image_src_set[0] ?>">
+        <source media="(max-width: 1279px)" srcset="<?php echo $image_src_set[1] ?>">
         <source media="(min-width: 1280px)" srcset="<?php echo $image_src_set[1] ?>">
         <img class="w-full" src="<?php echo $image_src_set[1] ?>" alt="">
     </picture>
