@@ -12,13 +12,37 @@ $images = [
     get_stylesheet_directory_uri() . '/images/section-4-image-2.webp',
     get_stylesheet_directory_uri() . '/images/section-4-money-a.webp',
     get_stylesheet_directory_uri() . '/images/section-4-money-b.webp',
+    get_stylesheet_directory_uri() . '/images/section-5-image-1.webp',
+    get_stylesheet_directory_uri() . '/images/section-5-image-2.webp',
 ];
-
-
 
 $are_there_any_concert = true;
 $shop_is_open = true;
 $shop_url = home_url('/shop');
+$spotify_embed_url = 'https://open.spotify.com/embed/artist/6YVFO1kvJ7kxbYpbIZLXhJ?utm_source=generator&theme=0';
+
+$streaming_platforms = [
+    [
+        'name' => 'spotify',
+        'image_src' => get_stylesheet_directory_uri() . '/images/temp/spotify.webp',
+        'link' => 'https://open.spotify.com/artist/6YVFO1kvJ7kxbYpbIZLXhJ'
+    ],
+    [
+        'name' => 'apple music',
+        'image_src' => get_stylesheet_directory_uri() . '/images/temp/apple_music.webp',
+        'link' => 'https://music.apple.com/us/artist/a-kir%C3%A1ly-halott/1331011092'
+    ],
+    [
+        'name' => 'tidal',
+        'image_src' => get_stylesheet_directory_uri() . '/images/temp/tidal.webp',
+        'link' => 'https://listen.tidal.com/artist/9404749'
+    ],
+    [
+        'name' => 'youtube music',
+        'image_src' => get_stylesheet_directory_uri() . '/images/temp/youtube.webp',
+        'link' => 'https://www.youtube.com/akiralyhalott'
+    ]
+];
 
 $concerts = [
     [
@@ -189,7 +213,7 @@ $webshop_products = [
     <!-- YouTube Video -->
     <?php if ($are_there_any_concert) { ?>
         <section class="mt-[299.52vw] w-full flex justify-center">
-            <iframe width="334" height="187" src="https://www.youtube.com/embed/A99MKasrGzk?si=dFaVgWL6IxPRwYKH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="w-[92.77vw] h-[51.94vw]" width="334" height="187" src="https://www.youtube.com/embed/A99MKasrGzk?si=dFaVgWL6IxPRwYKH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
     <?php } ?>
     <section class="relative pt-[185.44vw]">
@@ -207,7 +231,7 @@ $webshop_products = [
             </video>
         </div>
         <?php if ($are_there_any_concert) { ?>
-            <div class="flex flex-col justify-between pt-[35vw] pb-[14.16vw] bg-white px-[5vw] gap-[8.33vw]">
+            <div class="flex flex-col justify-between pt-[35vw] pb-[14.16vw] bg-white px-[5vw] gap-[8.33vw]" id="koncertek">
                 <?php foreach ($concerts as $concert) { ?>
                     <div class="flex justify-between">
                         <div class="flex flex-col items-start justify-between gap-[2vw]">
@@ -288,6 +312,33 @@ $webshop_products = [
                 </a>
             </div>
         <?php } ?>
+    </section>
+    <section class="relative pt-[59.44vw]" id="zene">
+        <img class="absolute w-[68.33vw] z-[-1] top-0 left-0" src="<?php echo $images[9] ?>" alt="">
+        <div class="shadow-spotify-iframe max-w-max mx-auto rounded-[12px]">
+            <iframe
+                class="w-[90vw] h-[94vw] mx-auto mb-[90.27vw] z-10 relative"
+                style="border-radius:12px"
+                src="<?php echo $spotify_embed_url ?>"
+                width="324"
+                height="341"
+                frameBorder="0"
+                allowtransparency="true"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+        <img class="absolute w-[74.44vw] top-[97.22vw] right-0 z-[-1]" src="<?php echo $images[10] ?>" alt="">
+        <div class="grid grid-cols-2 gap-x-10 gap-y-7 px-6 mb-5">
+            <?php if (!empty($streaming_platforms)) {
+                foreach ($streaming_platforms as $platform) { ?>
+                    <a class="flex justify-center items-center" href="<?php echo $platform['link'] ?>" target="_blank">
+                        <img src="<?php echo $platform['image_src'] ?>" alt="<?php echo $platform['name'] ?> logo">
+                    </a>
+            <?php }
+            } ?>
+        </div>
     </section>
     <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/dist/main.js' ?>" defer="true"></script>
 </body>

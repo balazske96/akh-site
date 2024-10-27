@@ -11,6 +11,7 @@
 
 html {
   @apply bg-[var(--smoke-white)] text-[var(--text-black)];
+  scroll-behavior: smooth;
 }
 
 * {
