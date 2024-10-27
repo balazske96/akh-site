@@ -5,14 +5,16 @@
 :root {
   --max-content-width: 72rem;
   --smoke-white: #e1e1e1;
+  --smoke-white-rgb: 225, 225, 225;
+  --text-black: #2b2c2d;
 }
 
 html {
-  @apply bg-[var(--smoke-white)];
+  @apply bg-[var(--smoke-white)] text-[var(--text-black)];
 }
 
 * {
-  @apply m-0 p-0 box-border font-serif;
+  @apply m-0 p-0 box-border font-mono;
 }
 
 a {
@@ -21,6 +23,15 @@ a {
 
 ul {
   list-style: none;
+}
+
+.webshop-carousel-fade {
+  background: linear-gradient(
+    90deg,
+    rgba(var(--smoke-white-rgb), 0) 0%,
+    rgba(var(--smoke-white-rgb), 1) 35%,
+    rgba(var(--smoke-white-rgb), 1) 100%
+  );
 }
 
 @layer utilities {

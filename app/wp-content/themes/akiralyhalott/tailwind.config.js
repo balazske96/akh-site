@@ -9,6 +9,7 @@ module.exports = {
     },
     fontFamily: {
       serif: ["Quando", "ui-serif"],
+      mono: ["Martian Mono"]
     },
   },
   plugins: [],
