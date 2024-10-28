@@ -18,6 +18,7 @@ jobs:
         cd ./app/wp-content/themes/akiralyhalott
         npm install
         npm run tailwind
+        npm run build
     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
