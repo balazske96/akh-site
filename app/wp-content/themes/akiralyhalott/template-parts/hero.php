@@ -11,8 +11,9 @@ $image_src_set = [
     <picture>
         <source media="(max-width: 1279px)" srcset="<?php echo $image_src_set[0] ?>">
         <source media="(min-width: 1280px)" srcset="<?php echo $image_src_set[1] ?>">
-        <img class="w-full mt-[-8vw]" src="<?php echo $image_src_set[0] ?>" alt="">
+        <img class="w-full mt-[-8vw] xl:mt-0" src="<?php echo $image_src_set[0] ?>" alt="">
     </picture>
     <!-- <div class="absolute bottom-0 left-0 h-[5rem] w-full bg-gradient-to-t from-[#e1e1e1] to-transparent"></div> -->
-    <div class="absolute top-0 xl:bottom-0 left-0 h-[12.5vw] w-full bg-gradient-to-b from-[#e1e1e1] to-transparent"></div>
+    <div class="absolute top-0 xl:bottom-0 left-0 h-[12.5vw] w-full bg-gradient-to-b from-[#e1e1e1] to-transparent xl:h-[5vw]"></div>
+    <div class="hidden xl:block absolute bottom-0 left-0 h-[5vw] w-full bg-gradient-to-t from-[#e1e1e1] to-transparent"></div>
 </section>
