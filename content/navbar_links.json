@@ -9,7 +9,8 @@
   },
   {
     "title": "Shop",
-    "href": "/shop"
+    "href": "https://shop.akiralyhalott.hu",
+    "newTab": true
   },
   {
     "title": "Kapcsolat",

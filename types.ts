@@ -1,6 +1,7 @@
 export type Link = {
 	title: string;
 	href: string;
+	newTab?: boolean
 };
 
 export type GalleryPost = {

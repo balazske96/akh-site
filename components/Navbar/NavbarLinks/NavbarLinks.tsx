@@ -25,6 +25,7 @@ export default function NavbarLinks() {
 			href={link.href}
 			onClick={() => setIsMenuOpened(false)}
 			rel="noreferrer"
+			target={link.newTab ? '_blank': '_self'}
 			className={clsx({
 				[styles.link]: true,
 				[styles.activeLink]: router.asPath === link.href,
