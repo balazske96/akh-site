@@ -14,6 +14,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-syne)"],
+        martian: ["var(--font-martian)"],
+        handwritten: ["var(--font-caveat)"],
       },
     },
   },

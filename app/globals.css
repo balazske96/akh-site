@@ -7,9 +7,14 @@
   --foreground: #2b2c2d;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background, #e1e1e1);
   color: var(--foreground, #2b2c2d);
+  @apply font-martian;
 }
 
 @layer utilities {
