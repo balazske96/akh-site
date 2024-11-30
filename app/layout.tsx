@@ -4,7 +4,6 @@ import { Syne } from "next/font/google";
 import { Martian_Mono } from "next/font/google";
 import { Caveat } from "next/font/google";
 
-import Footer from "./components/Footer";
 import { googleGtmId } from "@/constants";
 import "./globals.css";
 import Navbar from "./components/Navbar";
