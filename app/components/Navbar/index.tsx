@@ -4,26 +4,26 @@ import logo from "@/public/images/navbar-logo.webp";
 
 export default function Navbar() {
   return (
-    <header className="flex justify-center z-50 w-full relative xl:block ">
-      <div className="max-w-[1350px] xl:py-[50px] xl:flex xl:flex-row xl:px-[10px] xl:mx-auto">
-        <div className="flex w-full justify-center mt-[14.72vw] xl:mt-0 z-50 xl:justify-start">
+    <header className="flex justify-center z-50 w-full relative lg:block ">
+      <div className="lg:py-[2.6vw] lg:flex lg:flex-row lg:px-[14.79vw] lg:mx-auto">
+        <div className="flex w-full justify-center mt-[14.72vw] lg:mt-0 z-50 lg:justify-start">
           <a href="/">
             <Image
-              className="w-[60.55vw] xl:w-[225px] opacity-80"
+              className="w-[60.55vw] lg:w-[11.72vw] opacity-80"
               src={logo}
               alt=""
             />
           </a>
         </div>
-        <nav className="absolute right-[50%] bottom-0 translate-x-1/2 translate-y-[169vw] z-50 xl:relative xl:translate-x-0 xl:translate-y-0 xl:right-auto">
-          <ul className="flex gap-[10vw] xl:gap-[20px]">
-            <li className="text-[3.61vw] uppercase order-2 xl:order-1 xl:text-[15px]">
+        <nav className="absolute right-[50%] font-martian bottom-0 translate-x-1/2 translate-y-[169vw] z-50 lg:relative lg:translate-x-0 lg:translate-y-0 lg:right-auto">
+          <ul className="flex gap-[10vw] lg:gap-[1.04vw]">
+            <li className="text-[3.61vw] uppercase order-2 lg:order-1 lg:text-[0.78vw]">
               <a href="/#koncertek">Koncertek</a>
             </li>
-            <li className="text-[3.61vw] uppercase order-3 xl:order-2 xl:text-[15px]">
+            <li className="text-[3.61vw] uppercase order-3 lg:order-2 lg:text-[0.78vw]">
               <a href="/#webshop">Merch</a>
             </li>
-            <li className="text-[3.61vw] uppercase order-1 xl:order-3 xl:text-[15px]">
+            <li className="text-[3.61vw] uppercase order-1 lg:order-3 lg:text-[0.78vw]">
               <a href="/#zene">Zene</a>
             </li>
           </ul>

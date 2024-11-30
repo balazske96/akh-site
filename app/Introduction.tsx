@@ -12,7 +12,7 @@ const imageRevealFraction = 0.7;
 export const Introduction = () => (
   <section>
     <div className="relative mx-auto">
-      <div className="flex justify-center xl:hidden" aria-hidden>
+      <div className="flex justify-center lg:hidden" aria-hidden>
         <svg
           className="h-[32.5vw]"
           viewBox="0 0 2 117"
@@ -35,17 +35,18 @@ export const Introduction = () => (
           </defs>
         </svg>
       </div>
-      <h1 className="font-martian font-extrabold text-center leading-[14.33vw] text-[11.94vw] xl:text-[2.66vw] xl:leading-[3.125vw] uppercase xl:ml-[-6vw]">
+      <h1 className="font-martian font-extrabold text-center leading-[14.33vw] text-[11.94vw] lg:text-[2.66vw] lg:leading-[3.125vw] uppercase lg:ml-[-6vw]">
         Hallgasd
         <br />
         ahogy
         <br />
         átcsempész
       </h1>
-      <div className="hidden xl:block w-max mr-auto ml-[46.5vw] mt-[1.3125rem]">
+      <div className="hidden lg:block w-max mr-auto ml-[46.5vw] mt-[1.3125rem]">
         <svg
           width="18"
           height="156"
+          className="h-[8.13vw] w-[0.94vw]"
           viewBox="0 0 18 156"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +84,7 @@ export const Introduction = () => (
           </defs>
         </svg>
       </div>
-      <div className="flex justify-center mt-[15.27vw] xl:hidden">
+      <div className="flex justify-center mt-[15.27vw] lg:hidden">
         <svg
           className="h-[10vw]"
           viewBox="0 0 8 37"
@@ -96,7 +97,7 @@ export const Introduction = () => (
           />
         </svg>
       </div>
-      <div className="hidden xl:relative">
+      <div className="hidden lg:relative">
         <svg
           width="18"
           height="156"
@@ -144,7 +145,7 @@ export const Introduction = () => (
         duration={imageRevealTime}
       >
         <Image
-          className="w-[77.22vw] xl:w-[16.14vw] h-auto absolute right-[50%] xl:right-auto xl:left-[16.14vw] xl:translate-x-0 translate-x-1/2 top-[112.5vw] xl:top-0"
+          className="w-[77.22vw] lg:w-[16.14vw] h-auto absolute right-[50%] lg:right-auto lg:left-[16.14vw] lg:translate-x-0 translate-x-1/2 top-[112.5vw] lg:top-0"
           src={Section1Image2}
           alt=""
         />
@@ -156,21 +157,21 @@ export const Introduction = () => (
         duration={imageRevealTime}
       >
         <Image
-          className="absolute left-0 xl:left-[11.04vw] w-[61.66vw] xl:w-[16.77vw] h-auto top-[176.09vw] xl:top-[16.45vw]"
+          className="absolute left-0 lg:left-[11.04vw] w-[61.66vw] lg:w-[16.77vw] h-auto top-[176.09vw] lg:top-[16.45vw]"
           src={Section1Image1}
           alt=""
         />
       </Fade>
       {/* <!-- Relative text --> */}
-      <div className="absolute top-[246.38vw] xl:top-[22.91vw] right-[55%] xl:right-auto xl:left-[29.63vw] translate-x-1/2 xl:translate-x-0 w-max xl:max-w-max">
-        <p className="text-[7vw] xl:text-[1.4vw] leading-[6.82vw] xl:leading-[1.29vw] font-handwritten">
+      <div className="absolute top-[246.38vw] lg:top-[22.91vw] right-[55%] lg:right-auto lg:left-[29.63vw] translate-x-1/2 lg:translate-x-0 w-max lg:max-w-max">
+        <p className="text-[7vw] lg:text-[1.4vw] leading-[6.82vw] lg:leading-[1.29vw] font-handwritten">
           Épp, hogy megjöttél
         </p>
-        <div className="xl:flex-row xl:flex">
-          <p className="text-[7vw] xl:text-[1.4vw] leading-[6.82vw] xl:leading-[1.29vw] ml-[19vw] xl:ml-0 font-handwritten">
+        <div className="lg:flex-row lg:flex">
+          <p className="text-[7vw] lg:text-[1.4vw] leading-[6.82vw] lg:leading-[1.29vw] ml-[19vw] lg:ml-0 font-handwritten">
             szárnyat bontott{" "}
           </p>
-          <p className="text-[7vw] xl:text-[1.4vw] leading-[6.82vw] xl:leading-[1.29vw] ml-[53vw] xl:ml-0 font-handwritten">
+          <p className="text-[7vw] lg:text-[1.4vw] leading-[6.82vw] lg:leading-[1.29vw] ml-[53vw] lg:ml-0 font-handwritten">
             a tél...
           </p>
         </div>
@@ -184,16 +185,16 @@ export const Introduction = () => (
       >
         <picture>
           <source
-            media="(max-width: 1279px)"
+            media="(max-width: 1023px)"
             srcSet="/images/section-1-image-3-mobile.webp"
           />
           <source
-            media="(min-width: 1280px)"
+            media="(min-width: 1024px)"
             srcSet="/images/section-1-image-3-desktop.webp"
           />
           <img
             className="absolute w-[102.49vw] h-auto left-[-10.27vw] top-[271.11vw]
-            xl:w-[21.875vw] xl:left-auto xl:right-[16.14vw] xl:top-0
+            lg:w-[21.875vw] lg:left-auto lg:right-[16.14vw] lg:top-0
             "
             src="/images/sectoin-1-image-3-mobile.webp"
             alt=""
@@ -209,23 +210,23 @@ export const Introduction = () => (
       >
         <picture>
           <source
-            media="(max-width: 1279px)"
+            media="(max-width: 1023px)"
             srcSet="/images/section-1-image-4-mobile.webp"
           />
           <source
-            media="(min-width: 1280px)"
+            media="(min-width: 1024px)"
             srcSet="/images/section-1-image-4-desktop.webp"
           />
           <img
             className="
-          absolute w-[48.05vw] xl:w-[19.11vw] xl:right-[13.125vw] h-auto right-0 top-[316.38vw] xl:top-[25.31vw]"
+          absolute w-[48.05vw] lg:w-[19.11vw] lg:right-[13.125vw] h-auto right-0 top-[316.38vw] lg:top-[25.31vw]"
             src="<?php echo $images[3] ?>-mobile.webp"
             alt=""
           />
         </picture>
       </Fade>
       {/* <!-- Relative text / Desktop only --> */}
-      <div className="hidden xl:flex flex-row items-end absolute top-[32.23vw] left-[54.27vw]">
+      <div className="hidden lg:flex flex-row items-end absolute top-[32.23vw] left-[54.27vw]">
         <div>
           <span className="text-[1.4vw] font-handwritten leading-[1.29vw]">
             Bárcsak itt lennél,

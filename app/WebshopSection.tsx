@@ -126,7 +126,7 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
               <div className="flex">
                 {products.map((product) => (
                   <a
-                    className="flex-none w-[33%] min-w-0"
+                    className="flex-none w-[33%] min-w-0 flex justify-center"
                     key={product.id}
                     href={product.link}
                     onClick={(event) => {
@@ -134,7 +134,13 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
                       setPreviewProduct(product);
                     }}
                   >
-                    <Image width={57} height={52} alt="" src={product.image} />
+                    <Image
+                      className="w-[70%]"
+                      width={57}
+                      height={52}
+                      alt=""
+                      src={product.image}
+                    />
                   </a>
                 ))}
               </div>
@@ -163,10 +169,11 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
         <a
           target="_blank"
           href="https://shop.akiralyhalott.hu"
-          className="flex w-full flex-row justify-center items-center gap-[5.55vw] py-[6.94vw]"
+          className="flex w-full flex-row justify-center items-center gap-[4vw] py-[6.94vw] mb-[-0.7vw]"
         >
           <span className="text-[4.15vw] font-medium">WEBSHOP</span>
           <svg
+            className="h-[2.22vw] w-[9.44vw]"
             fill="none"
             height="8"
             viewBox="0 0 34 8"

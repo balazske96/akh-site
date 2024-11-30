@@ -65,8 +65,9 @@ export const Concerts = ({ concerts }: { concerts: IConcert[] }) => {
             </div>
           ))}
           <a className="xl:order-first flex items-center gap-[2.77vw]" href="#">
-            <span>Összes koncert dátum</span>
+            <span className="text-[4vw]">Összes koncert dátum</span>
             <svg
+              className="w-[9.72vw] h-[2.5vw] mb-[-0.5vw]"
               width="35"
               height="9"
               viewBox="0 0 35 9"
