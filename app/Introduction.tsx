@@ -5,9 +5,8 @@ import Image from "next/image";
 
 import Section1Image1 from "@/public/images/section-1-image-1.webp";
 import Section1Image2 from "@/public/images/section-1-image-2.webp";
-
-const imageRevealTime = 200; // milisec
-const imageRevealFraction = 0.7;
+import { fadedImageRevealDefaultFraction } from "@/constants";
+import { fadedImageDefaultRevealTime } from "@/constants";
 
 export const Introduction = () => (
   <section>
@@ -140,9 +139,9 @@ export const Introduction = () => (
       </div>
       {/* <!-- Relative images --> */}
       <Fade
-        fraction={imageRevealFraction}
+        fraction={fadedImageRevealDefaultFraction}
         triggerOnce
-        duration={imageRevealTime}
+        duration={fadedImageDefaultRevealTime}
       >
         <Image
           className="w-[77.22vw] lg:w-[16.14vw] h-auto absolute right-[50%] lg:right-auto lg:left-[16.14vw] lg:translate-x-0 translate-x-1/2 top-[112.5vw] lg:top-0"
@@ -151,10 +150,10 @@ export const Introduction = () => (
         />
       </Fade>
       <Fade
-        fraction={imageRevealFraction}
+        fraction={fadedImageRevealDefaultFraction}
         triggerOnce
         delay={100}
-        duration={imageRevealTime}
+        duration={fadedImageDefaultRevealTime}
       >
         <Image
           className="absolute left-0 lg:left-[11.04vw] w-[61.66vw] lg:w-[16.77vw] h-auto top-[176.09vw] lg:top-[16.45vw]"
@@ -179,9 +178,9 @@ export const Introduction = () => (
       {/* <!-- Relative images --> */}
       <Fade
         triggerOnce
-        fraction={imageRevealFraction}
+        fraction={fadedImageRevealDefaultFraction}
         delay={100}
-        duration={imageRevealTime}
+        duration={fadedImageDefaultRevealTime}
       >
         <picture>
           <source
@@ -204,9 +203,9 @@ export const Introduction = () => (
 
       <Fade
         triggerOnce
-        fraction={imageRevealFraction}
+        fraction={fadedImageRevealDefaultFraction}
         delay={300}
-        duration={imageRevealTime}
+        duration={fadedImageDefaultRevealTime}
       >
         <picture>
           <source
