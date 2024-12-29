@@ -1,13 +1,17 @@
 "use client";
-import Image from "next/image";
 
+import { Fade } from "react-awesome-reveal";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 import Section4Image1 from "@/public/images/section-4-image-1.webp";
 import Section4Image2 from "@/public/images/section-4-image-2.webp";
 import MoneyA from "@/public/images/section-4-money-a.webp";
 import MoneyB from "@/public/images/section-4-money-b.webp";
+import { fadedImageDefaultRevealTime } from "@/constants";
+import { fadedImageRevealDefaultFraction } from "@/constants";
 
 export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -30,46 +34,61 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
   }, [emblaApi]);
 
   return (
-    <section className="pt-[150vw] relative">
-      <Image
-        className="absolute w-[91.66vw] top-[18.33vw] right-0"
-        src={Section4Image1}
-        alt=""
-      />
-      <Image
-        className="absolute w-[47.77vw] top-[62.77vw] right-[3.33vw]"
-        src={Section4Image2}
-        alt=""
-      />
+    <section className="pt-[150vw] lg:pt-0 relative">
+      <Fade
+        fraction={fadedImageRevealDefaultFraction}
+        triggerOnce
+        duration={fadedImageDefaultRevealTime}
+      >
+        <Image
+          className="absolute w-[91.66vw] top-[18.33vw] lg:top-[-7.55vw] right-0 lg:right-[17.14vw] lg:w-[27.66vw] lg:h-[16.88vw]"
+          src={Section4Image1}
+          alt=""
+        />
+      </Fade>
+      <Fade
+        fraction={fadedImageRevealDefaultFraction}
+        triggerOnce
+        duration={fadedImageDefaultRevealTime}
+        delay={100}
+      >
+        <Image
+          className="absolute w-[47.77vw] lg:w-[16.25vw] top-[62.77vw] lg:top-[3.59vw] right-[3.33vw] lg:right-[19.58vw]"
+          src={Section4Image2}
+          alt=""
+        />
+      </Fade>
       {/* <!-- Money 1 --> */}
       <Image
-        className="absolute w-[21.38vw] top-[78.61vw] left-[20.83vw]"
+        className="absolute w-[21.38vw] lg:w-[3.44vw] top-[78.61vw] lg:top-[5.26vw] left-[20.83vw] lg:left-[53.02vw]"
         src={MoneyA}
         alt=""
       />
       {/* <!-- Money 2 --> */}
       <Image
-        className="absolute w-[30.55vw] rotate-[-21.65deg] left-[28.33vw] top-[111.11vw]"
+        className="absolute w-[30.55vw] lg:w-[12.19vw] rotate-[-21.65deg] lg:rotate-0 left-[28.33vw] lg:left-[50.03vw] top-[111.11vw] lg:top-[12.79vw]"
         src={MoneyB}
         alt=""
       />
       {/* <!-- Quote --> */}
-      <div id="webshop" className="absolute top-[102vw] left-[1vw]">
-        <p className="text-[7vw] tracking-widest leading-[7vw] font-handwritten">
+      <div
+        id="webshop"
+        className="absolute top-[102vw] lg:top-[11.3vw] left-[1vw] lg:left-[42vw]"
+      >
+        <p className="text-[7vw] tracking-widest leading-[7vw] lg:text-[1.6vw] lg:leading-[1.7vw] font-handwritten">
           Termék
-          <br />
-          vagyok,
-          <br />
+          <br className="lg:hidden" />
+          vagyok, <br className="lg:hidden" />
           leszek, voltam
           <br />
           Ha egy
-          <br />
-          valamit,ezt
+          <br className="lg:hidden" />
+          valamit, ezt
           <br />
           megtanultam
         </p>
       </div>
-      <div className="pb-[8vw] font-martian">
+      <div className="pb-[8vw] font-martian lg:absolute lg:left-[10vw]">
         <a href={previewProduct.link} id="product-link" target="_blank">
           <div>
             <Image
@@ -77,14 +96,14 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
               width={300}
               height={322}
               id="preview-image"
-              className="mx-auto w-[83.33vw]"
+              className="mx-auto w-[83.33vw] lg:w-[27.60vw]"
               src={previewProduct.image}
             />
           </div>
           <div>
             <p
               id="title-container"
-              className="text-[6.94vw] text-center font-bold pt-[5vw]"
+              className="text-[6.94vw] lg:text-[1.30vw] lg:leading-[1.56vw] text-center font-bold pt-[5vw] lg:pt-[0.5vw]"
             >
               {previewProduct.name}
             </p>
@@ -92,15 +111,15 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
           <div>
             <p
               id="price-container"
-              className="text-center text-[3.33vw] pt-[1vw] pb-[3vw]"
+              className="text-center text-[3.33vw] lg:text-[1.04vw] pt-[1vw] pb-[3vw] lg:pb-[1vw]"
             >
               {previewProduct.price}
             </p>
           </div>
         </a>
-        <div id="webshop-slider" className="mt-[2vw]">
+        <div id="webshop-slider" className="mt-[2vw] lg:mt-0">
           <div
-            className="glide__arrows flex flex-row px-[6.11vw] gap-[4.15vw]"
+            className="flex lg:justify-between flex-row px-[6.11vw] lg:px-0 gap-[4.15vw] lg:gap-[1vw] lg:mx-auto"
             data-glide-el="controls"
           >
             <button
@@ -108,7 +127,7 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
               className={`rotate-180 ${shouldDisplayPrevButton ? "opacity-100" : "opacity-0"}`}
             >
               <svg
-                className="w-[7.22vw] h-[7.22vw]"
+                className="w-[7.22vw] h-[7.22vw] lg:w-[2.2vw] lg:h-[2.2vw]"
                 width="26"
                 height="26"
                 viewBox="0 0 26 26"
@@ -122,7 +141,10 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
                 />
               </svg>
             </button>
-            <div ref={emblaRef} className="overflow-hidden w-full">
+            <div
+              ref={emblaRef}
+              className="overflow-hidden w-full lg:w-[17.81vw]"
+            >
               <div className="flex">
                 {products.map((product) => (
                   <a
@@ -150,7 +172,7 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
               className={`${shouldDisplayNextButton ? "opacity-100" : "opacity-0"}`}
             >
               <svg
-                className="w-[7.22vw] h-[7.22vw]"
+                className="w-[7.22vw] h-[7.22vw] lg:w-[2.2vw] lg:h-[2.2vw]"
                 width="26"
                 height="26"
                 viewBox="0 0 26 26"
@@ -169,11 +191,13 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
         <a
           target="_blank"
           href="https://shop.akiralyhalott.hu"
-          className="flex w-full flex-row justify-center items-center gap-[4vw] py-[6.94vw] mb-[-0.7vw]"
+          className="flex w-full flex-row justify-center items-center gap-[4vw] lg:gap-[1.04vw] py-[6.94vw] lg:py-[2vw] mb-[-0.7vw]"
         >
-          <span className="text-[4.15vw] font-medium">WEBSHOP</span>
+          <span className="text-[4.15vw] lg:text-[0.78vw] font-medium">
+            WEBSHOP
+          </span>
           <svg
-            className="h-[2.22vw] w-[9.44vw]"
+            className="h-[2.22vw] w-[9.44vw] lg:w-[1.72vw]"
             fill="none"
             height="8"
             viewBox="0 0 34 8"

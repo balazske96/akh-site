@@ -1,22 +1,46 @@
+"use client";
+
+import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
 
-import Image1 from "@/public/images/section-5-image-1.webp";
-import Image2 from "@/public/images/section-5-image-2.webp";
+import Image2Mobile from "@/public/images/section-5-image-2-mobile.webp";
+import Image2Desktop from "@/public/images/section-5-image-2-desktop.webp";
+import { fadedImageDefaultRevealTime } from "@/constants";
+import { fadedImageRevealDefaultFraction } from "@/constants";
 
 export const Music = ({
   streamingProviders,
 }: {
   streamingProviders: IStreamingProvider[];
 }) => (
-  <section className="relative pt-[59.44vw] h-[270vw] md:h-[250vw]" id="zene">
-    <Image
-      className="absolute w-[68.33vw] z-[-1] top-0 left-0"
-      src={Image1}
-      alt=""
-    />
-    <div className="shadow-spotify-iframe mx-auto px-4">
+  <section
+    className="relative pt-[59.44vw] h-[270vw] lg:h-auto md:h-[250vw] lg:mt-[43vw]"
+    id="zene"
+  >
+    <Fade
+      fraction={fadedImageRevealDefaultFraction}
+      triggerOnce
+      duration={fadedImageDefaultRevealTime}
+    >
+      <picture>
+        <source
+          media="(max-width: 1023px)"
+          srcSet="/images/section-5-image-1-mobile.webp"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="/images/section-5-image-1-desktop.webp"
+        />
+        <img
+          className="absolute w-[68.33vw] lg:w-[25.57vw] z-[-1] top-0 left-0 lg:left-[5.68vw]"
+          src="/images/section-5-image-1-mobile.webp"
+          alt=""
+        />
+      </picture>
+    </Fade>
+    <div className="shadow-spotify-iframe mx-auto px-4 lg:absolute lg:top-[20vw] lg:right-[38vw] z-10">
       <iframe
-        className="md:w-[90.28vw] md:h-[60vw] mx-auto shadow-lg"
+        className="md:w-[90.28vw] md:h-[60vw] mx-auto shadow-lg lg:w-[22.97vw] lg:h-[30vw]"
         style={{ borderRadius: "12px" }}
         src="https://open.spotify.com/embed/artist/6YVFO1kvJ7kxbYpbIZLXhJ?utm_source=generator"
         width="100%"
@@ -27,12 +51,31 @@ export const Music = ({
         loading="lazy"
       ></iframe>
     </div>
-    <Image
-      className="absolute w-[74.44vw] top-[97.22vw] right-0 z-[-1] mb-[9.17vw]"
-      src={Image2}
-      alt=""
-    />
-    <div className="w-full grid grid-cols-2 md:grid-cols-4 md:gap-x-30 gap-x-10 gap-y-7 sm:gap-y-10 md:gap-y-20 px-6 mb-5 absolute bottom-0">
+    <Fade
+      fraction={fadedImageRevealDefaultFraction}
+      triggerOnce
+      duration={fadedImageDefaultRevealTime}
+    >
+      <picture>
+        <source
+          media="(max-width: 1023px)"
+          srcSet="/images/section-5-image-2-mobile.webp"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="/images/section-5-image-2-desktop.webp"
+        />
+        <img
+          className="absolute w-[74.44vw] top-[97.22vw] lg:top-[-10.47vw] right-0 lg:right-[11.09vw] z-[-1] mb-[9.17vw] lg:w-[33.02vw]"
+          src="/images/section-5-image-2-mobile.webp"
+          alt=""
+        />
+      </picture>
+    </Fade>
+    <div
+      className="w-full lg:w-[28vw] grid grid-cols-2 md:grid-cols-4 md:gap-x-30
+          gap-x-10 gap-y-7 sm:gap-y-10 md:gap-y-20 px-6 mb-5 absolute bottom-0 lg:bottom-auto lg:top-[35vw] lg:right-[11.1vw]"
+    >
       {streamingProviders.map((provider) => (
         <a
           key={provider.name}
