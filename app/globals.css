@@ -28,7 +28,7 @@ body {
 }
 
 .footer .footer__body {
-  @apply grid grid-cols-[auto_auto] py-[1.68rem] mx-auto lg:grid-cols-3 lg:grid-rows-1 lg:px-4;
+  @apply grid grid-cols-[auto_auto] py-[1.68rem] mx-auto lg:grid-cols-3 lg:grid-rows-1 lg:px-[11vw];
 }
 
 .footer .footer__band-logo-container {
