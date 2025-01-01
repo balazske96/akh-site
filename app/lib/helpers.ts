@@ -22,3 +22,10 @@ export function getStreamingProviders(): IStreamingProvider[] {
     },
   ];
 }
+
+export async function getFooterLinks(): Promise<ISiteLink[]> {
+  return [
+    { href: "/szervezoknek", displayName: "Szervezőknek" },
+    { href: "/impresszum", displayName: "Impresszum" },
+  ];
+}

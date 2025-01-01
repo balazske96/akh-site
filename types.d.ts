@@ -19,3 +19,8 @@ interface IStreamingProvider {
   imageUrl: string;
   link: string;
 }
+
+interface ISiteLink {
+  href: string;
+  displayName: string;
+}

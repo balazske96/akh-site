@@ -22,3 +22,33 @@ body {
     text-wrap: balance;
   }
 }
+
+.footer {
+  @apply font-martian bg-black text-white;
+}
+
+.footer .footer__body {
+  @apply grid grid-cols-[auto_auto] py-[1.68rem] mx-auto lg:grid-cols-3 lg:grid-rows-1 lg:px-4;
+}
+
+.footer .footer__band-logo-container {
+  @apply row-span-2 lg:row-span-1 lg:col-start-2 flex justify-end items-center mr-8 lg:mr-0 lg:justify-center lg:[&>svg]:h-[50px];
+}
+
+.footer .footer__links {
+  @apply col-start-2 lg:col-start-3 flex flex-col text-[13px] lg:justify-end lg:gap-6;
+}
+
+.footer .footer__link {
+  @apply underline uppercase leading-[26px];
+}
+
+.footer .footer__copyright {
+  @apply col-start-2 lg:row-start-1 mt-[9px] text-[10px] leading-[12px] lg:col-start-1 lg:justify-start lg:mt-0;
+}
+
+.footer .footer__band-logo-container,
+.footer .footer__copyright,
+.footer .footer__links {
+  @apply lg:flex lg:flex-row lg:items-center;
+}

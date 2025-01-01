@@ -1,3 +1,31 @@
-export default function Footer() {
-  return <footer className="font-sans">My Footer</footer>;
+"use server";
+
+import BandLogo from "../BandLogo";
+import { getFooterLinks } from "@/app/lib/helpers";
+
+export default async function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const links = await getFooterLinks();
+
+  return (
+    <footer className="footer">
+      <div className="footer__body">
+        <div className="footer__band-logo-container">
+          <BandLogo />
+        </div>
+        <div className="footer__links">
+          {links.map((link) => (
+            <a key={link.href} className="footer__link" href={link.href}>
+              {link.displayName}
+            </a>
+          ))}
+        </div>
+        <div className="footer__copyright">
+          Copyright {currentYear}
+          <br className="lg:hidden" /> @ A Király Halott
+        </div>
+      </div>
+    </footer>
+  );
 }

@@ -6,6 +6,7 @@ import { Caveat } from "next/font/google";
 
 import { googleGtmId } from "@/constants";
 import "./globals.css";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 const description =
@@ -80,7 +81,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
         <GoogleTagManager gtmId={googleGtmId} />
       </body>
     </html>
