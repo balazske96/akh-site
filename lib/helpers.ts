@@ -29,3 +29,31 @@ export async function getFooterLinks(): Promise<ISiteLink[]> {
     { href: "/impresszum", displayName: "Impresszum" },
   ];
 }
+
+export function isValidURL(url: string): boolean {
+  const urlRegex =
+    /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:\d+)?(\/[\w%-]*)*(\?.*)?(#.*)?$/;
+  return urlRegex.test(url);
+}
+
+export function isValidYouTubeVideoURL(url: string): boolean {
+  const youtubeUrlRegex =
+    /^https:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[\w-]{11}$/;
+
+  return youtubeUrlRegex.test(url);
+}
+
+export function isValidSlug(slug: string): boolean {
+  const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+  return slugRegex.test(slug);
+}
+
+export function convertStringToSlug(val: string): string {
+  return val
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "")
+    .toLowerCase();
+}

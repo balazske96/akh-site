@@ -3,8 +3,6 @@
 import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
 
-import Image2Mobile from "@/public/images/section-5-image-2-mobile.webp";
-import Image2Desktop from "@/public/images/section-5-image-2-desktop.webp";
 import { fadedImageDefaultRevealTime } from "@/constants";
 import { fadedImageRevealDefaultFraction } from "@/constants";
 

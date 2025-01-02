@@ -6,8 +6,8 @@ import { Caveat } from "next/font/google";
 
 import { googleGtmId } from "@/constants";
 import "./globals.css";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
 const description =
   "Ismerd meg a zenekart, hallgass bele a zenéjükbe és nézd meg hol találkozhatsz velük legközelebb!";

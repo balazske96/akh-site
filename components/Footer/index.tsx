@@ -1,7 +1,7 @@
 "use server";
 
 import BandLogo from "../BandLogo";
-import { getFooterLinks } from "@/app/lib/helpers";
+import { getFooterLinks } from "@/lib/helpers";
 
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
