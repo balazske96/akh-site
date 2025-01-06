@@ -16,7 +16,12 @@ export default async function Footer() {
         </div>
         <div className="footer__links">
           {links.map((link) => (
-            <a key={link.href} className="footer__link" href={link.href}>
+            <a
+              key={link.href}
+              className="footer__link"
+              href={link.href}
+              target={link.external ? "_blank" : "_self"}
+            >
               {link.displayName}
             </a>
           ))}

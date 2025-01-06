@@ -71,10 +71,7 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
         alt=""
       />
       {/* <!-- Quote --> */}
-      <div
-        id="webshop"
-        className="absolute top-[102vw] lg:top-[11.3vw] left-[1vw] lg:left-[42vw]"
-      >
+      <div className="absolute top-[102vw] lg:top-[11.3vw] left-[1vw] lg:left-[42vw]">
         <p className="text-[7vw] tracking-widest leading-[7vw] lg:text-[1.6vw] lg:leading-[1.7vw] font-handwritten">
           Termék
           <br className="lg:hidden" />
@@ -89,7 +86,7 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
         </p>
       </div>
       <div className="pb-[8vw] font-martian lg:absolute lg:left-[10vw]">
-        <a href={previewProduct.link} id="product-link" target="_blank">
+        <a href={previewProduct.link} id="webshop" target="_blank">
           <div>
             <Image
               alt=""
@@ -103,7 +100,7 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
           <div>
             <p
               id="title-container"
-              className="text-[6.94vw] lg:text-[1.30vw] lg:leading-[1.56vw] text-center font-bold pt-[5vw] lg:pt-[0.5vw]"
+              className="text-[4vw] mx-auto lg:text-[1.30vw] max-w-[90vw] lg:leading-[1.56vw] text-center font-bold pt-[5vw] lg:pt-[0.5vw] lg:max-w-[27vw] truncate"
             >
               {previewProduct.name}
             </p>

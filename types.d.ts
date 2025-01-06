@@ -1,9 +1,9 @@
 interface IConcert {
-  city: string;
   displayName: string;
   venue: string;
   date: string;
-  ticketLink: string;
+  ticketLink?: string;
+  eventLink?: string;
 }
 
 interface IWebshopProduct {
@@ -23,4 +23,19 @@ interface IStreamingProvider {
 interface ISiteLink {
   href: string;
   displayName: string;
+  external?: boolean;
+}
+
+interface IWoocommerceProduct {
+  id: number;
+  name: string;
+  permalink: string;
+  price: string;
+  images: IWoocommerceImage[];
+}
+
+interface IWoocommerceImage {
+  id: number;
+  src: string;
+  name: string;
 }

@@ -1,33 +1,30 @@
-export function getStreamingProviders(): IStreamingProvider[] {
-  return [
-    {
-      name: "Spotify",
-      link: "https://open.spotify.com/artist/6YVFO1kvJ7kxbYpbIZLXhJ",
-      imageUrl: "/images/streaming-providers/spotify.webp",
-    },
-    {
-      name: "Apple Music",
-      link: "https://music.apple.com/us/artist/a-kir%C3%A1ly-halott/1331011092",
-      imageUrl: "/images/streaming-providers/apple_music.webp",
-    },
-    {
-      name: "YouTube",
-      link: "https://www.youtube.com/akiralyhalott",
-      imageUrl: "/images/streaming-providers/youtube.webp",
-    },
-    {
-      name: "Tidal",
-      link: "https://listen.tidal.com/artist/9404749",
-      imageUrl: "/images/streaming-providers/tidal.webp",
-    },
-  ];
+import { getFooterData as getFooterDataFromPayload } from "./payload";
+import { getMainPageData } from "./payload";
+import { getStreamingProviders as getStreamingProvidersFromPayload } from "./payload";
+import { StreamingProviderLogo } from "@/payload-types";
+
+export async function getStreamingProviders(): Promise<IStreamingProvider[]> {
+  const data = await getStreamingProvidersFromPayload();
+
+  return data.docs.map((provider) => {
+    return {
+      name: provider.name,
+      imageUrl: (provider.image as StreamingProviderLogo).url ?? "",
+      link: provider.link,
+    };
+  });
 }
 
 export async function getFooterLinks(): Promise<ISiteLink[]> {
-  return [
-    { href: "/szervezoknek", displayName: "Szervezőknek" },
-    { href: "/impresszum", displayName: "Impresszum" },
-  ];
+  const footerData = await getFooterDataFromPayload();
+
+  return (
+    footerData.links?.map(({ href, displayName, external }) => ({
+      href,
+      displayName,
+      external: external ?? false,
+    })) ?? []
+  );
 }
 
 export function isValidURL(url: string): boolean {
@@ -38,7 +35,7 @@ export function isValidURL(url: string): boolean {
 
 export function isValidYouTubeVideoURL(url: string): boolean {
   const youtubeUrlRegex =
-    /^https:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[\w-]{11}$/;
+    /^https:\/\/(www\.)?youtube\.com\/embed\/[\w-]{11}(\?.*)?$/;
 
   return youtubeUrlRegex.test(url);
 }
@@ -56,4 +53,8 @@ export function convertStringToSlug(val: string): string {
     .replace(/ /g, "-")
     .replace(/[^\w-]+/g, "")
     .toLowerCase();
+}
+
+export async function getMainPageYouTubeLink() {
+  return (await getMainPageData()).youtube_video_url;
 }

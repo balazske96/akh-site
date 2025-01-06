@@ -83,6 +83,13 @@ export const Concerts: CollectionConfig = {
       required: true,
     },
     {
+      type: "checkbox",
+      name: "hidden",
+      label: "Elrejt",
+      defaultValue: false,
+      required: true,
+    },
+    {
       type: "upload",
       name: "image",
       label: "Kép",

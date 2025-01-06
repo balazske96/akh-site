@@ -106,6 +106,7 @@ export interface Concert {
   ticketLink?: string | null;
   eventLink?: string | null;
   highlighted: boolean;
+  hidden: boolean;
   image: number | ConcertHeader;
   updatedAt: string;
   createdAt: string;
@@ -312,6 +313,7 @@ export interface ConcertsSelect<T extends boolean = true> {
   ticketLink?: T;
   eventLink?: T;
   highlighted?: T;
+  hidden?: T;
   image?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -431,7 +433,9 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface MainPage {
   id: number;
   youtube_video_url: string;
-  google_gtm_id?: string | null;
+  webshop_product_ids: {
+    id: string | null;
+  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -445,6 +449,7 @@ export interface Footer {
     | {
         href: string;
         displayName: string;
+        external?: boolean | null;
         id?: string | null;
       }[]
     | null;
@@ -457,7 +462,11 @@ export interface Footer {
  */
 export interface MainPageSelect<T extends boolean = true> {
   youtube_video_url?: T;
-  google_gtm_id?: T;
+  webshop_product_ids?:
+    | T
+    | {
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -472,6 +481,7 @@ export interface FooterSelect<T extends boolean = true> {
     | {
         href?: T;
         displayName?: T;
+        external?: T;
         id?: T;
       };
   updatedAt?: T;

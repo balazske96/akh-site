@@ -5,7 +5,17 @@ import Image from "next/image";
 
 import Section3Image1 from "@/public/images/section-3-image-1.webp";
 
-export const Concerts = ({ concerts }: { concerts: IConcert[] }) => {
+export const Concerts = ({
+  concerts,
+  showMoreConcertLabel = true,
+}: {
+  concerts: IConcert[];
+  showMoreConcertLabel?: boolean;
+}) => {
+  if (concerts.length > 0) {
+    return <div className="lg:h-[3vw]"></div>;
+  }
+
   return (
     <section>
       <div className="relative pt-[185.44vw] lg:pt-[15.78vw] lg:flex lg:flex-row lg:justify-end lg:pr-[10vw]">
@@ -72,27 +82,29 @@ export const Concerts = ({ concerts }: { concerts: IConcert[] }) => {
               </div>
             </div>
           ))}
-          <a
-            className="lg:order-first flex items-center lg:justify-end gap-[2.77vw] lg:gap-[1.56vw]"
-            href="#"
-          >
-            <span className="text-[4vw] lg:text-[0.78vw]">
-              Összes koncert dátum
-            </span>
-            <svg
-              className="w-[9.72vw] h-[2.5vw] mb-[-0.5vw] lg:w-[1.72vw] lg:mb-[-0.1vw]"
-              width="35"
-              height="9"
-              viewBox="0 0 35 9"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          {showMoreConcertLabel && (
+            <a
+              className="lg:order-first flex items-center lg:justify-end gap-[2.77vw] lg:gap-[1.56vw]"
+              href="#"
             >
-              <path
-                d="M1 4C0.723858 4 0.5 4.22386 0.5 4.5C0.5 4.77614 0.723858 5 1 5L1 4ZM34.3536 4.85356C34.5488 4.65829 34.5488 4.34171 34.3536 4.14645L31.1716 0.964469C30.9763 0.769207 30.6597 0.769206 30.4645 0.964469C30.2692 1.15973 30.2692 1.47631 30.4645 1.67158L33.2929 4.5L30.4645 7.32843C30.2692 7.52369 30.2692 7.84027 30.4645 8.03554C30.6597 8.2308 30.9763 8.2308 31.1716 8.03554L34.3536 4.85356ZM1 5L34 5L34 4L1 4L1 5Z"
-                fill="black"
-              />
-            </svg>
-          </a>
+              <span className="text-[4vw] lg:text-[0.78vw]">
+                Összes koncert dátum
+              </span>
+              <svg
+                className="w-[9.72vw] h-[2.5vw] mb-[-0.5vw] lg:w-[1.72vw] lg:mb-[-0.1vw]"
+                width="35"
+                height="9"
+                viewBox="0 0 35 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 4C0.723858 4 0.5 4.22386 0.5 4.5C0.5 4.77614 0.723858 5 1 5L1 4ZM34.3536 4.85356C34.5488 4.65829 34.5488 4.34171 34.3536 4.14645L31.1716 0.964469C30.9763 0.769207 30.6597 0.769206 30.4645 0.964469C30.2692 1.15973 30.2692 1.47631 30.4645 1.67158L33.2929 4.5L30.4645 7.32843C30.2692 7.52369 30.2692 7.84027 30.4645 8.03554C30.6597 8.2308 30.9763 8.2308 31.1716 8.03554L34.3536 4.85356ZM1 5L34 5L34 4L1 4L1 5Z"
+                  fill="black"
+                />
+              </svg>
+            </a>
+          )}
         </div>
       </div>
     </section>

@@ -30,6 +30,12 @@ export const Footer: GlobalConfig = {
           type: "text",
           label: "Megjelenítés",
         },
+        {
+          name: "external",
+          type: "checkbox",
+          label: "Külső link",
+          defaultValue: false,
+        },
       ],
     },
   ],

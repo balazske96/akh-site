@@ -9,15 +9,15 @@ import sharp from "sharp";
 import { en } from "@payloadcms/translations/languages/en";
 import { hu } from "@payloadcms/translations/languages/hu";
 
-import { Concerts } from "./collections/Concert";
-import { ConcertHeaders } from "./collections/ConcertHeaders";
-import { Users } from "./collections/Users";
-import { MainPage } from "./globals/MainPage";
-import { Pages } from "./collections/Pages";
-import { Files } from "./collections/Media";
-import { Footer } from "./globals/Footer";
-import { StreamingProviders } from "./collections/StreamingProviders";
-import { StreamingProviderLogo } from "./collections/StreamingProviderLogo";
+import { Concerts } from "./cms/collections/Concert";
+import { ConcertHeaders } from "./cms/collections/ConcertHeaders";
+import { Users } from "./cms/collections/Users";
+import { MainPage } from "./cms/globals/MainPage";
+import { Pages } from "./cms/collections/Pages";
+import { Files } from "./cms/collections/Files";
+import { Footer } from "./cms/globals/Footer";
+import { StreamingProviders } from "./cms/collections/StreamingProviders";
+import { StreamingProviderLogo } from "./cms/collections/StreamingProviderLogo";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -49,6 +49,7 @@ export default buildConfig({
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   db: postgresAdapter({
+    migrationDir: "migrations",
     pool: {
       connectionString: process.env.DATABASE_URI || "",
     },
