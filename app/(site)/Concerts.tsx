@@ -12,7 +12,7 @@ export const Concerts = ({
   concerts: IConcert[];
   showMoreConcertLabel?: boolean;
 }) => {
-  if (concerts.length > 0) {
+  if (!(concerts.length > 0)) {
     return <div className="lg:h-[3vw]"></div>;
   }
 
