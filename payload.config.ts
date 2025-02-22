@@ -19,9 +19,28 @@ import { Footer } from "./cms/globals/Footer";
 import { StreamingProviders } from "./cms/collections/StreamingProviders";
 import { StreamingProviderLogo } from "./cms/collections/StreamingProviderLogo";
 import { migrations } from "./migrations";
+import { azureStorage } from "@payloadcms/storage-azure";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+
+const isProduction = process.env.NODE_ENV == "production";
+
+const azureBaseUrl = process.env.AZURE_STORAGE_ACCOUNT_BASEURL;
+const azureConnectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
+const azureContainerName = process.env.AZURE_STORAGE_CONTAINER_NAME;
+
+const azureStoragePlugin = azureStorage({
+  collections: {
+    "concert-header": true,
+    files: true,
+    "streaming-provider-logo": true,
+  },
+  allowContainerCreate: false,
+  baseURL: azureBaseUrl ?? "",
+  connectionString: azureConnectionString ?? "",
+  containerName: azureContainerName ?? "static",
+});
 
 export default buildConfig({
   i18n: {
@@ -60,6 +79,6 @@ export default buildConfig({
   sharp,
   plugins: [
     payloadCloudPlugin(),
-    // storage-adapter-placeholder
+    ...(isProduction ? [azureStoragePlugin] : []),
   ],
 });

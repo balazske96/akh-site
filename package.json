@@ -16,6 +16,7 @@
     "@payloadcms/next": "3.12.0",
     "@payloadcms/payload-cloud": "3.12.0",
     "@payloadcms/richtext-lexical": "3.12.0",
+    "@payloadcms/storage-azure": "3.12.0",
     "embla-carousel-react": "8.5.1",
     "graphql": "16.10.0",
     "next": "15.1.3",
