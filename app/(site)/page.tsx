@@ -10,6 +10,8 @@ import { getMainPageProducts } from "../../lib/shop";
 import { getMainPageYouTubeLink } from "../../lib/helpers";
 import { getStreamingProviders } from "../../lib/helpers";
 
+export const revalidate = 300; // Revalidate every 5 minutes
+
 export default async function Home() {
   const concerts = await getConcerts();
   const products = await getMainPageProducts();
