@@ -14,23 +14,20 @@ import { fadedImageDefaultRevealTime } from "@/constants";
 import { fadedImageRevealDefaultFraction } from "@/constants";
 
 export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    dragFree: true,
+    loop: true,
+    slidesToScroll: 1,
+  });
+
   const [previewProduct, setPreviewProduct] = useState<IWebshopProduct>(
     products[0]
   );
 
-  const [shouldDisplayPrevButton, setShouldDisplayPrevButton] = useState(false);
-  const [shouldDisplayNextButton, setShouldDisplayNextButton] = useState(true);
-
   useEffect(() => {
-    if (emblaApi) {
-      emblaApi?.on("select", () => {
-        setShouldDisplayNextButton(emblaApi.canScrollNext());
-        setShouldDisplayPrevButton(emblaApi.canScrollPrev());
-      });
-    }
-
-    return () => emblaApi?.destroy();
+    return () => {
+      if (emblaApi) emblaApi?.destroy();
+    };
   }, [emblaApi]);
 
   return (
@@ -114,35 +111,13 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
             </p>
           </div>
         </a>
-        <div id="webshop-slider" className="mt-[2vw] lg:mt-0">
+        <div id="webshop-slider" className="mt-[2vw] lg:mt-0 flex">
           <div
-            className="flex lg:justify-between flex-row px-[6.11vw] lg:px-0 gap-[4.15vw] lg:gap-[1vw] lg:mx-auto"
+            className="flex lg:justify-between flex-row px-[6.11vw] lg:px-0 gap-[4.15vw] lg:gap-[1vw] w-full"
             data-glide-el="controls"
           >
-            <button
-              onClick={() => emblaApi?.scrollPrev()}
-              className={`rotate-180 ${shouldDisplayPrevButton ? "opacity-100" : "opacity-0"}`}
-            >
-              <svg
-                className="w-[7.22vw] h-[7.22vw] lg:w-[2.2vw] lg:h-[2.2vw]"
-                width="26"
-                height="26"
-                viewBox="0 0 26 26"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="13" cy="13" r="12.5" stroke="black" />
-                <path
-                  d="M7 12.5C6.72386 12.5 6.5 12.7239 6.5 13C6.5 13.2761 6.72386 13.5 7 13.5L7 12.5ZM19.3536 13.3536C19.5488 13.1583 19.5488 12.8417 19.3536 12.6464L16.1716 9.46447C15.9763 9.2692 15.6597 9.2692 15.4645 9.46447C15.2692 9.65973 15.2692 9.97631 15.4645 10.1716L18.2929 13L15.4645 15.8284C15.2692 16.0237 15.2692 16.3403 15.4645 16.5355C15.6597 16.7308 15.9763 16.7308 16.1716 16.5355L19.3536 13.3536ZM7 13.5L19 13.5L19 12.5L7 12.5L7 13.5Z"
-                  fill="black"
-                />
-              </svg>
-            </button>
-            <div
-              ref={emblaRef}
-              className="overflow-hidden w-full lg:w-[17.81vw]"
-            >
-              <div className="flex">
+            <div ref={emblaRef} className="overflow-hidden w-full">
+              <div className="flex ">
                 {products.map((product) => (
                   <a
                     className="flex-none w-[33%] min-w-0 flex justify-center"
@@ -164,31 +139,12 @@ export const Webshop = ({ products }: { products: IWebshopProduct[] }) => {
                 ))}
               </div>
             </div>
-            <button
-              onClick={() => emblaApi?.scrollNext()}
-              className={`${shouldDisplayNextButton ? "opacity-100" : "opacity-0"}`}
-            >
-              <svg
-                className="w-[7.22vw] h-[7.22vw] lg:w-[2.2vw] lg:h-[2.2vw]"
-                width="26"
-                height="26"
-                viewBox="0 0 26 26"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="13" cy="13" r="12.5" stroke="black" />
-                <path
-                  d="M7 12.5C6.72386 12.5 6.5 12.7239 6.5 13C6.5 13.2761 6.72386 13.5 7 13.5L7 12.5ZM19.3536 13.3536C19.5488 13.1583 19.5488 12.8417 19.3536 12.6464L16.1716 9.46447C15.9763 9.2692 15.6597 9.2692 15.4645 9.46447C15.2692 9.65973 15.2692 9.97631 15.4645 10.1716L18.2929 13L15.4645 15.8284C15.2692 16.0237 15.2692 16.3403 15.4645 16.5355C15.6597 16.7308 15.9763 16.7308 16.1716 16.5355L19.3536 13.3536ZM7 13.5L19 13.5L19 12.5L7 12.5L7 13.5Z"
-                  fill="black"
-                />
-              </svg>
-            </button>
           </div>
         </div>
         <a
           target="_blank"
           href="https://shop.akiralyhalott.hu"
-          className="flex w-full flex-row justify-center items-center gap-[4vw] lg:gap-[1.04vw] py-[6.94vw] lg:py-[2vw] mb-[-0.7vw]"
+          className="flex w-full flex-row justify-center items-center gap-[4vw] lg:gap-[1.04vw] py-[6.94vw] lg:py-[0.5vw] mb-[-0.7vw]"
         >
           <span className="text-[4.15vw] lg:text-[0.78vw] font-medium">
             WEBSHOP
