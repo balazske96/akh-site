@@ -36,9 +36,9 @@ export const Music = ({
         />
       </picture>
     </Fade>
-    <div className="shadow-spotify-iframe mx-auto px-4 lg:absolute lg:top-[20vw] lg:right-[38vw] z-10">
+    <div className="relative shadow-spotify-iframe mx-auto px-4 lg:absolute lg:top-[20vw] lg:right-[38vw] z-10">
       <iframe
-        className="md:w-[90.28vw] md:h-[60vw] mx-auto shadow-lg lg:w-[22.97vw] lg:h-[30vw]"
+        className="md:w-[90.28vw] md:h-[60vw] mx-auto min-[1171px]:shadow-lg lg:w-[22.97vw] lg:h-[30vw]"
         style={{ borderRadius: "12px" }}
         src="https://open.spotify.com/embed/artist/6YVFO1kvJ7kxbYpbIZLXhJ?utm_source=generator"
         width="100%"
