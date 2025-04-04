@@ -1,6 +1,7 @@
 import { Concerts } from "./Concerts";
 import { Introduction } from "./Introduction";
 import { MainPageHero } from "../../components/Hero";
+import { MainPageNavbar } from "@/components/Navbar";
 import { Music } from "./Music";
 import { Webshop } from "./WebshopSection";
 import { YouTubeVideo } from "./YouTubeVideo";
@@ -17,9 +18,11 @@ export default async function Home() {
   const products = await getMainPageProducts();
   const streamingProviders = await getStreamingProviders();
   const youTubeVideoLink = await getMainPageYouTubeLink();
+  const areThereAnyConcert = concerts.length >= 1;
 
   return (
     <>
+      <MainPageNavbar areThereAnyConcert={areThereAnyConcert} />
       <MainPageHero />
       <Introduction />
       <YouTubeVideo src={youTubeVideoLink} />

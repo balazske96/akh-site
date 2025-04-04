@@ -219,7 +219,7 @@ export const Introduction = () => (
           <img
             className="
           absolute w-[48.05vw] lg:w-[19.11vw] lg:right-[13.125vw] h-auto right-0 top-[316.38vw] lg:top-[25.31vw]"
-            src="<?php echo $images[3] ?>-mobile.webp"
+            src="/images/section-1-image-4-mobile.webp"
             alt=""
           />
         </picture>

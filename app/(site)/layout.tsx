@@ -4,11 +4,9 @@ import { Syne } from "next/font/google";
 import { Martian_Mono } from "next/font/google";
 import { Caveat } from "next/font/google";
 
-import { getConcerts } from "@/lib/concert";
 import { googleGtmId } from "@/constants";
 import "./globals.css";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 
 const description =
   "Ismerd meg a zenekart, hallgass bele a zenéjükbe és nézd meg hol találkozhatsz velük legközelebb!";
@@ -65,8 +63,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const areThereAnyConcert = (await getConcerts()).length >= 1;
-
   return (
     <html lang="hu">
       <head>
@@ -82,7 +78,6 @@ export default async function RootLayout({
       <body
         className={`${syne.variable} ${martian.variable} ${caveat.className} font-sans`}
       >
-        <Navbar areThereAnyConcert={areThereAnyConcert} />
         <main>{children}</main>
         <Footer />
         <GoogleTagManager gtmId={googleGtmId} />

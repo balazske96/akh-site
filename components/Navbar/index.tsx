@@ -6,7 +6,7 @@ interface NavbarProps {
   areThereAnyConcert?: boolean;
 }
 
-export default function Navbar({ areThereAnyConcert = false }: NavbarProps) {
+export function MainPageNavbar({ areThereAnyConcert = false }: NavbarProps) {
   const concertLink = `/${areThereAnyConcert ? "#" : ""}koncertek`;
 
   return (

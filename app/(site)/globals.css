@@ -40,7 +40,7 @@ body {
 }
 
 .footer .footer__link {
-  @apply underline uppercase leading-[26px];
+  @apply underline leading-[26px];
 }
 
 .footer .footer__copyright {
@@ -51,4 +51,16 @@ body {
 .footer .footer__copyright,
 .footer .footer__links {
   @apply lg:flex lg:flex-row lg:items-center;
+}
+
+.link-button {
+  @apply border-[1px] py-2 px-4;
+}
+
+.link-button.dark {
+  @apply text-white bg-gray-900;
+}
+
+.link-button.light {
+  @apply text-black bg-[var(--background)] border-gray-800;
 }

@@ -103,6 +103,8 @@ export interface Concert {
    */
   location: string;
   address: string;
+  city: string;
+  slug?: string | null;
   ticketLink?: string | null;
   eventLink?: string | null;
   highlighted: boolean;
@@ -310,6 +312,8 @@ export interface ConcertsSelect<T extends boolean = true> {
   displayName?: T;
   location?: T;
   address?: T;
+  city?: T;
+  slug?: T;
   ticketLink?: T;
   eventLink?: T;
   highlighted?: T;
