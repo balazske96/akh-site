@@ -40,7 +40,10 @@ function mapPayloadConcert(concert: Concert): IConcert {
         image: {
             url: (concert.image as ConcertHeader).url ?? undefined,
             width: (concert.image as ConcertHeader).width ?? undefined,
-            height: (concert.image as ConcertHeader).height ?? undefined
+            height: (concert.image as ConcertHeader).height ?? undefined,
+            mobileUrl: (concert.image as ConcertHeader).sizes?.mobile?.url ?? undefined,
+            tabletUrl: (concert.image as ConcertHeader).sizes?.tablet?.url ?? undefined,
+            desktopUrl: (concert.image as ConcertHeader).sizes?.desktop?.url ?? undefined,
         }
     };
 }

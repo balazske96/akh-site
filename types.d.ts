@@ -10,11 +10,17 @@ interface IConcert {
     slug: string;
     hidden: boolean;
     highlighted: boolean;
-    image: {
-        url: string | undefined;
-        width: number | undefined;
-        height: number | undefined;
-    }
+    image: IImage & {
+        mobileUrl: string | undefined;
+        tabletUrl: string | undefined;
+        desktopUrl: string | undefined;
+    };
+}
+
+interface IImage {
+    url: string | undefined;
+    width: number | undefined;
+    height: number | undefined;
 }
 
 interface IWebshopProduct {

@@ -84,12 +84,23 @@ export default async function Page({params}: IPageProps) {
                     <figcaption className="sr-only">
                         A Király Halott koncert flyer
                     </figcaption>
-                    <Image
-                        src={image?.url ?? ''}
-                        width={image.width}
-                        height={image.height}
-                        alt={'Koncert flyer'}
-                    />
+                    <picture>
+                        <source
+                            media="(min-width: 1024px)"
+                            srcSet={image.desktopUrl}
+                        />
+                        <source
+                            media="(min-width: 600px)"
+                            srcSet={image.tabletUrl}
+                        />
+                        <img
+                            className=""
+                            width={image.width}
+                            height={image.height}
+                            src={image.mobileUrl || image.url}
+                            alt={'Koncert flyer'}
+                        />
+                    </picture>
                 </figure>
                 <header>
                     <h1 className={'w-full text-center uppercase font-bold text-2xl pb-2 pt-6 sm:text-6xl sm:pb-8 sm:pt-14'}
