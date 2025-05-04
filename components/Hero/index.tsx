@@ -1,24 +1,16 @@
+import { ResponsiveImage } from '@/components/Image';
+
 export const MainPageHero = () => {
   return (
-    <section className="w-screen relative">
-      <picture>
-        <source
-          media="(max-width: 1023px)"
-          srcSet="/images/hero-image-mobile.webp"
-        />
-        <source
-          media="(min-width: 1024px)"
-          srcSet="/images/hero-image-desktop.webp"
-        />
-        <img
-          className="w-full mt-[-7vw] lg:mt-0"
-          src="/images/hero-image-mobile.webp"
-          alt=""
-        />
-      </picture>
+    <section className='relative w-screen'>
+      <ResponsiveImage
+        mobileImageSrc={'/images/hero-image-mobile.webp'}
+        desktopImageSrc={'/images/hero-image-desktop.webp'}
+        className='mt-[-7vw] w-full lg:mt-0'
+      />
       {/* <!-- <div className="absolute bottom-0 left-0 h-[5rem] w-full bg-gradient-to-t from-[#e1e1e1] to-transparent"></div> --> */}
-      <div className="absolute top-0 lg:bottom-0 left-0 h-[18.5vw] w-full bg-gradient-to-b from-[#e1e1e1] to-transparent lg:h-[5vw]"></div>
-      <div className="hidden lg:block absolute bottom-0 left-0 h-[5vw] w-full bg-gradient-to-t from-[#e1e1e1] to-transparent"></div>
+      <div className='absolute left-0 top-0 h-[18.5vw] w-full bg-gradient-to-b from-[#e1e1e1] to-transparent lg:bottom-0 lg:h-[5vw]'></div>
+      <div className='absolute bottom-0 left-0 hidden h-[5vw] w-full bg-gradient-to-t from-[#e1e1e1] to-transparent lg:block'></div>
     </section>
   );
 };

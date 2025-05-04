@@ -1,4 +1,4 @@
-import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
+import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres';
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
@@ -22,10 +22,14 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   ALTER TABLE "concert_header" ADD COLUMN "sizes_desktop_filename" varchar;
   CREATE INDEX IF NOT EXISTS "concert_header_sizes_mobile_sizes_mobile_filename_idx" ON "concert_header" USING btree ("sizes_mobile_filename");
   CREATE INDEX IF NOT EXISTS "concert_header_sizes_tablet_sizes_tablet_filename_idx" ON "concert_header" USING btree ("sizes_tablet_filename");
-  CREATE INDEX IF NOT EXISTS "concert_header_sizes_desktop_sizes_desktop_filename_idx" ON "concert_header" USING btree ("sizes_desktop_filename");`)
+  CREATE INDEX IF NOT EXISTS "concert_header_sizes_desktop_sizes_desktop_filename_idx" ON "concert_header" USING btree ("sizes_desktop_filename");`);
 }
 
-export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
+export async function down({
+  db,
+  payload,
+  req,
+}: MigrateDownArgs): Promise<void> {
   await db.execute(sql`
    DROP INDEX IF EXISTS "concert_header_sizes_mobile_sizes_mobile_filename_idx";
   DROP INDEX IF EXISTS "concert_header_sizes_tablet_sizes_tablet_filename_idx";
@@ -47,5 +51,5 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   ALTER TABLE "concert_header" DROP COLUMN IF EXISTS "sizes_desktop_height";
   ALTER TABLE "concert_header" DROP COLUMN IF EXISTS "sizes_desktop_mime_type";
   ALTER TABLE "concert_header" DROP COLUMN IF EXISTS "sizes_desktop_filesize";
-  ALTER TABLE "concert_header" DROP COLUMN IF EXISTS "sizes_desktop_filename";`)
+  ALTER TABLE "concert_header" DROP COLUMN IF EXISTS "sizes_desktop_filename";`);
 }

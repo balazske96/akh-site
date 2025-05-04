@@ -41,10 +41,12 @@ export interface Config {
   globals: {
     'main-page': MainPage;
     footer: Footer;
+    'contact-page': ContactPage;
   };
   globalsSelect: {
     'main-page': MainPageSelect<false> | MainPageSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
+    'contact-page': ContactPageSelect<false> | ContactPageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -500,6 +502,24 @@ export interface MainPage {
   webshop_product_ids: {
     id: string | null;
   }[];
+  image_1: number | File;
+  image_1_mobile: number | File;
+  image_2: number | File;
+  image_2_mobile: number | File;
+  image_3: number | File;
+  image_3_mobile: number | File;
+  image_4: number | File;
+  image_4_mobile: number | File;
+  image_5: number | File;
+  image_5_mobile: number | File;
+  image_6: number | File;
+  image_6_mobile: number | File;
+  image_7: number | File;
+  image_7_mobile: number | File;
+  image_8: number | File;
+  image_8_mobile: number | File;
+  image_9: number | File;
+  image_9_mobile: number | File;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -522,6 +542,30 @@ export interface Footer {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-page".
+ */
+export interface ContactPage {
+  id: number;
+  concert_contact_name: string;
+  concert_contact_email: string;
+  concert_contact_phone: string;
+  tour_contact_name: string;
+  tour_contact_email: string;
+  tour_contact_phone: string;
+  presskit_link: string;
+  secret_links?:
+    | {
+        display?: string | null;
+        document: number | File;
+        id?: string | null;
+      }[]
+    | null;
+  secret_links_password: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "main-page_select".
  */
 export interface MainPageSelect<T extends boolean = true> {
@@ -531,6 +575,24 @@ export interface MainPageSelect<T extends boolean = true> {
     | {
         id?: T;
       };
+  image_1?: T;
+  image_1_mobile?: T;
+  image_2?: T;
+  image_2_mobile?: T;
+  image_3?: T;
+  image_3_mobile?: T;
+  image_4?: T;
+  image_4_mobile?: T;
+  image_5?: T;
+  image_5_mobile?: T;
+  image_6?: T;
+  image_6_mobile?: T;
+  image_7?: T;
+  image_7_mobile?: T;
+  image_8?: T;
+  image_8_mobile?: T;
+  image_9?: T;
+  image_9_mobile?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -548,6 +610,30 @@ export interface FooterSelect<T extends boolean = true> {
         external?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-page_select".
+ */
+export interface ContactPageSelect<T extends boolean = true> {
+  concert_contact_name?: T;
+  concert_contact_email?: T;
+  concert_contact_phone?: T;
+  tour_contact_name?: T;
+  tour_contact_email?: T;
+  tour_contact_phone?: T;
+  presskit_link?: T;
+  secret_links?:
+    | T
+    | {
+        display?: T;
+        document?: T;
+        id?: T;
+      };
+  secret_links_password?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

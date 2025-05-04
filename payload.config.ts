@@ -1,30 +1,31 @@
 // storage-adapter-import-placeholder
-import { postgresAdapter } from "@payloadcms/db-postgres";
-import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import path from "path";
-import { buildConfig } from "payload";
-import { fileURLToPath } from "url";
-import sharp from "sharp";
-import { en } from "@payloadcms/translations/languages/en";
-import { hu } from "@payloadcms/translations/languages/hu";
+import { postgresAdapter } from '@payloadcms/db-postgres';
+import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
+import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import path from 'path';
+import { buildConfig } from 'payload';
+import { fileURLToPath } from 'url';
+import sharp from 'sharp';
+import { en } from '@payloadcms/translations/languages/en';
+import { hu } from '@payloadcms/translations/languages/hu';
 
-import { Concerts } from "./cms/collections/Concert";
-import { ConcertHeaders } from "./cms/collections/ConcertHeaders";
-import { Users } from "./cms/collections/Users";
-import { MainPage } from "./cms/globals/MainPage";
-import { Pages } from "./cms/collections/Pages";
-import { Files } from "./cms/collections/Files";
-import { Footer } from "./cms/globals/Footer";
-import { StreamingProviders } from "./cms/collections/StreamingProviders";
-import { StreamingProviderLogo } from "./cms/collections/StreamingProviderLogo";
-import { migrations } from "./migrations";
-import { azureStorage } from "@payloadcms/storage-azure";
+import { Concerts } from './cms/collections/Concert';
+import { ConcertHeaders } from './cms/collections/ConcertHeaders';
+import { Users } from './cms/collections/Users';
+import { MainPage } from './cms/globals/MainPage';
+import { Pages } from './cms/collections/Pages';
+import { Files } from './cms/collections/Files';
+import { Footer } from './cms/globals/Footer';
+import { StreamingProviders } from './cms/collections/StreamingProviders';
+import { StreamingProviderLogo } from './cms/collections/StreamingProviderLogo';
+import { migrations } from './migrations';
+import { azureStorage } from '@payloadcms/storage-azure';
+import { ContactPage } from '@/cms/globals/ContactPage';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV == 'production';
 
 const azureBaseUrl = process.env.AZURE_STORAGE_ACCOUNT_BASEURL;
 const azureConnectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
@@ -32,19 +33,19 @@ const azureContainerName = process.env.AZURE_STORAGE_CONTAINER_NAME;
 
 const azureStoragePlugin = azureStorage({
   collections: {
-    "concert-header": true,
+    'concert-header': true,
     files: true,
-    "streaming-provider-logo": true,
+    'streaming-provider-logo': true,
   },
   allowContainerCreate: false,
-  baseURL: azureBaseUrl ?? "",
-  connectionString: azureConnectionString ?? "",
-  containerName: azureContainerName ?? "static",
+  baseURL: azureBaseUrl ?? '',
+  connectionString: azureConnectionString ?? '',
+  containerName: azureContainerName ?? 'static',
 });
 
 export default buildConfig({
   i18n: {
-    fallbackLanguage: "hu",
+    fallbackLanguage: 'hu',
     supportedLanguages: { en, hu },
   },
   admin: {
@@ -53,7 +54,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  globals: [MainPage, Footer],
+  globals: [MainPage, Footer, ContactPage],
   collections: [
     Users,
     Concerts,
@@ -64,16 +65,16 @@ export default buildConfig({
     StreamingProviderLogo,
   ],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || "",
+  secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
-    outputFile: path.resolve(dirname, "payload-types.ts"),
+    outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: postgresAdapter({
-    migrationDir: "migrations",
+    migrationDir: 'migrations',
     push: false,
     prodMigrations: migrations,
     pool: {
-      connectionString: process.env.DATABASE_URI || "",
+      connectionString: process.env.DATABASE_URI || '',
     },
   }),
   sharp,

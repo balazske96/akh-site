@@ -1,8 +1,8 @@
-import clsx from "clsx";
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import clsx from 'clsx';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
 interface IButtonVariant {
-  variant?: "dark" | "light";
+  variant?: 'dark' | 'light';
 }
 
 interface IButtonProps
@@ -10,14 +10,14 @@ interface IButtonProps
     ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export default function Button({
-  variant = "dark",
+  variant = 'dark',
   className,
   ...rest
 }: IButtonProps) {
   const computedClassName = clsx({
-    [className ?? ""]: true,
+    [className ?? '']: true,
     [variant]: true,
-    ["button"]: true,
+    ['button']: true,
   });
 
   return <button className={computedClassName} {...rest} />;
@@ -28,14 +28,14 @@ interface ILinkButtonProps
     AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 export function LinkButton({
-  variant = "dark",
+  variant = 'dark',
   className,
   ...rest
 }: ILinkButtonProps) {
   const computedClassName = clsx({
-    [className ?? ""]: true,
+    [className ?? '']: true,
     [variant]: true,
-    ["link-button"]: true,
+    ['link-button']: true,
   });
 
   return <a className={computedClassName} {...rest} />;

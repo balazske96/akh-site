@@ -1,5 +1,5 @@
-import { getMainPageData } from "./payload";
-import { getWoocommerceProductsByIds } from "./woocommerce-client";
+import { getMainPageData } from './payload';
+import { getWoocommerceProductsByIds } from './woocommerce-client';
 
 export async function getMainPageProducts(): Promise<IWebshopProduct[]> {
   const mainPageData = await getMainPageData();

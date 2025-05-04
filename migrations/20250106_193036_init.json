@@ -304,12 +304,8 @@
           "name": "concerts_image_id_concert_header_id_fk",
           "tableFrom": "concerts",
           "tableTo": "concert_header",
-          "columnsFrom": [
-            "image_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["image_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -865,12 +861,8 @@
           "name": "streaming_providers_image_id_streaming_provider_logo_id_fk",
           "tableFrom": "streaming_providers",
           "tableTo": "streaming_provider_logo",
-          "columnsFrom": [
-            "image_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["image_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -1348,12 +1340,8 @@
           "name": "payload_locked_documents_rels_parent_fk",
           "tableFrom": "payload_locked_documents_rels",
           "tableTo": "payload_locked_documents",
-          "columnsFrom": [
-            "parent_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["parent_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1361,12 +1349,8 @@
           "name": "payload_locked_documents_rels_users_fk",
           "tableFrom": "payload_locked_documents_rels",
           "tableTo": "users",
-          "columnsFrom": [
-            "users_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["users_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1374,12 +1358,8 @@
           "name": "payload_locked_documents_rels_concerts_fk",
           "tableFrom": "payload_locked_documents_rels",
           "tableTo": "concerts",
-          "columnsFrom": [
-            "concerts_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["concerts_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1387,12 +1367,8 @@
           "name": "payload_locked_documents_rels_concert_header_fk",
           "tableFrom": "payload_locked_documents_rels",
           "tableTo": "concert_header",
-          "columnsFrom": [
-            "concert_header_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["concert_header_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1400,12 +1376,8 @@
           "name": "payload_locked_documents_rels_pages_fk",
           "tableFrom": "payload_locked_documents_rels",
           "tableTo": "pages",
-          "columnsFrom": [
-            "pages_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["pages_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1413,12 +1385,8 @@
           "name": "payload_locked_documents_rels_files_fk",
           "tableFrom": "payload_locked_documents_rels",
           "tableTo": "files",
-          "columnsFrom": [
-            "files_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["files_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1426,12 +1394,8 @@
           "name": "payload_locked_documents_rels_streaming_providers_fk",
           "tableFrom": "payload_locked_documents_rels",
           "tableTo": "streaming_providers",
-          "columnsFrom": [
-            "streaming_providers_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["streaming_providers_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1439,12 +1403,8 @@
           "name": "payload_locked_documents_rels_streaming_provider_logo_fk",
           "tableFrom": "payload_locked_documents_rels",
           "tableTo": "streaming_provider_logo",
-          "columnsFrom": [
-            "streaming_provider_logo_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["streaming_provider_logo_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1648,12 +1608,8 @@
           "name": "payload_preferences_rels_parent_fk",
           "tableFrom": "payload_preferences_rels",
           "tableTo": "payload_preferences",
-          "columnsFrom": [
-            "parent_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["parent_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1661,12 +1617,8 @@
           "name": "payload_preferences_rels_users_fk",
           "tableFrom": "payload_preferences_rels",
           "tableTo": "users",
-          "columnsFrom": [
-            "users_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["users_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1813,12 +1765,8 @@
           "name": "main_page_webshop_product_ids_parent_id_fk",
           "tableFrom": "main_page_webshop_product_ids",
           "tableTo": "main_page",
-          "columnsFrom": [
-            "_parent_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["_parent_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1976,12 +1924,8 @@
           "name": "footer_links_parent_id_fk",
           "tableFrom": "footer_links",
           "tableTo": "footer",
-          "columnsFrom": [
-            "_parent_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["_parent_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }

@@ -1,10 +1,10 @@
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload';
 
 export const StreamingProviderLogo: CollectionConfig = {
-  slug: "streaming-provider-logo",
+  slug: 'streaming-provider-logo',
   labels: {
-    singular: "Streaming szolgáltató logó",
-    plural: "Streaming szolgáltató logók",
+    singular: 'Streaming szolgáltató logó',
+    plural: 'Streaming szolgáltató logók',
   },
   access: {
     read: () => true,
@@ -15,15 +15,15 @@ export const StreamingProviderLogo: CollectionConfig = {
   },
   fields: [
     {
-      type: "text",
-      name: "name",
-      label: "Név",
+      type: 'text',
+      name: 'name',
+      label: 'Név',
       required: true,
       unique: true,
     },
   ],
   upload: {
-    staticDir: "storage/streaming-provider-logos",
-    mimeTypes: ["image/webp", "image/jpeg", "image/jpg"],
+    staticDir: 'storage/streaming-provider-logos',
+    mimeTypes: ['image/webp', 'image/jpeg', 'image/jpg'],
   },
 };

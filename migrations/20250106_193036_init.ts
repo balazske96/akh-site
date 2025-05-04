@@ -1,4 +1,4 @@
-import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
+import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres';
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
@@ -310,10 +310,14 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX IF NOT EXISTS "footer_links_order_idx" ON "footer_links" USING btree ("_order");
   CREATE INDEX IF NOT EXISTS "footer_links_parent_id_idx" ON "footer_links" USING btree ("_parent_id");
   CREATE UNIQUE INDEX IF NOT EXISTS "footer_links_href_idx" ON "footer_links" USING btree ("href");
-  CREATE UNIQUE INDEX IF NOT EXISTS "footer_links_display_name_idx" ON "footer_links" USING btree ("display_name");`)
+  CREATE UNIQUE INDEX IF NOT EXISTS "footer_links_display_name_idx" ON "footer_links" USING btree ("display_name");`);
 }
 
-export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
+export async function down({
+  db,
+  payload,
+  req,
+}: MigrateDownArgs): Promise<void> {
   await db.execute(sql`
    DROP TABLE "users" CASCADE;
   DROP TABLE "concerts" CASCADE;
@@ -330,5 +334,5 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   DROP TABLE "main_page_webshop_product_ids" CASCADE;
   DROP TABLE "main_page" CASCADE;
   DROP TABLE "footer_links" CASCADE;
-  DROP TABLE "footer" CASCADE;`)
+  DROP TABLE "footer" CASCADE;`);
 }

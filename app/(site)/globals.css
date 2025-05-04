@@ -24,27 +24,27 @@ body {
 }
 
 .footer {
-  @apply font-martian bg-black text-white;
+  @apply bg-black font-martian text-white;
 }
 
 .footer .footer__body {
-  @apply grid grid-cols-[auto_auto] py-[1.68rem] mx-auto lg:grid-cols-3 lg:grid-rows-1 lg:px-[11vw];
+  @apply mx-auto grid grid-cols-[auto_auto] py-[1.68rem] lg:grid-cols-3 lg:grid-rows-1 lg:px-[11vw];
 }
 
 .footer .footer__band-logo-container {
-  @apply row-span-2 lg:row-span-1 lg:col-start-2 flex justify-end items-center mr-8 lg:mr-0 lg:justify-center lg:[&>svg]:h-[50px];
+  @apply row-span-2 mr-8 flex items-center justify-end lg:col-start-2 lg:row-span-1 lg:mr-0 lg:justify-center lg:[&>svg]:h-[50px];
 }
 
 .footer .footer__links {
-  @apply col-start-2 lg:col-start-3 flex flex-col text-[13px] lg:justify-end lg:gap-6;
+  @apply col-start-2 flex flex-col text-[13px] lg:col-start-3 lg:justify-end lg:gap-6;
 }
 
 .footer .footer__link {
-  @apply underline leading-[26px];
+  @apply leading-[26px] underline;
 }
 
 .footer .footer__copyright {
-  @apply col-start-2 lg:row-start-1 mt-[9px] text-[10px] leading-[12px] lg:col-start-1 lg:justify-start lg:mt-0;
+  @apply col-start-2 mt-[9px] text-[10px] leading-[12px] lg:col-start-1 lg:row-start-1 lg:mt-0 lg:justify-start;
 }
 
 .footer .footer__band-logo-container,
@@ -54,13 +54,13 @@ body {
 }
 
 .link-button {
-  @apply border-[1px] py-2 px-4;
+  @apply border-[1px] px-4 py-2;
 }
 
 .link-button.dark {
-  @apply text-white bg-gray-900;
+  @apply bg-gray-900 text-white;
 }
 
 .link-button.light {
-  @apply text-black bg-[var(--background)] border-gray-800;
+  @apply border-gray-800 bg-[var(--background)] text-black;
 }
