@@ -1,33 +1,28 @@
-import {
-  getContactPageData,
-  getFooterData as getFooterDataFromPayload,
-} from './payload';
-import { getMainPageData } from './payload';
-import { getStreamingProviders as getStreamingProvidersFromPayload } from './payload';
-import { File, StreamingProviderLogo } from '@/payload-types';
+import { fetchFilamentResource, getSecretLinks } from './filament';
 
 export async function getStreamingProviders(): Promise<IStreamingProvider[]> {
-  const data = await getStreamingProvidersFromPayload();
-
-  return data.docs.map((provider) => {
-    return {
-      name: provider.name,
-      imageUrl: (provider.image as StreamingProviderLogo).url ?? '',
-      link: provider.link,
-    };
-  });
+  return (
+    (await fetchFilamentResource('/streaming-providers', [
+      'streaming-providers',
+    ])) as IFilamentStreamingProvider[]
+  ).map((provider) => ({
+    ...provider,
+    name: provider.display_name,
+    imageUrl: provider.logo_absolute_url,
+  }));
 }
 
 export async function getFooterLinks(): Promise<ISiteLink[]> {
-  const footerData = await getFooterDataFromPayload();
+  const data = (await fetchFilamentResource(
+    '/globals/footer-links',
+    ['footer-links'],
+    'force-cache'
+  )) as IFilamentFooterLink[];
 
-  return (
-    footerData.links?.map(({ href, displayName, external }) => ({
-      href,
-      displayName,
-      external: external ?? false,
-    })) ?? []
-  );
+  return data.map((link) => ({
+    ...link,
+    displayName: link.display_name,
+  }));
 }
 
 export function isValidURL(url: string): boolean {
@@ -83,34 +78,35 @@ export function convertDateStringToHumanReadableString(date: string) {
   return dateObject.toLocaleDateString('hu-HU', options);
 }
 
-export async function getMainPageYouTubeLink() {
-  return (await getMainPageData()).youtube_video_url;
+export async function getGlobalData() {
+  return (await fetchFilamentResource('/globals', [
+    'globals',
+  ])) as IFilamentGlobalData;
 }
 
-export async function getContactPageDetails(): Promise<IContactPage> {
-  const contactPagePayloadData = await getContactPageData();
+export async function getMainPageYouTubeLink() {
+  return (await getGlobalData()).youtube_video_url;
+}
+
+export async function getContactPageDetails(
+  secret?: string
+): Promise<IContactPage> {
+  const globalData = await getGlobalData();
+  const secretLinks = await getSecretLinks(secret);
 
   return {
-    secretLinksPassword: contactPagePayloadData.secret_links_password,
     concertContact: {
-      email: contactPagePayloadData.concert_contact_email,
-      phone: contactPagePayloadData.concert_contact_phone,
-      name: contactPagePayloadData.concert_contact_name,
+      email: globalData.concert_contact_email,
+      phone: globalData.concert_contact_phone,
+      name: globalData.concert_contact_name,
     },
     tourContact: {
-      email: contactPagePayloadData.tour_contact_email,
-      phone: contactPagePayloadData.tour_contact_phone,
-      name: contactPagePayloadData.tour_contact_name,
+      email: globalData.tour_contact_email,
+      phone: globalData.tour_contact_phone,
+      name: globalData.tour_contact_name,
     },
-    pressKitLink: contactPagePayloadData.presskit_link,
-    secretLinks:
-      contactPagePayloadData.secret_links?.map(
-        (l) =>
-          ({
-            display: l.display ?? '',
-            link: (l.document as File).url ?? '',
-          }) as ISecretInformation
-      ) ?? [],
+    pressKitLink: globalData.presskit_link,
+    secretLinks: secretLinks,
   };
 }
 
@@ -134,26 +130,27 @@ export async function getMainPageImages() {
     image_7_mobile,
     image_8_mobile,
     image_9_mobile,
-  } = await getMainPageData();
+    image_base_url,
+  } = await getGlobalData();
 
   return {
-    image_1: (image_1 as File)?.url,
-    image_2: (image_2 as File)?.url,
-    image_3: (image_3 as File)?.url,
-    image_4: (image_4 as File)?.url,
-    image_5: (image_5 as File)?.url,
-    image_6: (image_6 as File)?.url,
-    image_7: (image_7 as File)?.url,
-    image_8: (image_8 as File)?.url,
-    image_9: (image_9 as File)?.url,
-    image_1_mobile: (image_1_mobile as File)?.url,
-    image_2_mobile: (image_2_mobile as File)?.url,
-    image_3_mobile: (image_3_mobile as File)?.url,
-    image_4_mobile: (image_4_mobile as File)?.url,
-    image_5_mobile: (image_5_mobile as File)?.url,
-    image_6_mobile: (image_6_mobile as File)?.url,
-    image_7_mobile: (image_7_mobile as File)?.url,
-    image_8_mobile: (image_8_mobile as File)?.url,
-    image_9_mobile: (image_9_mobile as File)?.url,
+    image_1: `${image_base_url}${image_1}`,
+    image_2: `${image_base_url}${image_2}`,
+    image_3: `${image_base_url}${image_3}`,
+    image_4: `${image_base_url}${image_4}`,
+    image_5: `${image_base_url}${image_5}`,
+    image_6: `${image_base_url}${image_6}`,
+    image_7: `${image_base_url}${image_7}`,
+    image_8: `${image_base_url}${image_8}`,
+    image_9: `${image_base_url}${image_9}`,
+    image_1_mobile: `${image_base_url}${image_1_mobile}`,
+    image_2_mobile: `${image_base_url}${image_2_mobile}`,
+    image_3_mobile: `${image_base_url}${image_3_mobile}`,
+    image_4_mobile: `${image_base_url}${image_4_mobile}`,
+    image_5_mobile: `${image_base_url}${image_5_mobile}`,
+    image_6_mobile: `${image_base_url}${image_6_mobile}`,
+    image_7_mobile: `${image_base_url}${image_7_mobile}`,
+    image_8_mobile: `${image_base_url}${image_8_mobile}`,
+    image_9_mobile: `${image_base_url}${image_9_mobile}`,
   };
 }

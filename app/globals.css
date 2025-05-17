@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #e1e1e1;
+  --foreground: #2b2c2d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background, #e1e1e1);
+  color: var(--foreground, #2b2c2d);
+  @apply font-martian;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.footer {
+  @apply bg-black font-martian text-white;
+}
+
+.footer .footer__body {
+  @apply mx-auto grid grid-cols-[auto_auto] py-[1.68rem] lg:grid-cols-3 lg:grid-rows-1 lg:px-[11vw];
+}
+
+.footer .footer__band-logo-container {
+  @apply row-span-2 mr-8 flex items-center justify-end lg:col-start-2 lg:row-span-1 lg:mr-0 lg:justify-center lg:[&>svg]:h-[50px];
+}
+
+.footer .footer__links {
+  @apply col-start-2 flex flex-col text-[13px] lg:col-start-3 lg:justify-end lg:gap-6;
+}
+
+.footer .footer__link {
+  @apply leading-[26px] underline;
+}
+
+.footer .footer__copyright {
+  @apply col-start-2 mt-[9px] text-[10px] leading-[12px] lg:col-start-1 lg:row-start-1 lg:mt-0 lg:justify-start;
+}
+
+.footer .footer__band-logo-container,
+.footer .footer__copyright,
+.footer .footer__links {
+  @apply lg:flex lg:flex-row lg:items-center;
+}
+
+.link-button {
+  @apply border-[1px] px-4 py-2;
+}
+
+.link-button.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.link-button.light {
+  @apply border-gray-800 bg-[var(--background)] text-black;
+}
