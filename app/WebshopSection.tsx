@@ -11,20 +11,32 @@ import MoneyB from '@/public/images/section-4-money-b.webp';
 import { fadedImageDefaultRevealTime } from '@/constants';
 import { fadedImageRevealDefaultFraction } from '@/constants';
 import { ResponsiveImage } from '@/components/Image';
+import clsx from 'clsx';
 
 export const Webshop = ({
   products,
   image1,
   image2,
+  numberOfMissingConcerts = 0,
 }: {
   products: IWebshopProduct[];
   image1: IResponsiveImageProp;
   image2: IResponsiveImageProp;
+  numberOfMissingConcerts?: number;
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     dragFree: true,
     loop: true,
     slidesToScroll: 1,
+  });
+
+  // We have to declare it explicitly because tailwind won't grab it
+  const topMarginClass = clsx({
+    ['mt-0 lg:mt-[3vw]']: numberOfMissingConcerts === 0,
+    ['lg:mt-[5vw]']: numberOfMissingConcerts === 1,
+    ['lg:mt-[10vw]']: numberOfMissingConcerts === 2,
+    ['lg:mt-[22vw]']: numberOfMissingConcerts === 3,
+    ['lg:mt-[26vw]']: numberOfMissingConcerts === 4,
   });
 
   const [previewProduct, setPreviewProduct] = useState<IWebshopProduct>(
@@ -38,7 +50,7 @@ export const Webshop = ({
   }, [emblaApi]);
 
   return (
-    <section className='relative pt-[150vw] lg:pt-0'>
+    <section className={`relative pt-[150vw] lg:pt-0 ${topMarginClass}`}>
       <Fade
         fraction={fadedImageRevealDefaultFraction}
         triggerOnce

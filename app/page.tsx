@@ -10,6 +10,7 @@ import { getConcerts } from '@/lib/concert';
 import { getMainPageProducts } from '@/lib/shop';
 import { getMainPageImages, getMainPageYouTubeLink } from '@/lib/helpers';
 import { getStreamingProviders } from '@/lib/helpers';
+import { maxNumberOfConcertsOnMainPage } from '@/constants';
 
 export const fetchCache = 'default-cache';
 export const dynamic = 'force-dynamic';
@@ -28,6 +29,11 @@ export default async function Home() {
     await getMainPageYouTubeLink(),
     await getMainPageImages(),
   ]);
+
+  const numberOfMissingConcerts =
+    concerts.length < maxNumberOfConcertsOnMainPage
+      ? maxNumberOfConcertsOnMainPage - concerts.length
+      : 0;
 
   const areThereAnyConcert = concerts.length >= 1;
 
@@ -56,11 +62,11 @@ export default async function Home() {
       <YouTubeVideo src={youTubeVideoLink} />
       <Concerts
         concerts={concerts}
-        showMoreConcertLabel={concerts.length > 5}
         mobileImageSrc={mainPageImages.image_5_mobile ?? ''}
         desktopImageSrc={mainPageImages.image_5 ?? ''}
       />
       <Webshop
+        numberOfMissingConcerts={numberOfMissingConcerts}
         products={products}
         image1={{
           mobilSrc: mainPageImages.image_6_mobile ?? '',
@@ -72,6 +78,7 @@ export default async function Home() {
         }}
       />
       <Music
+        numberOfMissingConcerts={numberOfMissingConcerts}
         streamingProviders={streamingProviders}
         image1={{
           mobilSrc: mainPageImages.image_8_mobile ?? '',

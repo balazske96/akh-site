@@ -1,29 +1,19 @@
 import { convertDateStringToHumanReadableString } from '@/lib/helpers';
 import { getConcertBySlug } from '@/lib/concert';
-import { getConcertSlugs } from '@/lib/concert';
-import { headers } from 'next/headers';
 import Image from 'next/image';
 import { LinkButton } from '@/components/Button';
 import logo from '@/public/images/navbar-logo.webp';
 import { notFound } from 'next/navigation';
 import { ResponsiveImage } from '@/components/Image';
 
-export const dynamicParams = false;
-export const revalidate = 1200;
-
-export async function generateStaticParams() {
-  return await getConcertSlugs();
-}
+export const fetchCache = 'default-cache';
+export const dynamic = 'force-dynamic';
 
 interface IPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export default async function Page({ params }: IPageProps) {
-  const reqHeaders = await headers();
-  const origin =
-    reqHeaders.get('origin') ||
-    `${reqHeaders.get('x-forwarded-proto')}://${reqHeaders.get('host')}`;
   const { slug } = await params;
   const concert = await getConcertBySlug(slug);
 
@@ -55,7 +45,7 @@ export default async function Page({ params }: IPageProps) {
         addressCountry: 'HU',
       },
     },
-    image: `${origin}${image.url}`,
+    image,
   };
 
   if (ticketLink) {
@@ -95,7 +85,7 @@ export default async function Page({ params }: IPageProps) {
             mobileImageSrc={image.tabletUrl ?? ''}
             desktopImageSrc={image.desktopUrl ?? ''}
             minWidthForDesktopImage={600}
-            className=''
+            className='mx-auto'
             width={image.width}
             height={image.height}
             src={image.mobileUrl || image.url}

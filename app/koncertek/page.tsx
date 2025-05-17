@@ -1,6 +1,9 @@
 import { LinkButton } from '@/components/Button';
 import { getConcerts } from '@/lib/concert';
 
+export const fetchCache = 'default-cache';
+export const dynamic = 'force-dynamic';
+
 export default async function Concerts() {
   const concerts = await getConcerts();
   const shouldDisplayConcerts = concerts.length > 0;

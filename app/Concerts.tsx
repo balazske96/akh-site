@@ -3,21 +3,22 @@
 import { Fade } from 'react-awesome-reveal';
 
 import { ResponsiveImage } from '@/components/Image';
+import { maxNumberOfConcertsOnMainPage } from '@/constants';
 
 export const Concerts = ({
   concerts,
-  showMoreConcertLabel = true,
   mobileImageSrc,
   desktopImageSrc,
 }: {
   concerts: IConcert[];
-  showMoreConcertLabel?: boolean;
   mobileImageSrc: string;
   desktopImageSrc: string;
 }) => {
   if (!(concerts.length > 0)) {
     return <div className='lg:h-[3vw]'></div>;
   }
+
+  const showMoreConcertLabel = concerts.length > maxNumberOfConcertsOnMainPage;
 
   return (
     <section>
@@ -59,8 +60,10 @@ export const Concerts = ({
             />
           </div>
         </Fade>
-        <div className='flex flex-col justify-between gap-[8.33vw] bg-white px-[5vw] pb-[14.16vw] pt-[35vw] font-martian lg:w-[48.91vw] lg:gap-[1.56vw] lg:pb-[11.82vw] lg:pl-[8.23vw] lg:pr-[5.94vw] lg:pt-[4.48vw]'>
-          {concerts.map((concert) => (
+        <div
+          className={`flex flex-col justify-between gap-[8.33vw] bg-white px-[5vw] ${showMoreConcertLabel ? 'pb-[14.16vw] lg:pb-[11.82vw]' : 'pb-[14.16vw] lg:pb-[11vw]'} pt-[35vw] font-martian lg:w-[48.91vw] lg:gap-[1.56vw] lg:pl-[8.23vw] lg:pr-[5.94vw] lg:pt-[4.48vw]`}
+        >
+          {concerts.slice(0, maxNumberOfConcertsOnMainPage).map((concert) => (
             <div
               key={concert.displayName}
               className='flex justify-between lg:border-b-[0.05vw] lg:border-[black] lg:pb-[1.56vw]'
