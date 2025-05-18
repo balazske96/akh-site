@@ -54,6 +54,7 @@ export const Concerts = ({
             <video
               className='absolute left-0 top-0 z-10 h-full w-auto object-cover'
               src='/videos/audience-hands.webm'
+              playsInline
               autoPlay
               muted
               loop
