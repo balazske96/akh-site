@@ -4,6 +4,7 @@ import { Fade } from 'react-awesome-reveal';
 
 import { ResponsiveImage } from '@/components/Image';
 import { maxNumberOfConcertsOnMainPage } from '@/constants';
+import Link from 'next/link';
 
 export const Concerts = ({
   concerts,
@@ -91,9 +92,9 @@ export const Concerts = ({
             </div>
           ))}
           {showMoreConcertLabel && (
-            <a
+            <Link
               className='flex items-center gap-[2.77vw] lg:order-first lg:justify-end lg:gap-[1.56vw]'
-              href='#'
+              href='/koncertek'
             >
               <span className='text-[4vw] lg:text-[0.78vw]'>
                 Összes koncert dátum
@@ -111,7 +112,7 @@ export const Concerts = ({
                   fill='black'
                 />
               </svg>
-            </a>
+            </Link>
           )}
         </div>
       </div>
