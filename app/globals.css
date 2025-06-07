@@ -58,9 +58,9 @@ body {
 }
 
 .link-button.dark {
-  @apply bg-gray-900 text-white;
+  @apply bg-gray-900 text-white hover:bg-gray-700;
 }
 
 .link-button.light {
-  @apply border-gray-800 bg-[var(--background)] text-black;
+  @apply border-gray-800 bg-[var(--background)] text-black hover:bg-gray-200;
 }
