@@ -122,10 +122,16 @@ interface IWoocommerceImage {
 }
 
 interface IContactPage {
-  concertContact: IContactInfo;
-  tourContact: IContactInfo;
-  pressKitLink: string;
-  secretLinks: ISecretInformation[];
+  general: {
+    concert_contact_name: string;
+    concert_contact_phone: string;
+    concert_contact_email: string;
+    tour_contact_name: string;
+    tour_contact_phone: string;
+    tour_contact_email: string;
+    presskit_link: string;
+  };
+  secret_docs: IFilamentSecretDocument[];
 }
 
 interface IContactInfo {
