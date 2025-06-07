@@ -20,7 +20,7 @@ export function SubPageNavbar() {
 
   return (
     <header className='fixed top-0 z-50 w-full bg-[#E1E1E1] shadow-[0_2px_4px_rgba(0,0,0,0.1)]'>
-      <div className='mx-auto flex max-w-[1440px] items-center justify-between px-4 py-4 lg:px-8'>
+      <div className='mx-auto flex max-w-[1440px] items-center justify-between px-4 py-6 lg:px-8'>
         <Link href='/'>
           <Image
             className='w-[120px] opacity-80 lg:w-[140px]'

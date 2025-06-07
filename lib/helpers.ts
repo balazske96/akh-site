@@ -1,4 +1,4 @@
-import { fetchFilamentResource, getSecretLinks } from './filament';
+import { fetchFilamentResource } from './filament';
 
 export async function getStreamingProviders(): Promise<IStreamingProvider[]> {
   return (
@@ -91,23 +91,10 @@ export async function getMainPageYouTubeLink() {
 export async function getContactPageDetails(
   secret?: string
 ): Promise<IContactPage> {
-  const globalData = await getGlobalData();
-  const secretLinks = await getSecretLinks(secret);
-
-  return {
-    concertContact: {
-      email: globalData.concert_contact_email,
-      phone: globalData.concert_contact_phone,
-      name: globalData.concert_contact_name,
-    },
-    tourContact: {
-      email: globalData.tour_contact_email,
-      phone: globalData.tour_contact_phone,
-      name: globalData.tour_contact_name,
-    },
-    pressKitLink: globalData.presskit_link,
-    secretLinks: secretLinks,
-  };
+  return await fetchFilamentResource(
+    `/contact-page${secret ? '?p=' + secret : ''}`,
+    [`contact-page${secret ? '-with-secret-' + secret : ''}`]
+  );
 }
 
 export async function getMainPageImages() {

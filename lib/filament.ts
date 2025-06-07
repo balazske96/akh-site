@@ -61,21 +61,3 @@ export async function getConcertsBySlug(slug: string) {
 
   return convertFilamentConcertToFrontendConcert(data);
 }
-
-export async function getSecretLinks(password?: string) {
-  const response = await fetch(`${cmsBaseUrl}/api/secret-links?p=${password}`, {
-    next: { tags: [`secrets-${password ?? ''}`] },
-  });
-
-  if (response.status !== 200) {
-    return [];
-  }
-
-  return ((await response.json()) as IFilamentSecretDocument[]).map(
-    (secretDocs) =>
-      ({
-        display: secretDocs.display_name,
-        link: secretDocs.signed_url,
-      }) as ISecretInformation
-  );
-}

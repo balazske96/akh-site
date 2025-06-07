@@ -1,4 +1,3 @@
-import { SubPageNavbar } from '@/components/Navbar/SubPageNavbar';
 import { getConcerts } from '@/lib/concert';
 import { LinkButton } from '@/components/Button';
 
@@ -13,7 +12,6 @@ export default async function Concerts() {
 
   return (
     <>
-      <SubPageNavbar />
       <h1 className='mt-14 py-12 text-center font-martian text-4xl font-bold uppercase'>
         Koncertek
       </h1>
