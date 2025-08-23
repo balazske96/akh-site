@@ -1,4 +1,5 @@
 import { getContactPageDetails } from '@/lib/helpers';
+import SubPageFrame from '@/app/(subPages)/SubPageFrame';
 
 export default async function ContactPage({
   searchParams,
@@ -9,18 +10,11 @@ export default async function ContactPage({
   const pageData = await getContactPageDetails(passwordInLink.toString());
 
   return (
-    <section className='pt-24 font-martian'>
-      <div className='mx-auto max-w-[1440px]'>
-        <h1
-          className={
-            'pb-5 pt-7 text-center font-martian text-3xl font-bold uppercase md:py-9 md:text-5xl'
-          }
-        >
-          Kapcsolat
-        </h1>
+    <SubPageFrame title={'Kapcsolat'}>
+      <section className='mx-auto max-w-[1440px]'>
         <div
           className={
-            'mx-auto my-6 flex max-w-[800px] flex-col gap-4 md:flex-row md:gap-0'
+            'mx-auto my-6 flex max-w-[800px] flex-col gap-4 md:flex-row md:gap-0 lg:mt-16'
           }
         >
           <ContactBlock
@@ -67,8 +61,8 @@ export default async function ContactPage({
             ️
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+    </SubPageFrame>
   );
 }
 
