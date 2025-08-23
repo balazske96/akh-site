@@ -1,8 +1,5 @@
-import { convertDateStringToHumanReadableString } from '@/lib/helpers';
 import { getConcertBySlug } from '@/lib/concert';
-import Image from 'next/image';
 import { LinkButton } from '@/components/Button';
-import logo from '@/public/images/navbar-logo.webp';
 import { notFound } from 'next/navigation';
 import { ResponsiveImage } from '@/components/Image';
 
@@ -67,16 +64,11 @@ export default async function Page({ params }: IPageProps) {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className={'flex justify-center px-14 py-6'}>
-        <a href='/public'>
-          <Image
-            className={'w-40 sm:w-60 md:w-80'}
-            src={logo}
-            alt={'Zenekari logó'}
-          />
-        </a>
-      </div>
-      <article itemScope itemType='https://schema.org/Event'>
+      <article
+        itemScope
+        itemType='https://schema.org/Event'
+        className={'mt-24 sm:mt-36'}
+      >
         <figure>
           <figcaption className='sr-only'>
             A Király Halott koncert flyer
@@ -111,7 +103,7 @@ export default async function Page({ params }: IPageProps) {
           dateTime={date}
           itemProp='startDate'
         >
-          {convertDateStringToHumanReadableString(date)}
+          {date}
         </time>
         <div itemProp='location' itemScope itemType='https://schema.org/Place'>
           <span
