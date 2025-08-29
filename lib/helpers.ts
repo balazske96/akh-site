@@ -25,6 +25,26 @@ export async function getFooterLinks(): Promise<ISiteLink[]> {
   }));
 }
 
+export async function getSocialMediaPlatforms(): Promise<
+  ISocialMediaPlatform[]
+> {
+  const data = (await fetchFilamentResource(
+    '/social-media-platforms',
+    ['social-media-platforms'],
+    'force-cache'
+  )) as IFilamentSocialMediaPlatform[];
+
+  return data.map((provider) => {
+    const { display_name, link, logo_absolute_url } = provider;
+
+    return {
+      link,
+      displayName: display_name,
+      logo: logo_absolute_url,
+    };
+  });
+}
+
 export function isValidURL(url: string): boolean {
   const urlRegex =
     /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:\d+)?(\/[\w.%~-]*)*(\?.*)?(#.*)?$/;

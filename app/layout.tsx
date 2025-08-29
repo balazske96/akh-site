@@ -66,6 +66,7 @@ export default async function RootLayout({
   return (
     <html lang='hu'>
       <head>
+        <title>A Király Halott | Hivatalos zenekari weboldal</title>
         <noscript>
           <iframe
             src='https://www.googletagmanager.com/ns.html?id=GTM-P2M24QSJ'
@@ -76,9 +77,9 @@ export default async function RootLayout({
         </noscript>
       </head>
       <body
-        className={`${syne.variable} ${martian.variable} ${caveat.className} font-sans`}
+        className={`${syne.variable} ${martian.variable} ${caveat.className} flex min-h-[100vh] flex-col font-sans`}
       >
-        <main>{children}</main>
+        <main className={'flex-1'}>{children}</main>
         <Footer />
         <GoogleTagManager gtmId={googleGtmId} />
       </body>

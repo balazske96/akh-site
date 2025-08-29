@@ -24,33 +24,31 @@ body {
 }
 
 .footer {
-  @apply bg-black font-martian text-white;
+  @apply bg-[#151515] py-8 font-martian text-white sm:py-12;
 }
 
 .footer .footer__body {
-  @apply mx-auto grid grid-cols-[auto_auto] py-[1.68rem] lg:grid-cols-3 lg:grid-rows-1 lg:px-[11vw];
+  @apply flex flex-col justify-center gap-4 sm:gap-6 lg:gap-8;
 }
 
-.footer .footer__band-logo-container {
-  @apply row-span-2 mr-8 flex items-center justify-end lg:col-start-2 lg:row-span-1 lg:mr-0 lg:justify-center lg:[&>svg]:h-[50px];
+.footer .footer__social-media-platforms {
+  @apply flex justify-center gap-2 py-2 sm:gap-4 lg:gap-6;
 }
 
-.footer .footer__links {
-  @apply col-start-2 flex flex-col text-[13px] lg:col-start-3 lg:justify-end lg:gap-6;
-}
-
-.footer .footer__link {
-  @apply leading-[26px] underline;
+.footer .footer__social-media-platform-logo {
+  @apply h-[20px] w-[20px] sm:h-[30px] sm:w-[30px] lg:h-[40px] lg:w-[40px];
 }
 
 .footer .footer__copyright {
-  @apply col-start-2 mt-[9px] text-[10px] leading-[12px] lg:col-start-1 lg:row-start-1 lg:mt-0 lg:justify-start;
+  @apply text-center text-[10px] lg:text-sm;
 }
 
-.footer .footer__band-logo-container,
-.footer .footer__copyright,
 .footer .footer__links {
-  @apply lg:flex lg:flex-row lg:items-center;
+  @apply flex items-center justify-center gap-2 text-[10px] underline sm:gap-3 sm:text-sm lg:text-lg;
+}
+
+.footer .footer__links-separator svg {
+  @apply h-[15px] w-[15px] sm:h-[25px] sm:w-[25px] lg:h-[35px] lg:w-[35px];
 }
 
 .link-button {

@@ -81,6 +81,16 @@ interface IFilamentSecretDocument {
   signed_url: string;
 }
 
+interface IFilamentSocialMediaPlatform {
+  id: number;
+  display_name: string;
+  link: string;
+  logo: string;
+  created_at: string;
+  updated_at: string;
+  logo_absolute_url: string;
+}
+
 interface IImage {
   url: string | undefined;
   width: number | undefined;
@@ -154,4 +164,10 @@ interface IFilamentFooterLink {
   href: string;
   display_name: string;
   external: boolean;
+}
+
+interface ISocialMediaPlatform {
+  displayName: string;
+  link: string;
+  logo: string;
 }
