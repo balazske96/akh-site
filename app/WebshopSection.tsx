@@ -91,8 +91,7 @@ export const Webshop = ({
       {/* <!-- Quote --> */}
       <div className='absolute left-[1vw] top-[102vw] lg:left-[42vw] lg:top-[11.3vw]'>
         <p className='font-handwritten text-[7vw] leading-[7vw] tracking-widest lg:text-[1.6vw] lg:leading-[1.7vw]'>
-          Termék
-          <br className='lg:hidden' />
+          Termék <br className='lg:hidden' />
           vagyok, <br className='lg:hidden' />
           leszek, voltam
           <br />
