@@ -58,7 +58,6 @@ export default async function ContactPage({
                   {secretLink.display_name}
                 </a>
               ))}
-            ️
           </p>
         </div>
       </section>

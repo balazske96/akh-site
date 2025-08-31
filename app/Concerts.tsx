@@ -5,6 +5,7 @@ import { Fade } from 'react-awesome-reveal';
 import { ResponsiveImage } from '@/components/Image';
 import { maxNumberOfConcertsOnMainPage } from '@/constants';
 import Link from 'next/link';
+import React from 'react';
 
 export const Concerts = ({
   concerts,
@@ -65,32 +66,25 @@ export const Concerts = ({
         <div
           className={`flex flex-col justify-between gap-[8.33vw] bg-white px-[5vw] ${showMoreConcertLabel ? 'pb-[14.16vw] lg:pb-[11.82vw]' : 'pb-[14.16vw] lg:pb-[11vw]'} pt-[35vw] font-martian lg:w-[48.91vw] lg:gap-[1.56vw] lg:pl-[8.23vw] lg:pr-[5.94vw] lg:pt-[4.48vw]`}
         >
-          {concerts.slice(0, maxNumberOfConcertsOnMainPage).map((concert) => (
-            <div
-              key={concert.displayName}
-              className='flex justify-between lg:border-b-[0.05vw] lg:border-[black] lg:pb-[1.56vw]'
-            >
-              <div className='grid w-full grid-cols-[auto_1fr] grid-rows-2 gap-x-[2.78vw] lg:grid-cols-[auto_14vw_1fr] lg:grid-rows-1 lg:gap-x-[1.98vw]'>
-                <span className='items-center text-[2.77vw] font-light leading-[3.33vw] lg:flex lg:text-[0.57vw] lg:leading-[0.72vw]'>
-                  {concert.date}
-                </span>
-                <span className='items-center text-[2.77vw] font-light leading-[3.33vw] lg:col-start-3 lg:row-start-1 lg:flex lg:justify-start lg:text-[0.57vw] lg:leading-[0.72vw]'>
-                  {concert.venue}
-                </span>
-                <p className='col-span-2 max-w-[65vw] overflow-x-hidden text-ellipsis whitespace-nowrap text-[5.5vw] font-extrabold uppercase leading-[6.67vw] lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:text-[1.25vw] lg:leading-[1.56vw]'>
-                  {concert.displayName}
-                </p>
+          {/* Grid Container for Concerts */}
+          <div className='main-page-concerts-grid'>
+            {concerts.slice(0, maxNumberOfConcertsOnMainPage).map((concert) => (
+              <div className={'concert-row'} key={concert.displayName}>
+                <div className='date-column'>
+                  <span>{concert.date}</span>
+                </div>
+                <div className='display-name'>
+                  <p>{concert.displayName}</p>
+                </div>
+                <div className='venue'>
+                  <span>{concert.venue}</span>
+                </div>
+                <div className='tickets'>
+                  <a href={concert.ticketLink}>JEGYEK</a>
+                </div>
               </div>
-              <div className='flex items-end justify-center lg:items-center'>
-                <a
-                  className='rounded-[13.05vw] border-2 border-[#CDCDCD] px-[3.61vw] py-[2.78vw] text-[3.61vw] leading-[4.33vw] lg:rounded-none lg:border-b-[0.05vw] lg:border-l-0 lg:border-r-0 lg:border-t-0 lg:border-[#2B2C2D] lg:p-0 lg:text-[0.78vw] lg:leading-[0.94vw]'
-                  href={concert.ticketLink}
-                >
-                  JEGYEK
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
           {showMoreConcertLabel && (
             <Link
               className='flex items-center gap-[2.77vw] lg:order-first lg:justify-end lg:gap-[1.56vw]'
