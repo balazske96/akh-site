@@ -1,9 +1,5 @@
 'use client';
 
-import { Fade } from 'react-awesome-reveal';
-
-import { fadedImageRevealDefaultFraction } from '@/constants';
-import { fadedImageDefaultRevealTime } from '@/constants';
 import { ResponsiveImage } from '@/components/Image';
 
 interface IIntroductionProps {
@@ -148,31 +144,18 @@ export const Introduction = ({
         </svg>
       </div>
       {/* <!-- Relative images --> */}
-      <Fade
-        fraction={fadedImageRevealDefaultFraction}
-        triggerOnce
-        duration={fadedImageDefaultRevealTime}
-      >
-        <ResponsiveImage
-          mobileImageSrc={image1.mobilSrc}
-          desktopImageSrc={image1.desktopSrc}
-          className='absolute right-[50%] top-[112.5vw] h-auto w-[77.22vw] translate-x-1/2 lg:left-[16.14vw] lg:right-auto lg:top-0 lg:w-[16.14vw] lg:translate-x-0'
-          id={'image_1'}
-        />
-      </Fade>
-      <Fade
-        fraction={fadedImageRevealDefaultFraction}
-        triggerOnce
-        delay={100}
-        duration={fadedImageDefaultRevealTime}
-      >
-        <ResponsiveImage
-          mobileImageSrc={image3.mobilSrc}
-          desktopImageSrc={image3.desktopSrc}
-          className='absolute left-0 top-[176.09vw] h-auto w-[61.66vw] lg:left-[11.04vw] lg:top-[16.45vw] lg:w-[16.77vw]'
-          id={'image_3'}
-        />
-      </Fade>
+      <ResponsiveImage
+        mobileImageSrc={image1.mobilSrc}
+        desktopImageSrc={image1.desktopSrc}
+        className='absolute right-[50%] top-[112.5vw] h-auto w-[77.22vw] translate-x-1/2 lg:left-[16.14vw] lg:right-auto lg:top-0 lg:w-[16.14vw] lg:translate-x-0'
+        id={'image_1'}
+      />
+      <ResponsiveImage
+        mobileImageSrc={image3.mobilSrc}
+        desktopImageSrc={image3.desktopSrc}
+        className='absolute left-0 top-[176.09vw] h-auto w-[61.66vw] lg:left-[11.04vw] lg:top-[16.45vw] lg:w-[16.77vw]'
+        id={'image_3'}
+      />
       {/* <!-- Relative text --> */}
       <div className='absolute right-[55%] top-[246.38vw] w-max translate-x-1/2 lg:left-[29.63vw] lg:right-auto lg:top-[22.91vw] lg:max-w-max lg:translate-x-0'>
         <p className='font-handwritten text-[7vw] leading-[6.82vw] lg:text-[1.4vw] lg:leading-[1.29vw]'>
@@ -188,32 +171,18 @@ export const Introduction = ({
         </div>
       </div>
       {/* <!-- Relative images --> */}
-      <Fade
-        triggerOnce
-        fraction={fadedImageRevealDefaultFraction}
-        delay={100}
-        duration={fadedImageDefaultRevealTime}
-      >
-        <ResponsiveImage
-          mobileImageSrc={image2.mobilSrc}
-          desktopImageSrc={image2.desktopSrc}
-          className='absolute left-[-10.27vw] top-[271.11vw] h-auto w-[102.49vw] lg:left-auto lg:right-[16.14vw] lg:top-0 lg:w-[21.875vw]'
-          id={'image_2'}
-        />
-      </Fade>
-      <Fade
-        triggerOnce
-        fraction={fadedImageRevealDefaultFraction}
-        delay={300}
-        duration={fadedImageDefaultRevealTime}
-      >
-        <ResponsiveImage
-          mobileImageSrc={image4.mobilSrc}
-          desktopImageSrc={image4.desktopSrc}
-          className='absolute right-0 top-[316.38vw] h-auto w-[48.05vw] lg:right-[13.125vw] lg:top-[25.31vw] lg:w-[19.11vw]'
-          id={'image_4'}
-        />
-      </Fade>
+      <ResponsiveImage
+        mobileImageSrc={image2.mobilSrc}
+        desktopImageSrc={image2.desktopSrc}
+        className='absolute left-[-10.27vw] top-[271.11vw] h-auto w-[102.49vw] lg:left-auto lg:right-[16.14vw] lg:top-0 lg:w-[21.875vw]'
+        id={'image_2'}
+      />
+      <ResponsiveImage
+        mobileImageSrc={image4.mobilSrc}
+        desktopImageSrc={image4.desktopSrc}
+        className='absolute right-0 top-[316.38vw] h-auto w-[48.05vw] lg:right-[13.125vw] lg:top-[25.31vw] lg:w-[19.11vw]'
+        id={'image_4'}
+      />
       {/* <!-- Relative text / Desktop only --> */}
       <div className='absolute left-[54.27vw] top-[32.23vw] hidden flex-row items-end lg:flex'>
         <div>

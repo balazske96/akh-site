@@ -1,7 +1,5 @@
 'use client';
 
-import { Fade } from 'react-awesome-reveal';
-
 import { ResponsiveImage } from '@/components/Image';
 import { maxNumberOfConcertsOnMainPage } from '@/constants';
 import Link from 'next/link';
@@ -25,47 +23,43 @@ export const Concerts = ({
   return (
     <section>
       <div className='relative pt-[185.44vw] lg:flex lg:flex-row lg:justify-end lg:pr-[10vw] lg:pt-[15.78vw]'>
-        <Fade triggerOnce delay={100} fraction={0.2}>
-          <ResponsiveImage
-            mobileImageSrc={mobileImageSrc}
-            desktopImageSrc={desktopImageSrc}
-            className='absolute left-[-29.16vw] top-[14.88vw] h-auto w-[115.83vw] lg:left-[9.27vw] lg:top-[11.25vw] lg:h-[40.63vw] lg:w-[34.64vw]'
-            id={'image_5'}
-          />
-          <div className='absolute right-[65%] top-[20.27vw] w-max translate-x-1/2 text-white lg:left-[11.09vw] lg:top-[48.02vw] lg:translate-x-0'>
-            <p className='font-handwritten text-[7vw] leading-[9vw] lg:inline-block lg:text-[1.3vw] lg:leading-[1.29vw]'>
-              Ezt az éjszakát is
-            </p>
-            <p className='ml-[15vw] font-handwritten text-[7vw] leading-[9vw] lg:ml-[0.2vw] lg:inline-block lg:text-[1.3vw] lg:leading-[1.29vw]'>
-              követeli a hajnal...
-            </p>
-          </div>
-        </Fade>
-        <Fade triggerOnce>
-          <div
-            id='koncertek'
-            className='absolute left-[50%] top-[123.88vw] z-50 mx-auto h-[80.55vw] w-[80.55vw] translate-x-[-50%] overflow-hidden lg:left-[26.82vw] lg:top-[4.22vw] lg:h-[21.88vw] lg:w-[21.41vw] lg:translate-x-0'
+        <ResponsiveImage
+          mobileImageSrc={mobileImageSrc}
+          desktopImageSrc={desktopImageSrc}
+          className='absolute left-[-29.16vw] top-[14.88vw] h-auto w-[115.83vw] lg:left-[9.27vw] lg:top-[11.25vw] lg:h-[40.63vw] lg:w-[34.64vw]'
+          id={'image_5'}
+        />
+        <div className='absolute right-[65%] top-[20.27vw] w-max translate-x-1/2 text-white lg:left-[11.09vw] lg:top-[48.02vw] lg:translate-x-0'>
+          <p className='font-handwritten text-[7vw] leading-[9vw] lg:inline-block lg:text-[1.3vw] lg:leading-[1.29vw]'>
+            Ezt az éjszakát is
+          </p>
+          <p className='ml-[15vw] font-handwritten text-[7vw] leading-[9vw] lg:ml-[0.2vw] lg:inline-block lg:text-[1.3vw] lg:leading-[1.29vw]'>
+            követeli a hajnal...
+          </p>
+        </div>
+        <div
+          id='koncertek'
+          className='absolute left-[50%] top-[123.88vw] z-50 mx-auto h-[80.55vw] w-[80.55vw] translate-x-[-50%] overflow-hidden lg:left-[26.82vw] lg:top-[4.22vw] lg:h-[21.88vw] lg:w-[21.41vw] lg:translate-x-0'
+        >
+          <h2 className='absolute left-[50%] top-[50%] z-20 translate-x-[-50%] translate-y-[-50%] text-center font-martian text-[11.94vw] font-extrabold uppercase leading-[14.33vw] text-white lg:text-[3.3vw] lg:leading-[4.3vw]'>
+            Közelgő
+            <br />
+            koncert
+            <br />
+            dátumok
+          </h2>
+          <video
+            className='absolute left-0 top-0 z-10 h-full w-auto object-cover'
+            playsInline
+            autoPlay
+            muted
+            loop
+            poster={'/images/audience-hands.webp'}
           >
-            <h2 className='absolute left-[50%] top-[50%] z-20 translate-x-[-50%] translate-y-[-50%] text-center font-martian text-[11.94vw] font-extrabold uppercase leading-[14.33vw] text-white lg:text-[3.3vw] lg:leading-[4.3vw]'>
-              Közelgő
-              <br />
-              koncert
-              <br />
-              dátumok
-            </h2>
-            <video
-              className='absolute left-0 top-0 z-10 h-full w-auto object-cover'
-              playsInline
-              autoPlay
-              muted
-              loop
-              poster={'/images/audience-hands.webp'}
-            >
-              <source src='/videos/audience-hands.webm' type={'video/webp'} />
-              <source src='/videos/audience-hands.mp4' type={'video/mp4'} />
-            </video>
-          </div>
-        </Fade>
+            <source src='/videos/audience-hands.webm' type={'video/webp'} />
+            <source src='/videos/audience-hands.mp4' type={'video/mp4'} />
+          </video>
+        </div>
         <div
           className={`flex flex-col justify-between gap-[8.33vw] bg-white px-[5vw] ${showMoreConcertLabel ? 'pb-[14.16vw] lg:pb-[11.82vw]' : 'pb-[14.16vw] lg:pb-[11vw]'} pt-[35vw] font-martian lg:w-[48.91vw] lg:gap-[1.56vw] lg:pl-[8.23vw] lg:pr-[5.94vw] lg:pt-[4.48vw]`}
         >

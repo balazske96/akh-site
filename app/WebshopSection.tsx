@@ -1,6 +1,6 @@
 'use client';
 
-import { Fade } from 'react-awesome-reveal';
+import clsx from 'clsx';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useEffect } from 'react';
@@ -8,10 +8,7 @@ import { useState } from 'react';
 
 import MoneyA from '@/public/images/section-4-money-a.webp';
 import MoneyB from '@/public/images/section-4-money-b.webp';
-import { fadedImageDefaultRevealTime } from '@/constants';
-import { fadedImageRevealDefaultFraction } from '@/constants';
 import { ResponsiveImage } from '@/components/Image';
-import clsx from 'clsx';
 
 export const Webshop = ({
   products,
@@ -51,31 +48,18 @@ export const Webshop = ({
 
   return (
     <section className={`relative pt-[150vw] lg:pt-0 ${topMarginClass}`}>
-      <Fade
-        fraction={fadedImageRevealDefaultFraction}
-        triggerOnce
-        duration={fadedImageDefaultRevealTime}
-      >
-        <ResponsiveImage
-          mobileImageSrc={image1.mobilSrc}
-          desktopImageSrc={image1.desktopSrc}
-          id={'image_6'}
-          className='absolute right-0 top-[18.33vw] w-[91.66vw] lg:right-[17.14vw] lg:top-[-7.55vw] lg:h-[16.88vw] lg:w-[27.66vw]'
-        />
-      </Fade>
-      <Fade
-        fraction={fadedImageRevealDefaultFraction}
-        triggerOnce
-        duration={fadedImageDefaultRevealTime}
-        delay={100}
-      >
-        <ResponsiveImage
-          mobileImageSrc={image2.mobilSrc}
-          desktopImageSrc={image2.desktopSrc}
-          id={'image_7'}
-          className='absolute right-[3.33vw] top-[62.77vw] w-[47.77vw] lg:right-[19.58vw] lg:top-[3.59vw] lg:w-[16.25vw]'
-        />
-      </Fade>
+      <ResponsiveImage
+        mobileImageSrc={image1.mobilSrc}
+        desktopImageSrc={image1.desktopSrc}
+        id={'image_6'}
+        className='absolute right-0 top-[18.33vw] w-[91.66vw] lg:right-[17.14vw] lg:top-[-7.55vw] lg:h-[16.88vw] lg:w-[27.66vw]'
+      />
+      <ResponsiveImage
+        mobileImageSrc={image2.mobilSrc}
+        desktopImageSrc={image2.desktopSrc}
+        id={'image_7'}
+        className='absolute right-[3.33vw] top-[62.77vw] w-[47.77vw] lg:right-[19.58vw] lg:top-[3.59vw] lg:w-[16.25vw]'
+      />
       {/* <!-- Money 1 --> */}
       <Image
         className='absolute left-[20.83vw] top-[78.61vw] w-[21.38vw] lg:left-[53.02vw] lg:top-[5.26vw] lg:w-[3.44vw]'
