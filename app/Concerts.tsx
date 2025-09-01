@@ -55,12 +55,15 @@ export const Concerts = ({
             </h2>
             <video
               className='absolute left-0 top-0 z-10 h-full w-auto object-cover'
-              src='/videos/audience-hands.webm'
               playsInline
               autoPlay
               muted
               loop
-            />
+              poster={'/images/audience-hands.webp'}
+            >
+              <source src='/videos/audience-hands.webm' type={'video/webp'} />
+              <source src='/videos/audience-hands.mp4' type={'video/mp4'} />
+            </video>
           </div>
         </Fade>
         <div
