@@ -1,3 +1,4 @@
+import NextTopLoader from 'nextjs-toploader';
 import { GoogleTagManager } from '@next/third-parties/google';
 import type { Metadata, Viewport } from 'next';
 import { Syne } from 'next/font/google';
@@ -79,6 +80,7 @@ export default async function RootLayout({
       <body
         className={`${syne.variable} ${martian.variable} ${caveat.className} flex min-h-[100vh] flex-col font-sans`}
       >
+        <NextTopLoader showSpinner={false} height={4} color={'#151515'} />
         <main className={'flex-1'}>{children}</main>
         <Footer />
         <GoogleTagManager gtmId={googleGtmId} />
